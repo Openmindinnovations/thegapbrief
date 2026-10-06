@@ -5,5 +5,7 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 python3 build.py
 git add -A
-git commit -m "${1:-Update site}"
+if git diff --cached --quiet; then echo "nothing to commit"; else git commit -m "${1:-Update site}"; fi
+git pull --rebase --quiet origin main
 git push origin main
+echo "Pushed. Pages usually deploys in 1–2 minutes; then run scripts/verify.sh <date>."

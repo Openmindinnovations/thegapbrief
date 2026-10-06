@@ -7,6 +7,19 @@
   },
   "weeks": [
     {
+      "week": "Preview",
+      "label": "Preview issue",
+      "preview": true,
+      "date": "2026-10-06",
+      "date_label": "October 6, 2026",
+      "covering": "October 1 – October 6, 2026",
+      "title": "Test run: Watermarks, ads, and the controls users lost",
+      "summary": "A short test issue: OpenAI watermarks ChatGPT text in the EU and adds image-side ads, ChatGPT users report lost controls, and seed money goes to likeness licensing, personal AI hardware, and robot safety.",
+      "mascot_says": "This one’s a practice run. I’m checking that the trail is marked before Monday.",
+      "pdf": "pdfs/thegapbrief-2026-10-06.pdf",
+      "source": "briefs/2026-10-06/brief.html"
+    },
+    {
       "week": 1,
       "date": "2026-10-05",
       "date_label": "October 5, 2026",

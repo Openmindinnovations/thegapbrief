@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TheGapBrief — Preview issue (test run) · October 6, 2026</title>
+<link rel="stylesheet" href="../brief.css">
+</head>
+<body>
+
+<header class="masthead">
+  <img class="mascot" src="../../assets/gappy.svg" alt="Gappy, the scout fox">
+  <div class="mast-text">
+  <p class="kicker">TheGapBrief — Preview issue · Test run · October 6, 2026</p>
+  <h1>Test run: Watermarks, ads, and the controls users lost</h1>
+  <p class="dek">Product gaps, emerging markets, and AI updates from October 1 – October 6, 2026.</p>
+  <p class="meta">This is a short test issue that exercises the weekly publishing flow. It is not a numbered week. Items are ranked within each section, most important first. Every claim links to its source; numbers appear only where a cited source states them.</p>
+  </div>
+</header>
+
+<p class="intro">A light issue. OpenAI started watermarking ChatGPT text in the EU and announced display ads beside generated images. ChatGPT users reported losing controls they relied on, and seed money went to likeness licensing, personal AI hardware, and safety for AI-driven robots.</p>
+
+<ul class="contents">
+  <li class="c-gaps"><span class="dot"></span>Gaps · missing pieces in real products (3)</li>
+  <li class="c-markets"><span class="dot"></span>Markets · what is emerging (4)</li>
+  <li class="c-ai"><span class="dot"></span>AI · the week’s key updates (3)</li>
+</ul>
+
+<section class="s-gaps" data-section="gaps">
+<h2><span class="chip">Gaps</span>Missing gaps in real apps and products</h2>
+<p class="section-note">Real product, the missing piece, and why nobody covers it yet.</p>
+
+<div class="item">
+  <h3><span class="n">1.1</span>AI-text watermarks fade after light editing, and there is no shared detector</h3>
+  <p><span class="label">Missing</span>A way for publishers, schools, or platforms to check text from any vendor, one that still works after light editing.</p>
+  <p><span class="label">Evidence</span>OpenAI will watermark ChatGPT and Codex text in the EU to comply with the AI Act’s transparency rules. TechCrunch reports that in OpenAI’s own test, replacing 10% of words with synonyms cut detection from about 92% to 66%, and that short passages, math, and translations are harder to detect. Anthropic watermarks Claude text separately.</p>
+  <p><span class="label">Why open</span>Each lab marks its own output, and the report doesn’t describe a public checker that works across vendors.</p>
+  <p class="src"><a href="https://techcrunch.com/2026/10/05/openai-will-start-watermarking-chatgpts-text-in-the-eu/">TechCrunch</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">1.2</span>ChatGPT: users report they can no longer switch models inside a conversation</h3>
+  <p><span class="label">Missing</span>Switching to a better-suited model partway through a conversation, without starting a new chat and losing context.</p>
+  <p><span class="label">Evidence</span>An Oct 4 OpenAI Community bug report from a paid user says in-chat model switching disappeared and that memory is often not applied in long chats. A reply reports similar memory problems since mid-August.</p>
+  <p><span class="label">Why open</span>The user describes it as an unannounced change. We found no explanation from OpenAI.</p>
+  <p class="src"><a href="https://community.openai.com/t/gpt-5-6-regression-memory-retrieval-fails-long-chats-lose-context-early-and-in-chat-model-switching-is-gone/1403213">OpenAI Community thread</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">1.3</span>ChatGPT web: users rely on browser extensions to see edited-message versions and export full chats</h3>
+  <p><span class="label">Missing</span>Built-in navigation of message versions and branches, plus a complete export of a single conversation.</p>
+  <p><span class="label">Evidence</span>A long-running OpenAI Community bug thread about the removed version arrows was still active on Oct 2. Users describe extensions breaking as the web endpoints change, and an extension developer posting fixes.</p>
+  <p><span class="label">Why open</span>Users say third-party extensions are the only workaround, and those break each time the site changes.</p>
+  <p class="src"><a href="https://community.openai.com/t/chatgpt-web-update-removed-message-version-arrows-cannot-access-edited-message-history/1374666">OpenAI Community thread</a></p>
+</div>
+</section>
+
+<section class="s-markets" data-section="markets">
+<h2><span class="chip">Markets</span>Emerging markets</h2>
+<p class="section-note">What is actually showing up: new categories, rounds, launches, and the forces creating demand.</p>
+
+<div class="item">
+  <h3><span class="n">2.1</span>Licensing data, creative work, and likeness for AI</h3>
+  <p><strong>SignSplit</strong> came out of stealth on Oct 5. Its press release announces a $400M strategic seed with W Group at a $1B valuation for a service that lets people and institutions protect, license, and contribute their data, work, and likeness.</p>
+  <p class="src"><a href="https://www.prnewswire.com/news-releases/signsplit-secures-400-million-strategic-seed-round-at-1-billion-valuation-302897779.html">PR Newswire</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">2.2</span>Dedicated hardware for personal AI</h3>
+  <p><strong>Ghost</strong> came out of stealth with an $11M seed led by Andreessen Horowitz. It is building a $3,499 computer meant to run a personal AI.</p>
+  <p class="src"><a href="https://techcrunch.com/2026/10/05/at-19-ghost-founder-raises-11-million-to-build-a-3499-computer-for-your-personal-ai/">TechCrunch</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">2.3</span>Safety for robots driven by generative AI</h3>
+  <p><strong>Safeworld</strong> came out of stealth with a seed round of more than $12M, led by Shine Capital and a16z Speedrun. It focuses on convincing people that robots driven by generative AI are safe to be around.</p>
+  <p class="src"><a href="https://techcrunch.com/2026/10/05/can-safeworld-convince-people-that-gen-ai-robots-wont-hurt-them/">TechCrunch</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">2.4</span>Infrastructure for real-time world models</h3>
+  <p><strong>Reactor</strong>, a developer platform for real-time generative video and world models, said NVIDIA and Sapphire Ventures joined its Lightspeed-led Series A. The company cites adoption across media, entertainment, and physical AI. No amount was disclosed in the release.</p>
+  <p class="src"><a href="https://markets.financialcontent.com/stocks/article/bizwire-2026-10-5-reactor-expands-investors-in-series-a-round-to-scale-real-time-world-model-infrastructure">Business Wire via FinancialContent</a></p>
+</div>
+</section>
+
+<section class="s-ai" data-section="ai">
+<h2><span class="chip">AI</span>The most important AI updates this week</h2>
+<p class="section-note">What changed and why it matters.</p>
+
+<div class="item">
+  <h3><span class="n">3.1</span>OpenAI will watermark ChatGPT and Codex text in the EU</h3>
+  <p><span class="label">What changed</span>Announced Oct 5. The invisible watermark rolls out over the coming weeks to EU users on all plans to meet the AI Act’s transparency rules, which took effect Aug 2. API developers anywhere can turn it on for select models; it is off by default.</p>
+  <p><span class="label">Why it matters</span>EU rules are now changing how a major AI product works by default in one region. Products that publish AI text in the EU will need a disclosure plan.</p>
+  <p class="src"><a href="https://techcrunch.com/2026/10/05/openai-will-start-watermarking-chatgpts-text-in-the-eu/">TechCrunch</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">3.2</span>OpenAI adds display ads beside generated images</h3>
+  <p><span class="label">What changed</span>Visual ads will appear next to images that ChatGPT generates, starting later this month in the U.S. with an initial test group of advertisers. OpenAI also announced more measurement partners and brand-suitability pilots with DoubleVerify and IAS.</p>
+  <p><span class="label">Why it matters</span>The free tier is becoming an ad business with standard ad-industry measurement tools.</p>
+  <p class="src"><a href="https://techcrunch.com/2026/10/05/openai-launches-visual-ads-that-appear-alongside-image-generation-results/">TechCrunch</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">3.3</span>Google DeepMind watermarks AI-designed proteins (SynthID Bio)</h3>
+  <p><span class="label">What changed</span>SynthID Bio embeds a signal in proteins during design. In lab tests, the marked proteins worked as well as unmarked ones. Running a marked sequence through another design tool removes the mark, and the method cannot identify who made a protein. DeepMind is releasing the code and data to researchers.</p>
+  <p><span class="label">Why it matters</span>Provenance marking is spreading from media into biology, and so are its limits.</p>
+  <p class="src"><a href="https://singularityhub.com/2026/10/05/google-deepmind-gives-ai-designed-proteins-a-watermark/">Singularity Hub</a></p>
+</div>
+</section>
+
+<p class="colophon">Preview issue: a test run of the weekly flow. TheGapBrief is published weekly by Open Mind Innovations LLC. This issue covers news published October 1 – October 6, 2026. Funding amounts and other figures are as reported by the linked sources; nothing here is investment advice.</p>
+
+</body>
+</html>

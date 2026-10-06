@@ -33,6 +33,15 @@ def write(p, s):
     print("wrote", p)
 
 
+def label(w):
+    """Display label: explicit "label" (e.g. "Preview issue") or "Week N"."""
+    return w.get("label") or f"Week {w['week']}"
+
+
+def badge(w):
+    return '<span class="badge-preview">Preview</span> ' if w.get("preview") else ""
+
+
 def strip_tags(s):
     return html.unescape(re.sub(r"<[^>]+>", "", s)).strip()
 
@@ -130,7 +139,7 @@ def build_home(site, weeks):
     feat, rest = weeks[0], weeks[1:]
     o = outline(feat)
     featured = f"""<section class="featured" aria-labelledby="latest">
-  <p class="eyebrow" id="latest">Latest · Week {feat['week']} · <time datetime="{feat['date']}">{feat['date_label']}</time></p>
+  <p class="eyebrow" id="latest">{badge(feat)}Latest · {label(feat)} · <time datetime="{feat['date']}">{feat['date_label']}</time></p>
   <article class="card card-featured">
     <div class="card-body">
       <h2><a href="weeks/{feat['date']}/index.html">{html.escape(feat['title'])}</a></h2>
@@ -150,7 +159,7 @@ def build_home(site, weeks):
     if rest:
         cards = "".join(f"""
     <article class="card card-archive">
-      <p class="eyebrow">Week {w['week']} · <time datetime="{w['date']}">{w['date_label']}</time></p>
+      <p class="eyebrow">{badge(w)}{label(w)} · <time datetime="{w['date']}">{w['date_label']}</time></p>
       <h3><a href="weeks/{w['date']}/index.html">{html.escape(w['title'])}</a></h3>
       <p class="summary">{html.escape(w['summary'])}</p>
       <div class="actions">
@@ -192,12 +201,12 @@ def build_week(site, w, newer, older):
     </div>"""
     pdf = prefix + w["pdf"]
     nav = '<nav class="week-nav">'
-    nav += f'<a href="{prefix}weeks/{newer["date"]}/index.html">← Week {newer["week"]}</a>' if newer else "<span></span>"
-    nav += f'<a href="{prefix}weeks/{older["date"]}/index.html">Week {older["week"]} →</a>' if older else "<span></span>"
+    nav += f'<a href="{prefix}weeks/{newer["date"]}/index.html">← {label(newer)}</a>' if newer else "<span></span>"
+    nav += f'<a href="{prefix}weeks/{older["date"]}/index.html">{label(older)} →</a>' if older else "<span></span>"
     nav += "</nav>"
     body = f"""{header(prefix, site, small=True)}
 <main class="wrap week-page">
-  <p class="eyebrow">Week {w['week']} · <time datetime="{w['date']}">{w['date_label']}</time> · covering {html.escape(w.get('covering', ''))}</p>
+  <p class="eyebrow">{badge(w)}{label(w)} · <time datetime="{w['date']}">{w['date_label']}</time> · covering {html.escape(w.get('covering', ''))}</p>
   <h1 class="week-title">{html.escape(w['title'])}</h1>
   <p class="summary lead">{html.escape(w['summary'])}</p>
   <div class="actions">
@@ -215,7 +224,7 @@ def build_week(site, w, newer, older):
   </section>
   <section class="reader" aria-labelledby="reader-h">
     <h2 class="section-title" id="reader-h">Read the full brief</h2>
-    <object class="pdf-frame" data="{pdf}#view=FitH" type="application/pdf" aria-label="TheGapBrief Week {w['week']} PDF">
+    <object class="pdf-frame" data="{pdf}#view=FitH" type="application/pdf" aria-label="TheGapBrief {label(w)} PDF">
       <div class="pdf-fallback">
         <p>Your browser can’t show the PDF here.</p>
         <a class="btn btn-primary" href="{pdf}" download>Download PDF</a>
@@ -226,7 +235,7 @@ def build_week(site, w, newer, older):
 </main>
 {footer(prefix, site)}"""
     write(f"weeks/{w['date']}/index.html",
-          page(f"Week {w['week']} · {w['date_label']}: {w['title']} | {site['name']}", body, prefix, w["summary"]))
+          page(f"{label(w)} · {w['date_label']}: {w['title']} | {site['name']}", body, prefix, w["summary"]))
 
 
 def build_feed(site, weeks):
@@ -236,7 +245,7 @@ def build_feed(site, weeks):
         link = f"{site['url']}/weeks/{w['date']}/"
         items += f"""
   <item>
-    <title>Week {w['week']} · {html.escape(w['date_label'])}: {html.escape(w['title'])}</title>
+    <title>{html.escape(label(w))} · {html.escape(w['date_label'])}: {html.escape(w['title'])}</title>
     <link>{link}</link>
     <guid>{link}</guid>
     <pubDate>{format_datetime(d)}</pubDate>

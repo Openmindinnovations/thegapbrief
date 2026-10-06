@@ -1,10 +1,15 @@
 #!/usr/bin/env bash
-# Verify the live site, a week page, and a PDF. Usage: scripts/verify.sh 2026-10-05 [base_url]
+# Verify the live site, a week page, and its PDF; waits up to ~3 min for Pages to deploy.
+# Usage: scripts/verify.sh 2026-10-05 [base_url]
 set -uo pipefail
 DATE="${1:?usage: verify.sh YYYY-MM-DD [base_url]}"
 BASE="${2:-https://openmindinnovations.github.io/thegapbrief}"
+for i in $(seq 1 18); do
+  curl -sL -H 'Cache-Control: no-cache' "$BASE/?v=$RANDOM" | grep -q "weeks/$DATE/" && break
+  echo "waiting for deploy ($i)…"; sleep 10
+done
 ok=0
-check() { # url expected_type
+check() { # url expected_type_prefix
   read -r code ctype < <(curl -sL -o /dev/null -w '%{http_code} %{content_type}\n' "$1")
   printf '%s  %s  %s\n' "$code" "$ctype" "$1"
   [[ "$code" == 200 && "$ctype" == $2* ]] || ok=1
@@ -13,5 +18,5 @@ check "$BASE/" "text/html"
 check "$BASE/weeks/$DATE/" "text/html"
 check "$BASE/pdfs/thegapbrief-$DATE.pdf" "application/pdf"
 check "$BASE/feed.xml" ""
-curl -sL "$BASE/" | grep -q "weeks/$DATE/" && echo "home lists $DATE" || { echo "home does NOT list $DATE yet"; ok=1; }
+curl -sL "$BASE/?v=$RANDOM" | grep -q "weeks/$DATE/" && echo "OK: home lists $DATE" || { echo "FAIL: home does not list $DATE"; ok=1; }
 exit $ok

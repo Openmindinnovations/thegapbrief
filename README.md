@@ -16,6 +16,7 @@ briefs/<date>/brief.html   the week's report source (rendered to PDF)
 pdfs/thegapbrief-<date>.pdf
 assets/style.css           site styles
 assets/gappy*.svg          mascot
+scripts/new_week.sh        scaffold briefs/<date>/brief.html from briefs/_template.html + print weeks.json stub
 scripts/make_pdf.sh        brief.html -> PDF (headless Chrome) + page-1 PNG preview in previews/
 scripts/publish.sh         build + commit + push
 scripts/verify.sh          curl checks against the live site
@@ -32,41 +33,32 @@ Each issue is dated Monday and covers the previous Monday through that Monday. T
    - *Markets*: new categories, funding rounds, launches, and regulation that creates demand.
    - *AI*: what changed and why it matters.
    - Rules: link a source for every item. Don't invent numbers; only state a figure if a cited source gives it, and attribute it. Leave out anything you can't verify. No hype. Re-check that "this week" news is actually from this week, because aggregators sometimes republish old funding news. Don't pitch the owner's existing projects as new ideas (Kapsoul, iMusement, Hivvly, FlirtFee, Anchor AR, Wash Wizardz, Get UI Now, DeepReach, Fetch).
-2. **Write the brief.**
+2. **Scaffold and write the brief.**
    ```bash
-   mkdir -p briefs/2026-10-12
-   cp briefs/2026-10-05/brief.html briefs/2026-10-12/brief.html
-   # edit: <title>, kicker ("TheGapBrief — Week 2 · October 12, 2026"), <h1> headline, dek, intro, items
+   scripts/new_week.sh 2026-10-12 "Week 2" "October 5 – October 12, 2026"
+   # creates briefs/2026-10-12/brief.html from briefs/_template.html and prints a weeks.json stub
    ```
-   Keep the structure, because `build.py` reads the outline from it:
+   Fill in the `<h1>` headline, intro, the counts in the contents list, and the items. Copy an `<div class="item">` block for each extra item. Keep the structure, because `build.py` reads the outline from it:
    `<section class="s-gaps" data-section="gaps">`, `s-markets`/`markets`, `s-ai`/`ai`, and one `<div class="item"><h3><span class="n">1.1</span>Headline</h3>…</div>` per item.
 3. **Render the PDF and check it.**
    ```bash
    scripts/make_pdf.sh 2026-10-12      # -> pdfs/thegapbrief-2026-10-12.pdf and previews/thegapbrief-2026-10-12-p1.png
    ```
-   Look at the PNG preview. The PDF should run 3–6 pages, and links should be clickable (`pdfinfo -url pdfs/...pdf`).
-4. **Add the entry** to the `weeks` array in `weeks.json`:
-   ```json
-   {
-     "week": 2,
-     "date": "2026-10-12",
-     "date_label": "October 12, 2026",
-     "covering": "October 5 – October 12, 2026",
-     "title": "Short headline-style title",
-     "summary": "One-line summary for the list.",
-     "mascot_says": "A light one-liner from Gappy (keep it friendly, no claims).",
-     "pdf": "pdfs/thegapbrief-2026-10-12.pdf",
-     "source": "briefs/2026-10-12/brief.html"
-   }
-   ```
+   The script warns if template placeholders are left and prints the page and link counts (full issues target 3–6 pages). Open the PNG and check the layout.
+4. **Add the entry** printed by `new_week.sh` to the `weeks` array in `weeks.json`, and fill in `title`, `summary`, and `mascot_says`. Order doesn't matter, because the build sorts by date and features the newest.
+   - Optional `"label"` overrides the displayed "Week N" text.
+   - Previews and test issues: set `"week": "Preview"` (a non-number, so it doesn't use up a week number), `"label": "Preview issue"`, and `"preview": true`. This adds a yellow PREVIEW badge.
 5. **Build and publish.**
    ```bash
    scripts/publish.sh "Week 2 · October 12, 2026"   # python3 build.py && git add -A && git commit && git push origin main
    ```
-6. **Verify.** Pages takes about 1–2 minutes to deploy.
+6. **Verify.**
    ```bash
-   scripts/verify.sh 2026-10-12     # expects 200s and application/pdf; exits non-zero on failure
+   scripts/verify.sh 2026-10-12     # waits up to ~3 min for Pages, then expects 200s + application/pdf; exits non-zero on failure
    ```
+   `publish.sh` does nothing harmful if there is nothing to commit, and it rebases on `origin/main` before pushing.
+
+To remove a preview later, delete its entry from `weeks.json` along with `briefs/<date>/`, `pdfs/thegapbrief-<date>.pdf`, and `weeks/<date>/`, then run `scripts/publish.sh "Remove preview"`.
 
 Requirements on the box: `python3`, `google-chrome` (or chromium), `poppler-utils` (`pdftoppm`, `pdfinfo`), and `git` with push access to `Openmindinnovations/thegapbrief` (via `gh auth`).
 

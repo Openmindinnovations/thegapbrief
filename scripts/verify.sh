@@ -4,7 +4,7 @@
 # Note: a plain (non-cache-busted) load of the home page can show the old version for up to 10 minutes.
 set -uo pipefail
 DATE="${1:?usage: verify.sh YYYY-MM-DD [base_url]}"
-BASE="${2:-https://openmindinnovations.github.io/thegapbrief}"
+BASE="${2:-https://thegapbrief.com}"
 # GitHub Pages' CDN caches HTML (max-age=600) and edges can disagree right after a deploy,
 # so require 3 consecutive cache-busted hits before checking.
 hits=0

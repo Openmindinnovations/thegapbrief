@@ -2,7 +2,7 @@
 
 A weekly brief on product gaps, emerging markets, and AI updates. Published by Open Mind Innovations LLC.
 
-- Live: https://openmindinnovations.github.io/thegapbrief/ (custom domain `thegapbrief.com` is pending DNS, see below)
+- Live: https://thegapbrief.com/ (GitHub Pages; https://openmindinnovations.github.io/thegapbrief/ redirects here)
 - Mascot: **Gappy**, the scout fox (`assets/gappy.svg`, `assets/gappy-head.svg`). Both are original, hand-written SVGs.
 - Static HTML/CSS. No framework. GitHub Pages serves the `main` branch from the root (`/`).
 
@@ -64,17 +64,11 @@ Requirements on the box: `python3`, `google-chrome` (or chromium), `poppler-util
 
 ## Custom domain (thegapbrief.com)
 
-The domain is registered at Squarespace Domains, and its DNS is hosted on Squarespace nameservers (`nsb1–4.squarespacedns.com`). To point it at GitHub Pages:
+The domain is live. It's registered at Squarespace Domains, and DNS is on Squarespace nameservers (`nsb1–4.squarespacedns.com`):
 
-1. In Squarespace → Domains → thegapbrief.com → DNS settings, remove the Squarespace default A/CNAME records for `@` and `www`.
-2. Add these records:
-   - `A @ 185.199.108.153`, `A @ 185.199.109.153`, `A @ 185.199.110.153`, `A @ 185.199.111.153`
-   - optional `AAAA @ 2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153`
-   - `CNAME www openmindinnovations.github.io`
-3. Once `dig +short thegapbrief.com` returns the 185.199.x.153 addresses, set the custom domain:
-   `gh api -X PUT repos/Openmindinnovations/thegapbrief/pages -f cname=thegapbrief.com`
-   (or add a `CNAME` file containing `thegapbrief.com`), then enable HTTPS:
-   `gh api -X PUT repos/Openmindinnovations/thegapbrief/pages -F https_enforced=true` (after the certificate is issued).
-4. Change `site.url` in `weeks.json` to `https://thegapbrief.com` and republish.
+- `A @` → 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153
+- `CNAME www` → openmindinnovations.github.io
 
-Don't set the custom domain before DNS points at GitHub. If you do, the github.io URL redirects to thegapbrief.com, which would still be serving the Squarespace page.
+The repo's `CNAME` file contains `thegapbrief.com`. Keep it. With branch-based Pages, deleting it detaches the custom domain. `build.py` never touches it, and `site.url` in `weeks.json` is `https://thegapbrief.com` (used for the RSS feed). HTTPS is enforced in the Pages settings.
+
+To check the Pages state: `gh api repos/Openmindinnovations/thegapbrief/pages --jq '{cname, https_enforced, cert: .https_certificate.state}'`

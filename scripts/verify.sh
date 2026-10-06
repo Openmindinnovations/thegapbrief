@@ -9,7 +9,8 @@ BASE="${2:-https://thegapbrief.com}"
 # so require 3 consecutive cache-busted hits before checking.
 hits=0
 for i in $(seq 1 30); do
-  if curl -sL -H 'Cache-Control: no-cache' "$BASE/?v=$RANDOM$i" | grep -q "weeks/$DATE/"; then
+  page=$(curl -sL -H 'Cache-Control: no-cache' "$BASE/?v=$RANDOM$i")   # capture first: curl|grep -q + pipefail = false failures
+  if [[ "$page" == *"weeks/$DATE/"* ]]; then
     hits=$((hits+1)); (( hits >= 3 )) && break; sleep 3
   else
     hits=0; echo "waiting for deploy ($i)…"; sleep 10
@@ -25,5 +26,6 @@ check "$BASE/" "text/html"
 check "$BASE/weeks/$DATE/" "text/html"
 check "$BASE/pdfs/thegapbrief-$DATE.pdf" "application/pdf"
 check "$BASE/feed.xml" ""
-curl -sL -H "Cache-Control: no-cache" "$BASE/?v=final$RANDOM" | grep -q "weeks/$DATE/" && echo "OK: home lists $DATE" || { echo "FAIL: home does not list $DATE"; ok=1; }
+page=$(curl -sL -H "Cache-Control: no-cache" "$BASE/?v=final$RANDOM")
+[[ "$page" == *"weeks/$DATE/"* ]] && echo "OK: home lists $DATE" || { echo "FAIL: home does not list $DATE"; ok=1; }
 exit $ok

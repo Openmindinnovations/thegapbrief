@@ -1,0 +1,21 @@
+{
+  "site": {
+    "name": "TheGapBrief",
+    "tagline": "A weekly brief on product gaps, emerging markets, and AI updates.",
+    "publisher": "Open Mind Innovations LLC",
+    "url": "https://openmindinnovations.github.io/thegapbrief"
+  },
+  "weeks": [
+    {
+      "week": 1,
+      "date": "2026-10-05",
+      "date_label": "October 5, 2026",
+      "covering": "September 28 – October 5, 2026",
+      "title": "Agents shipped this week. The controls around them did not.",
+      "summary": "Always-on agents arrived while permission scoping, spend caps, and agent attribution lag behind. Plus agent-identity funding, decision models, and OpenAI shelving GPT-6.1 Astra.",
+      "mascot_says": "Everyone shipped agents this week, so I went looking for the guardrails.",
+      "pdf": "pdfs/thegapbrief-2026-10-05.pdf",
+      "source": "briefs/2026-10-05/brief.html"
+    }
+  ]
+}

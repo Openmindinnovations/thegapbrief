@@ -1,0 +1,53 @@
+/* TheGapBrief PDF stylesheet (rendered with headless Chrome). Palette matches the site. */
+:root {
+  --cream: #FBF6EC; --ink: #23201C; --muted: #6E665C; --line: #E6DCCB;
+  --gaps: #D9573A; --markets: #1F8A84; --ai: #6A55C9; --sun: #F5B841;
+}
+@page {
+  size: Letter;
+  margin: 0.75in 0.85in 0.7in 0.85in;
+  background: #FBF6EC;
+  @bottom-left { content: "TheGapBrief"; font-family: "DM Sans", sans-serif; font-size: 7.5pt; color: #8C8377; }
+  @bottom-right { content: counter(page) " / " counter(pages); font-family: "DM Sans", sans-serif; font-size: 7.5pt; color: #8C8377; }
+}
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; background: var(--cream); }
+body {
+  font-family: "Source Serif Pro", Georgia, serif;
+  font-size: 9.6pt; line-height: 1.42; color: var(--ink); margin: 0; background: var(--cream);
+  font-kerning: normal; hyphens: auto;
+}
+a { color: var(--ink); text-decoration: underline; text-decoration-color: #C9BBA5; text-underline-offset: 1.5px; }
+
+/* Masthead */
+.masthead { display: flex; align-items: center; gap: 16pt; background: #FFFFFF; border: 1pt solid var(--line); border-radius: 12pt; padding: 14pt 16pt; margin-bottom: 12pt; }
+.masthead .mascot { width: 92pt; height: auto; flex: none; }
+.mast-text { flex: 1; }
+.kicker { font-family: "DM Sans", sans-serif; font-weight: 700; font-size: 7.5pt; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gaps); margin: 0 0 4pt; }
+h1 { font-family: "Fraunces", Georgia, serif; font-weight: 700; font-size: 20pt; line-height: 1.12; margin: 0 0 5pt; letter-spacing: -0.01em; }
+.dek { font-size: 10.5pt; color: #3D3832; margin: 0; }
+.meta { font-family: "DM Sans", sans-serif; font-size: 7.5pt; color: var(--muted); margin: 6pt 0 0; }
+.intro { margin: 0 0 6pt; }
+.contents { font-family: "DM Sans", sans-serif; font-size: 8.5pt; margin: 8pt 0 0; padding: 0; list-style: none; display: flex; gap: 14pt; flex-wrap: wrap; }
+.contents li { display: flex; align-items: center; gap: 5pt; }
+.contents .dot { width: 8pt; height: 8pt; border-radius: 50%; display: inline-block; }
+.c-gaps .dot { background: var(--gaps); } .c-markets .dot { background: var(--markets); } .c-ai .dot { background: var(--ai); }
+
+/* Sections, color-coded */
+section { --sec: var(--gaps); }
+section.s-markets { --sec: var(--markets); }
+section.s-ai { --sec: var(--ai); }
+h2 {
+  font-family: "Fraunces", Georgia, serif; font-weight: 700; font-size: 14pt; color: var(--ink);
+  border-top: 2pt solid var(--sec); padding-top: 7pt; margin: 18pt 0 3pt; break-after: avoid;
+  display: flex; align-items: center; gap: 8pt;
+}
+.chip { font-family: "DM Sans", sans-serif; font-weight: 700; font-size: 7.5pt; letter-spacing: 0.08em; text-transform: uppercase; color: #fff; background: var(--sec); border-radius: 20pt; padding: 2pt 8pt; }
+.section-note { font-size: 9pt; color: var(--muted); margin: 0 0 8pt; font-style: italic; break-after: avoid; }
+.item { margin: 0 0 9pt; orphans: 3; widows: 3; }
+.item p { break-inside: avoid; margin: 0 0 3pt 20pt; }
+.item h3 { font-family: "Source Serif Pro", Georgia, serif; font-size: 11pt; font-weight: 700; margin: 0 0 3pt; line-height: 1.3; break-after: avoid; padding-left: 20pt; position: relative; }
+.item h3 .n { position: absolute; left: 0; top: 0.15em; font-family: "DM Sans", sans-serif; font-weight: 700; font-size: 7.5pt; color: #fff; background: var(--sec); border-radius: 4pt; padding: 1pt 3pt; line-height: 1.3; }
+.item .label { font-family: "DM Sans", sans-serif; font-weight: 700; font-size: 7pt; letter-spacing: 0.06em; text-transform: uppercase; color: var(--sec); margin-right: 3pt; }
+.item .src { break-before: avoid; font-family: "DM Sans", sans-serif; font-size: 7.5pt; color: var(--muted); margin-top: 2pt; }
+.item .src a { color: #4A443D; }
+.colophon { font-family: "DM Sans", sans-serif; font-size: 7.5pt; color: var(--muted); border-top: 1pt solid var(--line); margin-top: 10pt; padding-top: 5pt; }

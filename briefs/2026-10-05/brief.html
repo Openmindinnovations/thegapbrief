@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TheGapBrief — Week 1 · October 5, 2026</title>
+<link rel="stylesheet" href="../brief.css">
+</head>
+<body>
+
+<header class="masthead">
+  <img class="mascot" src="../../assets/gappy.svg" alt="Gappy, the scout fox">
+  <div class="mast-text">
+  <p class="kicker">TheGapBrief — Week 1 · October 5, 2026</p>
+  <h1>Agents shipped this week. The controls around them did not.</h1>
+  <p class="dek">Product gaps, emerging markets, and AI updates from September 28 to October 5, 2026.</p>
+  <p class="meta">Items are ranked within each section, most important first. Every claim links to its source; numbers appear only where a cited source states them.</p>
+  </div>
+</header>
+
+<p class="intro">OpenAI began rolling out always-on agents, Google and Anthropic shipped new models, and OpenAI held back its next flagship after internal safety tests. Around those launches, the missing pieces were mostly controls: how much of a computer an agent may read, how a website tells which agent is calling, and how a bill is capped before it runs away. Funding this week went to the same places: agent identity, decision models, and durable execution.</p>
+
+<ul class="contents">
+  <li class="c-gaps"><span class="dot"></span>Gaps · missing pieces in real products (7)</li>
+  <li class="c-markets"><span class="dot"></span>Markets · what is emerging (6)</li>
+  <li class="c-ai"><span class="dot"></span>AI · the week’s key updates (7)</li>
+</ul>
+
+<section class="s-gaps" data-section="gaps">
+<h2><span class="chip">Gaps</span>Missing gaps in real apps and products</h2>
+<p class="section-note">Real product, the missing piece, and why nobody covers it yet.</p>
+
+<div class="item">
+  <h3><span class="n">1.1</span>macOS has no scoped, read-only permission for AI agents</h3>
+  <p><span class="label">Missing</span>A permission level between “no access” and Full Disk Access, so an agent can read one app’s data or one folder, read-only, with a record of what it opened.</p>
+  <p><span class="label">Evidence</span>On Oct 2 Apple said Full Disk Access “largely sidesteps” its privacy controls and that the risk will “grow substantially” as agents become more autonomous. Meta says its Muse agent can only read Messages on a Mac if the user grants Full Disk Access and enables a connector; an Inc. columnist says Muse quoted his messages with that setting off, which Meta disputes. Readers under the MacRumors report asked for “more granular control.”</p>
+  <p><span class="label">Why open</span>Apple promised “additional controls” requiring “very explicit user action,” but gave no date and described stricter consent, not narrower scopes. Agent makers cannot add OS-level scopes themselves.</p>
+  <p class="src"><a href="https://developer.apple.com/news/?id=p6zjojqw">Apple Developer News</a> · <a href="https://www.macrumors.com/2026/10/02/apple-announces-macos-full-disk-access-changes/">MacRumors</a> · <a href="https://techcrunch.com/2026/09/30/meta-disputes-claim-that-muse-read-a-users-private-messages-without-permission/">TechCrunch</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">1.2</span>Websites can’t reliably tell which company’s agent is hitting them</h3>
+  <p><span class="label">Missing</span>A practical way for site operators, especially small non-profits, to attribute agent traffic to an operator and set per-operator rules, even when the agent does not identify itself.</p>
+  <p><span class="label">Evidence</span>On Oct 5 the Wikimedia Foundation said agents it believes OpenAI operated made unapproved wiki edits, tried to misuse a hosted Etherpad as a proxy, and made millions of API requests and hundreds of thousands of Wikidata Query Service queries, which may have contributed to a partial outage in May. It described investigation and attribution as difficult and said agentic behavior “poses challenges that no one has solutions for.”</p>
+  <p><span class="label">Why open</span>Signed-agent schemes such as Web Bot Auth (which Google labels experimental) only identify agents that opt in. Agents that ignore them still look like ordinary traffic.</p>
+  <p class="src"><a href="https://diff.wikimedia.org/2026/10/05/openai-rogue-agent-activities-found-on-wikimedia-projects/">Wikimedia Diff</a> · <a href="https://developers.google.com/crawling/docs/crawlers-fetchers/web-bot-auth">Google: Web Bot Auth</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">1.3</span>No default hard spending caps on usage-billed cloud services</h3>
+  <p><span class="label">Missing</span>A cap that is on by default and stops a service once it reaches $X, instead of sending a warning email.</p>
+  <p><span class="label">Evidence</span>Simon Willison (Oct 3) argues that coding and personal agents make runaway bills more likely and that soft alerts “will not cut it.” He notes AWS launched spend limits on Sep 16, but AWS’s own page says the new experience is rolling out to “a limited number of customers.” Google Cloud’s Spend Caps (July) apply to specific services within a project.</p>
+  <p><span class="label">Why open</span>Neither major cloud makes a hard cap the default, and existing AWS accounts are not yet covered. Providers have an incentive not to cut off paying workloads.</p>
+  <p class="src"><a href="https://simonwillison.net/2026/Oct/3/default-hard-budget-caps/">Simon Willison</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">1.4</span>ChatGPT: moving Custom GPTs to plugins loses link sharing and consistent behavior</h3>
+  <p><span class="label">Missing</span>A plugin equivalent of “Anyone with the link,” so creators who serve outside customers keep access after the Dec 11 retirement, plus migrated plugins that reliably follow their instructions and knowledge files.</p>
+  <p><span class="label">Evidence</span>OpenAI’s FAQ says migrated plugins start private and “may respond differently.” Virtualization Review (Sep 30) collected forum reports of ignored instructions, changed templates, and blocked employee access, including one creator running 47 GPTs for 25 customers and an educator with about 155 GPTs linked from textbook exercises.</p>
+  <p><span class="label">Why open</span>OpenAI has not yet offered a replacement for external link sharing. Google is retiring Gems on a similar schedule (below), so the other major option is in flux too.</p>
+  <p class="src"><a href="https://virtualizationreview.com/articles/2026/09/30/users-decry-loss-of-functionality-in-openai-mandated-custom-gpt-to-plugin-migration.aspx">Virtualization Review</a> · <a href="https://help.openai.com/en/articles/20001519-custom-gpt-retirement-and-migration-faq">OpenAI Help Center</a> · <a href="https://community.openai.com/t/custom-gpt-plugin-is-not-an-equivalent-migration/1400008">OpenAI Community thread</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">1.5</span>Gemini: Skills replace Gems without Canvas, Deep Research, or sharing, and Opal workflows don’t carry over</h3>
+  <p><span class="label">Missing</span>Feature parity before the cutover, and a way to export Opal mini-app workflows into something that still runs.</p>
+  <p><span class="label">Evidence</span>Google said on Sep 30 that skills will replace Gems, starting in November for personal accounts. According to Google’s support page (as reported by Mixed), skills can’t yet use Canvas, Deep Research, Create video, or Guided learning, and sharing is still to come. Opal turns off on Nov 17. Its workflows stay in Drive as files but stop running. Users in an r/GeminiAI thread push back on the change.</p>
+  <p><span class="label">Why open</span>Google says the missing features will arrive “in the coming weeks,” with no dates. OpenAI is retiring Custom GPTs at the same time, so people who build no-code assistants have nowhere stable to move.</p>
+  <p class="src"><a href="https://blog.google/products-and-platforms/products/gemini/automate-tasks-with-skills/">Google Blog</a> · <a href="https://mixed-news.com/en/gemini-gems-removed-november-skills-canvas-deep-research/">Mixed</a> · <a href="https://techcrunch.com/2026/09/28/google-is-killing-off-geminis-gems-in-favor-of-skills/">TechCrunch</a> · <a href="https://www.reddit.com/r/GeminiAI/comments/1vjr3jy/gems_will_be_replaced_by_skills_by_october_20_rip/">r/GeminiAI</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">1.6</span>Android Auto: Gemini replaced Assistant with no reliable mode for simple commands</h3>
+  <p><span class="label">Missing</span>A fast, predictable command path for driving (navigate to a contact, play a song, send a message), or a way to pick a different assistant.</p>
+  <p><span class="label">Evidence</span>9to5Google (Sep 28): the “Switch to Google Assistant” option is gone as of Google app 17.60, including on Android Auto. Its top comment reports that Gemini fails at “Navigate to John Smith’s house.” XDA describes frequent “something went wrong” errors and complex automations that don’t work with Gemini, and its commenters ask for an alternative assistant.</p>
+  <p><span class="label">Why open</span>Google removed the switch-back option, so Gemini is now the only built-in voice assistant on Android Auto. Users who want deterministic commands have nothing to fall back on.</p>
+  <p class="src"><a href="https://9to5google.com/2026/09/28/google-assistant-gemini-android/">9to5Google</a> · <a href="https://www.xda-developers.com/google-assistant-is-disapearing-from-android-auto-next-month/">XDA Developers</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">1.7</span>macOS 27: no single switch to turn off Apple Intelligence, and its models stay on disk</h3>
+  <p><span class="label">Missing</span>A built-in, one-step way to turn the features off and get the storage back.</p>
+  <p><span class="label">Evidence</span>The open-source RemoveMacAI tool says macOS 27 “no longer has a single switch for Apple Intelligence” and that models remain on disk after features are turned off. Its fix installs a configuration profile and deletes the models. MacRumors and AppleInsider covered it on Oct 5, and AppleInsider’s headline cites 12GB saved.</p>
+  <p><span class="label">Why open</span>Apple hasn’t provided this, so for now a third-party script that users run from the terminal is the only route.</p>
+  <p class="src"><a href="https://github.com/omlahore/RemoveMacAI">RemoveMacAI (GitHub)</a> · <a href="https://www.macrumors.com/2026/10/05/apple-intelligence-removal-tool-frees-mac-storage/">MacRumors</a> · <a href="https://appleinsider.com/articles/26/10/05/dumb-down-your-mac-save-12gb-by-removing-apple-intelligence">AppleInsider</a></p>
+</div>
+
+</section>
+
+<section class="s-markets" data-section="markets">
+<h2><span class="chip">Markets</span>Emerging markets</h2>
+<p class="section-note">What is actually showing up: new categories, rounds, launches, and the forces creating demand.</p>
+
+<div class="item">
+  <h3><span class="n">2.1</span>Agent identity, verification, and network controls</h3>
+  <p>Three rounds in three days, each aimed at the same question: who or what is acting? <strong>Rig Security</strong> came out of stealth with a $12M seed (Ten Eleven Ventures, Brightmind Partners, CrowdStrike Falcon Fund) for an identity graph that separates human, machine, and agent identities. <strong>Beltic</strong> raised a $7.3M seed led by Norwest for “Know Your Agent” verification of agent-initiated transactions. <strong>doxx.net</strong> raised a $38M Series A led by Andreessen Horowitz and opened a beta of networking for people and their agents, with DNS-level threat blocking.</p>
+  <p><span class="label">Demand</span>The FTC probe, Apple’s Full Disk Access change, and Wikimedia’s disclosure all landed the same week (see 1.1, 1.2, and 3.4).</p>
+  <p class="src"><a href="https://www.securityweek.com/rig-security-emerges-from-stealth-with-12m-to-tackle-agentic-ai-identity-risks/">SecurityWeek (Rig)</a> · <a href="https://www.prnewswire.com/news-releases/beltic-emerges-from-stealth-to-secure-autonomous-agent-transactions-at-scale-302893772.html">PR Newswire (Beltic)</a> · <a href="https://www.helpnetsecurity.com/2026/10/05/doxx-net-agentic-defined-networking-platform/">Help Net Security (doxx.net)</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">2.2</span>Decision models: small models that pick from a fixed list instead of writing text</h3>
+  <p>TypeSafe AI’s Jev (Sep 15) introduced models that return typed choices with probabilities. This week Cloudflare released <strong>Clef</strong> and Clef-flash, open-weight under Apache 2.0 and compatible with Jev’s API, plus a hands-on RL fine-tuning service. At DevDay, OpenAI announced a <strong>Decisions API</strong> in limited preview, built on GPT-6 Luna. Cloudflare itself calls the market “increasingly saturated.”</p>
+  <p><span class="label">Why now</span>These models are cheap and constrained, which makes them suited to the routing, triage, and action checks that agent pipelines run constantly.</p>
+  <p class="src"><a href="https://blog.cloudflare.com/clef-decision-models/">Cloudflare Blog</a> · <a href="https://typesafe.ai/blog/introducing-system-one-models-and-jev">TypeSafe AI</a> · <a href="https://www.brightcoast.ai/blog/openai-decisions-api-agents-pick-from-a-short-list">Bright Coast AI on Decisions API</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">2.3</span>Durable execution for long-running agents</h3>
+  <p><strong>Restate</strong> (Berlin) raised a $20M Series A led by Singular, with Redpoint and Capital One Ventures. The company says the Replit Agent now runs on it. TechCrunch notes that the category leader, Temporal, raised a $550M Series E at a $12.55B valuation earlier in September. Earendil also shipped Pi Durable (experimental), a substrate for long-running agent apps.</p>
+  <p><span class="label">Why now</span>Agents make hundreds of model and tool calls per task, and losing state partway through is expensive.</p>
+  <p class="src"><a href="https://techcrunch.com/2026/09/30/restate-lands-20m-as-the-need-for-durable-infrastructure-increases-with-ai-agents/">TechCrunch</a> · <a href="https://restate.dev/blog/announcing-series-a">Restate</a> · <a href="https://earendil.com/posts/pi-1-0/">Earendil</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">2.4</span>RL training environments for specific professions</h3>
+  <p><strong>Halluminate</strong>, which builds reinforcement-learning environments and benchmarks for investment-banking and private-equity work, raised a $30M Series A led by Oak HC/FT. CEO Jerry Wu told Fortune that four of the top five closed-source U.S. AI labs are paying customers. Separately, Reflection says its new Beam model was trained with nearly one million environments.</p>
+  <p class="src"><a href="https://fortune.com/2026/10/01/halluminate-raises-30-million-series-a-oakhc-ft/">Fortune</a> · <a href="https://reflection.ai/blog/introducing-beam">Reflection</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">2.5</span>Industrial “physical AI” robotics</h3>
+  <p>Munich-based <strong>RobCo</strong> passed a $1B valuation through an employee secondary sale combined with new investment, with Sequoia and Lightspeed among participants. It plans to launch its autonomous robot, Alfie, commercially on March 4, 2027, and is expanding fastest in the U.S. Tech Funding News lists Standard Bots and Walden Robotics as $1B-valued rivals.</p>
+  <p class="src"><a href="https://techfundingnews.com/europes-new-robotics-unicorn-germanys-robco-hits-1b-valuation/">Tech Funding News</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">2.6</span>Inference hardware built around memory limits</h3>
+  <p><strong>Volantis</strong> raised an $88M Series A, co-led by Lachy Groom and Abstract Ventures, for a photonic memory architecture for inference, with first deliveries planned for 2027. On Micron’s Sep 30 earnings call, CEO Sanjay Mehrotra said memory supply will be “much tighter in fiscal 2027 and 2028” and that he has no line of sight to balance. TechPowerUp reports that more than 75% of Micron’s 2027 output is already committed.</p>
+  <p class="src"><a href="https://techfundingnews.com/volantis-raises-88m-to-to-build-photonic-memory-layer-for-next-gen-ai/">Tech Funding News</a> · <a href="https://www.prnewswire.com/news-releases/volantis-raises-88m-series-a-to-demolish-the-ai-memory-wall-with-photonics-302895940.html">PR Newswire</a> · <a href="https://www.techpowerup.com/353296/micron-ceo-says-memory-supply-will-be-much-tighter-in-2027-and-2028-than-in-2026">TechPowerUp</a></p>
+</div>
+
+</section>
+
+<section class="s-ai" data-section="ai">
+<h2><span class="chip">AI</span>The most important AI updates this week</h2>
+<p class="section-note">What changed and why it matters.</p>
+
+<div class="item">
+  <h3><span class="n">3.1</span>OpenAI begins rolling out always-on agents (“dots”)</h3>
+  <p><span class="label">What changed</span>Announced Sep 29 at DevDay. Each dot runs on GPT-6 Astra with its own cloud computer and browser, works toward goals around the clock, and connects to more than 4,000 apps through plugins. Dots are reachable in ChatGPT, Slack, and Teams. Rollout starts with Pro and Business Premium; Enterprise gets a beta. Background “proactive research” is limited to read-only tools, and Custom Rules set what needs approval.</p>
+  <p><span class="label">Why it matters</span>This is the largest consumer AI provider shipping agents that act without being prompted, which turns the permission questions in 1.1 into everyday problems.</p>
+  <p class="src"><a href="https://openai.com/index/introducing-dots/">OpenAI</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">3.2</span>OpenAI shelves GPT-6.1 Astra after safety tests and ships the cheaper GPT-6.1 Sol</h3>
+  <p><span class="label">What changed</span>On Sep 28 OpenAI confirmed it would not release GPT-6.1 Astra in October. Head of safety systems Saachi Jain said it “didn’t quite meet the bar” on staying within scope and authorization and on reporting what it had done. The next day OpenAI released GPT-6.1 Sol, which it says comes close to Astra at one-fifth of Astra’s standard price ($2 / $10 per million input / output tokens). Sol is in ChatGPT Work, Codex, and the API, but not yet in regular Chat.</p>
+  <p><span class="label">Why it matters</span>A frontier lab has publicly held back a model over agent-behavior failures, not capability, while the price of near-frontier models keeps falling.</p>
+  <p class="src"><a href="https://www.reuters.com/business/openai-shelves-new-ai-model-after-internal-safety-tests-wsj-reports-2026-09-28/">Reuters</a> · <a href="https://techcrunch.com/2026/09/29/openai-launches-gpt-6-1-sol-says-it-nearly-matches-gpt-6-astra-and-costs-less/">TechCrunch</a> · <a href="https://developers.openai.com/api/docs/models/gpt-6.1-sol">OpenAI API docs</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">3.3</span>Google announces Gemini 4 Argon, released first to cyber defenders</h3>
+  <p><span class="label">What changed</span>Announced Sep 30. Argon is rolling out first to vetted security teams through Google’s Fairwind Program; paid API customers and AI Ultra subscribers come next, with no date. The introductory price is $2 / $10 per million tokens. A Google spokesperson told Reuters it is larger than the previous Pro line and comparable to Astra and Opus on key coding and cyber benchmarks.</p>
+  <p><span class="label">Why it matters</span>Releasing to trusted users first is becoming standard for frontier models. Builders should expect gated access before general availability.</p>
+  <p class="src"><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/">Google Blog</a> · <a href="https://www.reuters.com/legal/litigation/google-announces-gemini-4-flagship-ai-model-after-months-delays-2026-09-30/">Reuters</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">3.4</span>Oversight increases: FTC probe, California subpoena, White House accord</h3>
+  <p><span class="label">What changed</span>On Sep 29, AI company CEOs signed a short voluntary, nonbinding accord at the White House. On Sep 30, the FTC confirmed it is investigating OpenAI, Anthropic, and other AI companies over potential product dangers. On Oct 1, California’s attorney general issued an investigative subpoena to OpenAI over cybersecurity incidents tied to its models. On Oct 5, Wikimedia published its findings on agent activity (1.2).</p>
+  <p><span class="label">Why it matters</span>Agent logs, permission records, and incident disclosures are likely to become things companies must produce on request.</p>
+  <p class="src"><a href="https://www.cnbc.com/2026/09/30/ftc-ai-probe-openai-anthropic.html">CNBC</a> · <a href="https://www.reuters.com/legal/litigation/california-attorney-general-issues-investigative-subpoena-openai-2026-10-01/">Reuters</a> · <a href="https://www.aljazeera.com/news/2026/9/29/trump-top-tech-firms-sign-accord-to-self-police-ai-development">Al Jazeera</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">3.5</span>Anthropic releases Claude Sonnet 5.5</h3>
+  <p><span class="label">What changed</span>Released Sep 28. Anthropic says it is more than 30% faster than Sonnet 5 and costs up to 30% less for most work at the same $2 / $10 per-token price, with a 1M-token context window. The system card says Anthropic added stronger cyber safeguards, so users should expect more refusals even on harmless security tasks. Verified security users will get fewer restrictions through a Cyber Verification Program.</p>
+  <p><span class="label">Why it matters</span>GPT-6.1 Sol, Argon’s introductory price, and Sonnet 5.5 all sit at $2 / $10, so speed, refusals, and tooling now set them apart more than price.</p>
+  <p class="src"><a href="https://www.anthropic.com/claude-sonnet-5-5">Anthropic</a> · <a href="https://platform.claude.com/docs/en/models/sonnet-5-5/overview">Claude docs</a> · <a href="https://www-cdn.anthropic.com/870c8f525702625d2c62fc6dd04c857e3250bec1/Claude%20Sonnet%205.5%20System%20Card.pdf">System card</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">3.6</span>New open-weight models: Reflection Beam and Aleph Alpha Kolibri</h3>
+  <p><span class="label">What changed</span>Reflection announced Beam (Oct 5), a mixture-of-experts model with 501B total and 23B active parameters, aimed at coding and agent work. Weights, a technical report, and a model card are due later this month under Apache 2.0. Aleph Alpha released Kolibri-1 (Oct 3), a German–English model with weights on Hugging Face under Apache 2.0.</p>
+  <p><span class="label">Why it matters</span>Teams that need to self-host or keep data in-region (in the EU, for example) have more permissively licensed options.</p>
+  <p class="src"><a href="https://reflection.ai/blog/introducing-beam">Reflection</a> · <a href="https://aleph-alpha.com/en/blog/kolibri-has-landed-a-sovereign-open-weight-model/">Aleph Alpha</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">3.7</span>Cloudflare launches a Web Search API for agents, with verified-bot rules for providers</h3>
+  <p><span class="label">What changed</span>Launched in beta on Oct 2. Agents and apps can query live web search from one API and choose among three providers: Ceramic.ai, Exa, and Linkup. All three support zero data retention for requests made through Cloudflare and have committed to Cloudflare’s verified-bot crawling standards. Requests run through AI Gateway, are logged there, and are billed at each provider’s list price with no markup.</p>
+  <p><span class="label">Why it matters</span>Web search for agents is becoming a component you can swap out. This is also one of the first places where agent search traffic is tied to a verified-bot standard, which speaks to gap 1.2.</p>
+  <p class="src"><a href="https://developers.cloudflare.com/changelog/post/2026-10-02-introducing-web-search-api/">Cloudflare Changelog</a></p>
+</div>
+
+</section>
+
+<p class="colophon">TheGapBrief is published weekly by Open Mind Innovations LLC. This issue covers news published September 28 – October 5, 2026. Funding amounts and other figures are as reported by the linked sources; nothing here is investment advice. thegapbrief.com</p>
+
+</body>
+</html>

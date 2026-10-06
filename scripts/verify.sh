@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Verify the live site, a week page, and a PDF. Usage: scripts/verify.sh 2026-10-05 [base_url]
+set -uo pipefail
+DATE="${1:?usage: verify.sh YYYY-MM-DD [base_url]}"
+BASE="${2:-https://openmindinnovations.github.io/thegapbrief}"
+ok=0
+check() { # url expected_type
+  read -r code ctype < <(curl -sL -o /dev/null -w '%{http_code} %{content_type}\n' "$1")
+  printf '%s  %s  %s\n' "$code" "$ctype" "$1"
+  [[ "$code" == 200 && "$ctype" == $2* ]] || ok=1
+}
+check "$BASE/" "text/html"
+check "$BASE/weeks/$DATE/" "text/html"
+check "$BASE/pdfs/thegapbrief-$DATE.pdf" "application/pdf"
+check "$BASE/feed.xml" ""
+curl -sL "$BASE/" | grep -q "weeks/$DATE/" && echo "home lists $DATE" || { echo "home does NOT list $DATE yet"; ok=1; }
+exit $ok

@@ -30,8 +30,10 @@ Each issue is dated Monday and covers the previous Monday through that Monday. T
 
 1. **Research.** Look for news from the coverage window. The brief has exactly three sections, and items within each are ranked with the most important first. Aim for 5–7 items per section:
    - *Gaps*: a real product, the missing piece, and why neither the product nor its competitors cover it. Back each item with evidence such as complaints, forum threads, changelogs, reviews, or feature-request trackers.
-   - *Markets*: new categories, funding rounds, launches, and regulation that creates demand.
+   - *Markets* ("Emerging markets in apps and digital products"): new categories, funding rounds, launches, and regulation that creates demand.
    - *AI*: what changed and why it matters.
+   - **Scope (standing rule from Jacob):** sections 1 and 2 cover the whole digital economy, not just AI: consumer and business apps, fintech/payments, commerce/marketplaces, creator tools, gaming, health/fitness apps, productivity, travel, social, devices/smart home, and so on. AI should not dominate sections 1–2; it goes mainly in section 3.
+   - Don't repeat items from earlier issues unless there's a genuinely new development.
    - Rules: link a source for every item. Don't invent numbers; only state a figure if a cited source gives it, and attribute it. Leave out anything you can't verify. No hype. Re-check that "this week" news is actually from this week, because aggregators sometimes republish old funding news. Don't pitch the owner's existing projects as new ideas (Kapsoul, iMusement, Hivvly, FlirtFee, Anchor AR, Wash Wizardz, Get UI Now, DeepReach, Fetch).
 2. **Scaffold and write the brief.**
    ```bash

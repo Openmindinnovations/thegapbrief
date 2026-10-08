@@ -29,6 +29,18 @@
       "mascot_says": "Everyone shipped agents this week, so I went looking for the guardrails.",
       "pdf": "pdfs/thegapbrief-2026-10-05.pdf",
       "source": "briefs/2026-10-05/brief.html"
+    },
+    {
+      "week": 2,
+      "label": "Week 2",
+      "date": "2026-10-12",
+      "date_label": "October 12, 2026",
+      "covering": "October 5 – October 12, 2026",
+      "title": "Sync broke, replays got locked, and checkout moved into the feed",
+      "summary": "Strava sync failures, League of Legends' replay lockdown, and a Copilot app move that left chats behind. Plus in-feed checkout, stablecoin payouts, age-signal compliance, and Windows' new agent containers.",
+      "mascot_says": "I followed the data between apps this week. A lot of it never arrived.",
+      "pdf": "pdfs/thegapbrief-2026-10-12.pdf",
+      "source": "briefs/2026-10-12/brief.html"
     }
   ]
 }

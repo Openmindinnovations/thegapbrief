@@ -16,7 +16,7 @@ from datetime import datetime, timezone
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SECTIONS = [("gaps", "Gaps", "Missing pieces in real products"),
-            ("markets", "Markets", "What is actually emerging"),
+            ("markets", "Markets", "Emerging in apps and digital products"),
             ("ai", "AI", "The week's key AI updates")]
 
 

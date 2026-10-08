@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TheGapBrief — Week 2 · October 12, 2026</title>
+<link rel="stylesheet" href="../brief.css">
+</head>
+<body>
+
+<header class="masthead">
+  <img class="mascot" src="../../assets/gappy.svg" alt="Gappy, the scout fox">
+  <div class="mast-text">
+  <p class="kicker">TheGapBrief — Week 2 · October 12, 2026</p>
+  <h1>Sync broke, replays got locked, and checkout moved into the feed</h1>
+  <p class="dek">Product gaps, emerging markets, and AI updates from October 5 – October 12, 2026.</p>
+  <p class="meta">Items are ranked within each section, most important first. Every claim links to its source; numbers appear only where a cited source states them, and company-reported figures are labeled as such.</p>
+  </div>
+</header>
+
+<p class="intro">This week the weak spots were the hand-offs between products. Workouts stopped reaching Strava from several watch brands, Riot cut League of Legends replays off from everyone but the player, and Microsoft’s Copilot app move on Android left chats and voice behind. On the market side, checkout kept moving to where people already are: TikTok’s feed and airline plugins inside ChatGPT. Stablecoin settlement turned up inside ordinary payout software, and age-signal laws turned into a developer integration job. In AI, Windows shipped containment for agents, small-model prices fell again, and Google cut its free Gemini tier.</p>
+
+<ul class="contents">
+  <li class="c-gaps"><span class="dot"></span>Gaps · missing pieces (6)</li>
+  <li class="c-markets"><span class="dot"></span>Markets · what is emerging (6)</li>
+  <li class="c-ai"><span class="dot"></span>AI · key updates (6)</li>
+</ul>
+
+<section class="s-gaps" data-section="gaps">
+<h2><span class="chip">Gaps</span>Missing gaps in real apps and products</h2>
+<p class="section-note">Real product, the missing piece, and why nobody covers it yet. Drawn from across the digital economy: fitness, gaming, devices, smart home, and consumer apps.</p>
+
+<div class="item">
+  <h3><span class="n">1.1</span>Strava: workouts stopped syncing from Garmin, Galaxy, and Apple watches</h3>
+  <p><span class="label">Missing</span>One dependable path from watch to Strava, and a per-device status that says what failed and whether it will retry.</p>
+  <p><span class="label">Evidence</span>From October 5, users on Reddit reported errors connecting watches to Strava, mostly Garmin owners but also Galaxy Watch and Apple Watch users. Signing out of Samsung Health and Strava, or reconnecting Health Connect, did not help. Strava’s statement called the problems “isolated and disconnected from one another” and said “every ecosystem has a slightly different integration.” It gave no timeline for a fix. A WHOOP community thread separately reports Strava imports failing on and off for weeks.</p>
+  <p><span class="label">Why open</span>Strava sits downstream of every watch maker’s own pipeline (Garmin Connect, Samsung Health/Health Connect, Apple Health). No one party owns the whole path, so a failure shows up as several “isolated” bugs, with no shared status anywhere.</p>
+  <p class="src"><a href="https://www.androidauthority.com/strava-app-not-syncing-with-smartwatch-3719326/">Android Authority</a> · <a href="https://www.sammobile.com/news/strava-workout-syncing-issue-galaxy-watches/">SamMobile</a> · <a href="https://www.community.whoop.com/t/whoop-strava-import-intermittently-failing-for-weeks/15994">WHOOP Community</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">1.2</span>League of Legends: replays locked to your own matches from Patch 26.20</h3>
+  <p><span class="label">Missing</span>A sanctioned way for coaches, analysts, and educational channels to review games they did not play in.</p>
+  <p><span class="label">Evidence</span>From October 7, players can download replays only of their own matches, and third-party apps and sites lose replay downloads entirely. Riot linked the change to cheat developers abusing data access. Approved apps get a transition period for separate game-memory changes, but Riot has announced no exception for replays. Players asked whether “coaching and VOD reviews [are] just dead now.” Channels that upload high-Elo and pro solo-queue games are directly affected.</p>
+  <p><span class="label">Why open</span>Riot’s reason is security, so any fix has to be permissioned access: the reviewed player’s consent, or a verified coach or creator role. Only Riot can grant that, so third parties cannot build around it.</p>
+  <p class="src"><a href="https://www.strafe.com/news/read/riot-changes-lol-replay-system-sparking-community-backlash/">Strafe</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">1.3</span>Microsoft Copilot on Android: the app switch left chats, voice, and limits behind</h3>
+  <p><span class="label">Missing</span>A migration that carries chat history and features across, and states new usage limits before the switch.</p>
+  <p><span class="label">Evidence</span>Android users were moved from the old Copilot app to a renamed Microsoft 365 app. Unstar read the 722 one- to three-star Google Play reviews posted since September 21. Of those, 121 cite a new daily limit, 84 say voice chat or the microphone is gone, and 45 say old chats did not come over. Microsoft replied to none. Reviewers report the missing chats are still visible in the Legacy app, the browser, and the desktop app.</p>
+  <p><span class="label">Why open</span>The data still exists; the new client does not load it. This is the second forced migration in two weeks to drop user state, after OpenAI’s Custom GPT change in Week 1.</p>
+  <p class="src"><a href="https://unstar.app/blog/copilot-app-daily-limit-voice-chat-gone-legacy-switch-reviews-2026">Unstar review analysis</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">1.4</span>Apple Watch: watchOS 27 removed the Walkie-Talkie app</h3>
+  <p><span class="label">Missing</span>Push-to-talk between family and friends that works with the contacts you already have, with no new account.</p>
+  <p><span class="label">Evidence</span>Tom’s Guide (October 6) found Walkie-Talkie gone after updating to watchOS 27. Third-party push-to-talk apps in the watch App Store make both people register accounts, and the ones the reviewer found had a single review each.</p>
+  <p><span class="label">Why open</span>The system app worked off Apple ID and iCloud contacts out of the box. The reviewer’s complaint is that replacements lack that system integration, and the article cites no explanation or replacement from Apple.</p>
+  <p class="src"><a href="https://www.tomsguide.com/wellness/smartwatches/i-just-installed-watchos-27-and-instantly-regretted-it-heres-why">Tom’s Guide</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">1.5</span>Google Home: one bug broke color control across bulb brands</h3>
+  <p><span class="label">Missing</span>An in-app status when hub-level controls break, and a fallback control path while they are down.</p>
+  <p><span class="label">Evidence</span>Color sliders, voice color commands, and routines stopped working for Philips Hue, Tuya, and Lumiman bulbs, while on/off and brightness kept working. Google acknowledged the bug in the users’ Reddit thread and rolled out a fix on October 7. 9to5Google notes monthly fixes are arriving as Google Assistant is phased out of Home.</p>
+  <p><span class="label">Why open</span>The fix was quick. The structural problem is that one platform bug hit many brands at once, and users learned about it from Reddit, not from the app.</p>
+  <p class="src"><a href="https://9to5google.com/2026/10/07/google-home-fixes-color-smart-light-bug/">9to5Google</a> · <a href="https://www.androidauthority.com/google-home-smart-light-color-control-3719654/">Android Authority</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">1.6</span>Pixel 11: the newest Pixels are behind older ones on Android 17 QPR1</h3>
+  <p><span class="label">Missing</span>Software parity for the current flagship: the quarterly features older Pixels already have.</p>
+  <p><span class="label">Evidence</span>The October update shipped fixes for the Pixel 11 series (launched in August) but not QPR1, which other Pixels received last month. QPR1 includes a narrower media player, system blur, and new Quick Settings tiles. 9to5Google expects Google may wait for December to align devices.</p>
+  <p><span class="label">Why open</span>Only Google controls Pixel builds, and the report gives no reason from Google. Buyers of the newest phone are the ones waiting.</p>
+  <p class="src"><a href="https://9to5google.com/2026/10/07/pixel-11-no-android-17-qpr1/">9to5Google</a></p>
+</div>
+</section>
+
+<section class="s-markets" data-section="markets">
+<h2><span class="chip">Markets</span>Emerging markets in apps and digital products</h2>
+<p class="section-note">What is actually showing up across commerce, payments, health, platforms, and gaming: launches, rounds, and the rules creating demand.</p>
+
+<div class="item">
+  <h3><span class="n">2.1</span>Checkout moves into the feed and the chat window</h3>
+  <p>On October 5, TikTok announced <strong>one-click checkout from the For You feed</strong> to buy directly from brands, plus a conversational Shopping Assistant. Its partners include Salesforce, Shopify, Shoplazza, and Stripe. TechCrunch cites an eMarketer estimate of about $15.8 billion in 2025 U.S. TikTok Shop sales, roughly 18% of U.S. social commerce. Travel followed the same path. On October 5, <strong>easyJet</strong> launched a ChatGPT plugin for flight and package searches and live flight status. On October 6, <strong>Southwest</strong> launched what it calls a first-of-its-kind U.S. airline plugin in ChatGPT, built with OpenAI and AWS, as “the first step in a phased” booking approach. Condor launched its own on September 30.</p>
+  <p><span class="label">Watch</span>All three airlines still send you to their own sites to finish booking; the payment step has not moved into chat yet. easyJet reports organic traffic from ChatGPT up 400% year on year for flights, but gives no absolute totals. TechCrunch’s report gives no markets, fees, or dates for TikTok’s rollout.</p>
+  <p class="src"><a href="https://techcrunch.com/2026/10/05/tiktok-rolls-out-an-ai-shopping-assistant-and-one-click-checkout/">TechCrunch (TikTok)</a> · <a href="https://www.airwaysmag.com/new-post/easyjet-chatgpt-flights-holidays">Airways (easyJet)</a> · <a href="https://investors.southwest.com/news-events/press-releases/detail/1945/southwest-airlines-launches-first-of-its-kind-u-s-airline-plugin-in-chatgpt">Southwest</a> · <a href="https://condor-newsroom.condor.com/en/de/news-article/from-the-first-travel-idea-to-the-right-flight-condor-app-now-available-in-chatgpt/">Condor</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">2.2</span>Stablecoin settlement shows up inside ordinary payout software</h3>
+  <p>On October 6, <strong>Anchorage Digital acquired Routable</strong>, an enterprise payouts API serving creators, contractors, sellers, and drivers in 220+ countries. It will run as “Routable by Anchorage Digital,” with stablecoin and tokenized-deposit settlement built into the existing product. The integrated offerings will roll out over the coming quarters. The same day, Africa-focused <strong>Kora</strong> launched One Rail. It adds USDT and USDC collections, payouts, and treasury functions to its existing fiat APIs, so merchants need no blockchain expertise. Kora’s CEO puts African remittance costs at 8–8.8%, against a 6.49% global average.</p>
+  <p><span class="label">Pattern</span>Stablecoins are being sold as one settlement option inside fiat payment tools, not as a separate crypto product.</p>
+  <p class="src"><a href="https://www.anchorage.com/press-room/anchorage-digital-acquires-routable-extending-its-institutional-platform-to-the-payment-rails-of-the-worlds-largest-companies">Anchorage Digital</a> · <a href="https://www.axios.com/pro/fintech-deals/2026/10/06/anchorage-routable-corporate-payments">Axios Pro</a> · <a href="https://fintech.global/2026/10/06/kora-launches-stablecoin-rail-for-african-cross-border-payments/">FinTech Global (Kora)</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">2.3</span>Age signals become app plumbing</h3>
+  <p>Google Play now states that <strong>Texas’ App Store Accountability Act (SB 2420) is in effect</strong>, after a federal appeals court stayed the December 2025 injunction. Its tools for developers:</p>
+  <ul>
+    <li>the beta <strong>Play Age Signals API</strong>, which returns age ranges and parental-approval status;</li>
+    <li>a way to notify Play of “significant changes” that need parental approval;</li>
+    <li>age ratings on in-app purchase SKUs.</li>
+  </ul>
+  <p>Next comes <strong>California’s Digital Age Assurance Act</strong> on January 1, 2027. Operating systems will send age-band signals to developers, who are then deemed to have “actual knowledge” of a user’s age range. Existing accounts get signals by July 1, 2027.</p>
+  <p><span class="label">Demand</span>Every app now has to take in these signals from both Apple and Google, handle a mixed period when some users have signals and some do not, and tie the results to COPPA and parental-consent flows.</p>
+  <p class="src"><a href="https://support.google.com/googleplay/android-developer/answer/16569691">Google Play Console Help</a> · <a href="https://www.mondaq.com/unitedstates/privacy-protection/1850146/update-your-app-again-californias-digital-age-assurance-act-takes-effect-january-1-2027">Frankfurt Kurnit via Mondaq</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">2.4</span>Healthcare “stores” with prices shown up front</h3>
+  <p><strong>General Medicine</strong> raised a $120 million Series B led by Andreessen Horowitz (total funding $152 million), with Eli Lilly among the participants. It sells care nationwide the way a shop does: search, compare, and buy medications, labs, telehealth, specialist e-consults, and some in-person visits. Insurance and cash prices are shown before purchase. The company reports a catalog of more than 2,900 products and services and “hundreds of thousands” of sign-ups. It says the same catalog is meant to let an AI agent shop for care on a patient’s behalf.</p>
+  <p class="src"><a href="https://www.prnewswire.com/news-releases/general-medicine-raises-120-million-to-build-the-healthcare-store-302899356.html">PR Newswire (General Medicine)</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">2.5</span>EU: payment links outside the App Store are now a fixed option, with fees</h3>
+  <p>Apple’s revised EU terms took effect October 1:</p>
+  <ul>
+    <li>15% on out-of-app offers reached through an actionable link;</li>
+    <li>a 5% Core Technology Commission on alternative marketplaces and web distribution;</li>
+    <li>developers who offer alternative payment links must keep them for 12 months.</li>
+  </ul>
+  <p>The European Commission is monitoring rather than penalizing for now. The Coalition for App Fairness (18 signatories) told the Commission on September 8 that the terms still do not comply with the DMA.</p>
+  <p><span class="label">Demand</span>Web checkout, payment-link, and alternative-distribution tooling for EU app developers, under fee terms that may still be reopened.</p>
+  <p class="src"><a href="https://theeuropeanpost.eu/european-affairs/apple-dma-compliance-faces-brussels-test-as-new-app-fees-start/">The European Post</a> · <a href="https://developer.apple.com/support/apps-in-the-eu/">Apple Developer</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">2.6</span>Pay-per-view creator campaigns for game launches</h3>
+  <p><strong>Trapster</strong> opened its self-serve, CPM-priced creator marketplace for game studios worldwide on October 6. Studios post briefs and keys; creators pick campaigns and are paid on views. The company reports more than 177 million views and over 2 million wishlists for early clients, with 252 studios and 800+ creators on the platform before the global launch. Creator-led discovery is now bought on measured views rather than flat fees.</p>
+  <p class="src"><a href="https://marcommnews.com/trapster-launches-self-service-creator-marketplace-globally-following-successful-invite-only-period/">Marketing Communication News</a></p>
+</div>
+</section>
+
+<section class="s-ai" data-section="ai">
+<h2><span class="chip">AI</span>The most important AI updates this week</h2>
+<p class="section-note">What changed and why it matters.</p>
+
+<div class="item">
+  <h3><span class="n">3.1</span>Windows ships agent containment and local-plus-cloud Copilot</h3>
+  <p><span class="label">What changed</span>On October 7, Microsoft made <strong>Microsoft Execution Containers (MXC)</strong> generally available on Windows 11. MXC enforces at runtime which files and networks an agent can reach. Codex, GitHub Copilot, OpenClaw, Replit, and LM Studio support it now; Claude Code, Perplexity, Manus, and others are listed as coming. Copilot on Copilot+ PCs will gain local context, local actions, and local models “in the coming months.” GitHub’s HydraFusion router will send tasks to local or cloud models in an experimental preview later in October.</p>
+  <p><span class="label">Why it matters</span>Week 1’s gap list was about missing agent controls. Here the OS vendor ships containment as a platform feature, and pitches local inference as a way to cut token spend.</p>
+  <p class="src"><a href="https://blogs.windows.com/windowsexperience/2026/10/07/building-windows-for-hybrid-intelligence/">Windows Experience Blog</a> · <a href="https://www.theverge.com/tech/1007147/microsoft-surface-laptop-ultra-windows-event-everything-announced">The Verge</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">3.2</span>Claude Haiku 5.5 brings small-model prices down to 10¢ / 50¢</h3>
+  <p><span class="label">What changed</span>On October 7, Anthropic released Haiku 5.5. For prompts up to 100K tokens, it costs $0.10 per million input tokens and $0.50 per million output, versus $1 and $5 for Haiku 4.5. It is also the first Haiku with an adjustable effort setting. Sonnet 5.5 cache reads were halved to 10¢ per million. Claude Max and Team plans now include monthly API credits. SiliconANGLE notes the rates match OpenAI’s GPT-6 Luna; Anthropic’s own benchmarks put Haiku ahead.</p>
+  <p><span class="label">Why it matters</span>High-volume work like classification, support, and subagents gets much cheaper. The two largest labs are now at price parity at the low end.</p>
+  <p class="src"><a href="https://siliconangle.com/2026/10/07/anthropic-releases-claude-haiku-5-5-small-model-and-halves-sonnet-5-5-cache-read-prices/">SiliconANGLE</a> · <a href="https://www.anthropic.com/claude-haiku-5-5">Anthropic</a> · <a href="https://github.blog/changelog/2026-10-07-claude-haiku-5-5-in-github-copilot/">GitHub Changelog</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">3.3</span>Free Gemini drops to Flash Lite only</h3>
+  <p><span class="label">What changed</span>From October 9, free Gemini users get only Flash Lite. Standard Flash requires the $4.99 AI Plus plan, which itself loses Pro. Pro and Deep Think move to AI Pro ($19.99) and Ultra ($99.99). Higher effort levels use up the limits faster.</p>
+  <p><span class="label">Why it matters</span>In the same week, Microsoft’s new Copilot Android app added daily limits (see 1.3). Two of the largest consumer assistants cut what free users get. Anyone building habits or workflows on a free tier should expect lower ceilings.</p>
+  <p class="src"><a href="https://www.theverge.com/ai-artificial-intelligence/1005451/google-gemini-free-flash-lite-only">The Verge</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">3.4</span>Appeals court: copying headnotes to train a legal AI was not fair use</h3>
+  <p><span class="label">What changed</span>In <em>Thomson Reuters v. ROSS</em>, the Third Circuit held that 2,243 Westlaw headnotes are copyrightable and that ROSS’s copying of them for training was not fair use. Haynes Boone calls it apparently the first federal appellate fair-use ruling on AI training (opinion issued September 29; analysis published October 5). The court treated licensing text as AI training data as a recognized derivative market. It also separated ROSS from generative systems that produce new expression.</p>
+  <p><span class="label">Why it matters</span>Training-data licensing now has appellate support as a market. The ruling’s reach into generative AI cases is limited by the court’s own footnote.</p>
+  <p class="src"><a href="https://www.jdsupra.com/legalnews/third-circuit-rejects-fair-use-for-ross-1596920/">Haynes Boone via JD Supra</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">3.5</span>The Pentagon stops using Anthropic products</h3>
+  <p><span class="label">What changed</span>A Defense Department spokesperson told MeriTalk (October 6) the department “has ceased the use of Anthropic products.” That follows the D.C. Circuit’s 2–1 ruling on September 25 upholding its supply-chain-risk designation. The dispute began when Anthropic objected to two uses: mass surveillance and fully autonomous weapons. A separate California ruling in Anthropic’s favor still stands.</p>
+  <p><span class="label">Why it matters</span>A model vendor’s usage policy now has direct procurement consequences, and defense contractors building on Claude need another model for that work.</p>
+  <p class="src"><a href="https://www.meritalk.com/articles/dod-halts-use-of-anthropic-ai-after-court-upholds-supply-chain-risk-designation/">MeriTalk</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">3.6</span>Minnesota’s AI “nudification” ban is paused on appeal</h3>
+  <p><span class="label">What changed</span>The Eighth Circuit granted xAI’s request to block Minnesota’s law while the appeal proceeds, in a one-page order with no reasoning (reported October 6). The law carries a $500,000 fine per violation for tech companies and lets victims sue. A lower court had refused to block it in early September.</p>
+  <p><span class="label">Why it matters</span>The first state law to put liability on the image-generation tool itself, not only on its users, is on hold. Rules for these providers stay unsettled and vary by state.</p>
+  <p class="src"><a href="https://www.govtech.com/artificial-intelligence/federal-appeals-court-pauses-minnesota-nudification-ban">GovTech / Star Tribune</a></p>
+</div>
+</section>
+
+<p class="colophon">TheGapBrief is published weekly by Open Mind Innovations LLC. This issue covers news published October 5 – October 12, 2026 (research through October 7). Funding amounts and other figures are as reported by the linked sources; nothing here is investment advice.</p>
+
+</body>
+</html>

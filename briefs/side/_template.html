@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{TITLE}} · TheGapBrief Side Report</title>
+<link rel="stylesheet" href="../../brief.css">
+<link rel="stylesheet" href="../side.css">
+</head>
+<body>
+<!-- Side Report scaffold. Every <section> needs data-label="..." (shown as an outline column on the web page);
+     every <h3> inside a section becomes an outline line. Keep <span class="n">…</span> numbers inside h3 if you want them.
+     Rules: cite every claim; only cited, attributed numbers; no hype; flag compliance-heavy ideas. -->
+<header class="masthead">
+  <img class="mascot" src="../../../assets/gappy.svg" alt="Gappy, the scout fox">
+  <div class="mast-text">
+  <p class="kicker">TheGapBrief · Side Report · {{DATE_LABEL}}</p>
+  <h1>{{TITLE}}</h1>
+  <p class="dek">One-sentence description of the question this report answers.</p>
+  <p class="meta">Assigned by Jacob Peterson. Every claim links to its source; numbers appear only where a cited source states them.</p>
+  </div>
+</header>
+
+<section data-label="Summary">
+<h2><span class="chip">Summary</span>Bottom line</h2>
+<div class="item">
+  <h3><span class="n">1</span>Headline finding</h3>
+  <p>…</p>
+  <p class="src"><a href="https://example.com">Source</a></p>
+</div>
+</section>
+
+<section data-label="Findings">
+<h2><span class="chip">Findings</span>Section title</h2>
+<div class="item">
+  <h3><span class="n">2.1</span>Finding</h3>
+  <p>…</p>
+  <p class="src"><a href="https://example.com">Source</a></p>
+</div>
+</section>
+
+<p class="colophon">TheGapBrief Side Reports are published by Open Mind Innovations LLC. Researched {{DATE_LABEL}}. Prices and figures are as shown by the linked sources on that date; nothing here is legal, tax, or investment advice.</p>
+</body>
+</html>

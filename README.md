@@ -64,6 +64,30 @@ To remove a preview later, delete its entry from `weeks.json` along with `briefs
 
 Requirements on the box: `python3`, `google-chrome` (or chromium), `poppler-utils` (`pdftoppm`, `pdfinfo`), and `git` with push access to `Openmindinnovations/thegapbrief` (via `gh auth`).
 
+## Side Reports (ad-hoc research)
+
+Side Reports are one-off, detailed reports Jacob assigns. They live at `/side/` (hub) and `/side/<slug>/` (report page with an outline and the embedded PDF). They use the same design system with a blue accent (`#2F5D8C`) and a "Side Report" badge, and they are listed in `side.json`, not `weeks.json`. The weekly procedure above does not change.
+
+Files: `side.json` · `briefs/side/_template.html` · `briefs/side/side.css` (PDF overrides on top of `briefs/brief.css`) · `briefs/side/<slug>/report.html` · `pdfs/side/<slug>.pdf` · generated `side/index.html`, `side/<slug>/index.html`, and `side/feed.xml` (separate RSS; the weekly `feed.xml` stays weekly-only).
+
+1. **Research.** The rules match the weekly brief: cite every claim, use no invented market sizes, revenue, users, or conversion rates, attribute every figure, avoid hype, and don't pitch Jacob's existing projects. Flag anything compliance-heavy.
+2. **Scaffold.**
+   ```bash
+   scripts/new_side.sh my-report-slug "Report Title" 2026-10-10   # date defaults to today
+   ```
+   This creates `briefs/side/<slug>/report.html` and prints a `side.json` stub. Each `<section>` needs `data-label="..."`, because its `<h3>` headlines become an outline column on the web page. Tables (`<table>`), callout boxes (`<div class="box">`), and `<span class="badge">` are styled.
+3. **Render and check every page.**
+   ```bash
+   scripts/make_side_pdf.sh my-report-slug   # -> pdfs/side/<slug>.pdf + previews/side-<slug>-NN.png
+   ```
+   Open the PNGs and fix any layout problems. There is no page-count rule; long reports are fine.
+4. **Add the entry** to the `reports` array in `side.json` (slug, date, date_label, title, summary, mascot_says, pdf, source). `build.py` exits if the PDF is missing.
+5. **Publish and verify.**
+   ```bash
+   scripts/publish.sh "Side report: Report Title"
+   scripts/verify.sh side my-report-slug     # hub, report page, PDF, side feed, home
+   ```
+
 ## Custom domain (thegapbrief.com)
 
 The domain is live. It's registered at Squarespace Domains, and DNS is on Squarespace nameservers (`nsb1–4.squarespacedns.com`):

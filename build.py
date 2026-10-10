@@ -290,7 +290,7 @@ def side_outline(r):
         return []
     out = []
     for m in re.finditer(r'<section[^>]*data-label="([^"]+)"[^>]*>(.*?)</section>', read(src), re.S):
-        heads = [strip_tags(re.sub(r'<span class="n">.*?</span>', "", h, flags=re.S))
+        heads = [strip_tags(re.sub(r'<span class="(?:n|badge[^"]*)">.*?</span>', "", h, flags=re.S))
                  for h in re.findall(r"<h3[^>]*>(.*?)</h3>", m.group(2), re.S)]
         if heads:
             out.append((html.unescape(m.group(1)), heads))

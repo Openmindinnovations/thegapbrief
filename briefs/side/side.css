@@ -25,3 +25,7 @@ body { font-size: 10.3pt; line-height: 1.5; }
 .item p { margin-bottom: 4.5pt; }
 section[data-label="Ranked opportunities"] .item + .item { border-top: .6pt dashed var(--line); padding-top: 10pt; }
 section[data-label="Baseline: CharacterGuard"], section[data-label="Ranked opportunities"] { break-before: page; }
+.gappy { font-family: "Fraunces", Georgia, serif; font-style: italic; color: var(--side); margin: 2pt 0 0 20pt; }
+.gappy::before { content: "Gappy says: "; font-family: "DM Sans", sans-serif; font-style: normal; font-weight: 700; font-size: 7pt; letter-spacing: .06em; text-transform: uppercase; }
+.status-grid td:first-child { font-weight: 700; width: 24%; }
+.tag-now { background: #2E8B57; } .tag-later { background: #B07A1E; } .tag-spec { background: #8A3B3B; }

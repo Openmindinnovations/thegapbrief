@@ -1,6 +1,16 @@
 {
   "reports": [
     {
+      "slug": "optimus-aftermarket",
+      "date": "2026-10-10",
+      "date_label": "October 10, 2026",
+      "title": "15 Low-Barrier Creative Aftermarket Opportunities for Optimus",
+      "summary": "Optimus is being built but not sold. These are 15 fun, low-capital aftermarket ideas (costumes, shells, decals, booths, wranglers), split into ones you can start now on robots you can rent today and ones that wait for robots in homes.",
+      "mascot_says": "Every robot deserves an ugly holiday sweater.",
+      "pdf": "pdfs/side/optimus-aftermarket.pdf",
+      "source": "briefs/side/optimus-aftermarket/report.html"
+    },
+    {
       "slug": "micro-saas-niches",
       "date": "2026-10-10",
       "date_label": "October 10, 2026",

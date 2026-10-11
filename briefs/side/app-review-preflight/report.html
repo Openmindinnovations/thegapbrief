@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Pre-Flight for Vibe Coders · TheGapBrief Side Report</title>
+<link rel="stylesheet" href="../../brief.css">
+<link rel="stylesheet" href="../side.css">
+<style>section[data-label="Main concept: deep dive"], section[data-label="Five sibling concepts"] { break-before: page; }</style>
+</head>
+<body>
+<header class="masthead">
+  <img class="mascot" src="../../../assets/gappy.svg" alt="Gappy, the scout fox">
+  <div class="mast-text">
+  <p class="kicker">TheGapBrief · Side Report · October 11, 2026</p>
+  <h1>Pre-Flight for Vibe Coders: An App Store Rejection Scanner and 5 Sibling Ideas</h1>
+  <p class="dek">People building apps with Cursor, Lovable, Bolt, Replit, Rork and v0 are reaching App Review in large numbers. This report asks whether a “check before you submit” service is still open, and finds a market that is real, busy and cheap.</p>
+  <p class="meta">Assigned by Jacob Peterson. Every factual claim links to its source. Competitor prices are as shown on the vendors’ pages when checked on October 11, 2026 (or as indexed, where marked). No market sizes, revenue, user counts or conversion rates are estimated. Suggested prices are our proposals and are labeled. Not affiliated with Apple or Google; “App Store” and “Google Play” are their trademarks.</p>
+  </div>
+</header>
+
+<section data-label="Summary">
+<h2><span class="chip">Summary</span>Bottom line and ranking</h2>
+<p class="intro lede">The demand is documented by Apple itself. It reviewed <strong>9,100,620</strong> submissions in 2025 and rejected <strong>2,093,244</strong>, and it says that on average <strong>over 40%</strong> of unresolved issues fall under guideline 2.1, App Completeness. The catch is competition. At least seven pre-submission checkers already sell for <strong>$2.99 to $199</strong>, and the free, open-source fastlane <em>precheck</em> covers metadata. A new entrant can’t win on “we check your app.” It has to win on <strong>who it serves and what it checks that others don’t</strong>. Vibe coders ship a web wrapper, a Supabase backend and an AI feature at once, and no single tool we found checks all three against both store rules and data exposure.</p>
+
+<div class="item">
+  <h3><span class="n">1</span>Ranked list with scores</h3>
+  <p>Each idea is scored 1–5 on five axes. <strong>Margin</strong> is price headroom against cited competitors at low variable cost. <strong>Maint.</strong>: 5 means the least ongoing human work. <strong>Speed</strong> is time to a working paid version. <strong>Demand</strong> is the strength of cited evidence, not market size. <strong>Room</strong>: 5 means the least crowded. A ⚑ marks ideas that touch legal or compliance work. These must be sold as preparation tools with no guarantee.</p>
+</div>
+<table>
+  <tr><th class="num">#</th><th>Concept</th><th>Core model</th><th class="num">Margin</th><th class="num">Maint.</th><th class="num">Speed</th><th class="num">Demand</th><th class="num">Room</th><th class="num">Total</th></tr>
+  <tr><td class="num">1</td><td>Vibe-coder App Store pre-flight (main concept)</td><td>Free scan → paid report + fix prompts → per-release subscription</td><td class="num">4</td><td class="num">3</td><td class="num">4</td><td class="num">5</td><td class="num">2</td><td class="num"><strong>18</strong></td></tr>
+  <tr><td class="num">2</td><td>Privacy &amp; AI-consent consistency checker ⚑</td><td>Policy ↔ nutrition label ↔ Data safety ↔ SDKs, with drift watch</td><td class="num">4</td><td class="num">4</td><td class="num">4</td><td class="num">4</td><td class="num">3</td><td class="num"><strong>19</strong></td></tr>
+  <tr><td class="num">3</td><td>Backend exposure scanner (Supabase/Firebase keys, RLS, open APIs)</td><td>URL scan → full findings → weekly monitor</td><td class="num">3</td><td class="num">4</td><td class="num">5</td><td class="num">5</td><td class="num">1</td><td class="num"><strong>18</strong></td></tr>
+  <tr><td class="num">4</td><td>Google Play pre-check + 12-tester readiness</td><td>AAB/listing scan → closed-test coach</td><td class="num">3</td><td class="num">4</td><td class="num">4</td><td class="num">3</td><td class="num">3</td><td class="num"><strong>17</strong></td></tr>
+  <tr><td class="num">5</td><td>Payments &amp; IAP rule checker (3.1, by storefront) ⚑</td><td>Paywall/link scan → storefront matrix → rule-change alerts</td><td class="num">4</td><td class="num">2</td><td class="num">3</td><td class="num">3</td><td class="num">4</td><td class="num"><strong>16</strong></td></tr>
+  <tr><td class="num">6</td><td>Accessibility pre-check for app-store labels</td><td>Build scan → label-readiness report</td><td class="num">3</td><td class="num">4</td><td class="num">3</td><td class="num">2</td><td class="num">4</td><td class="num"><strong>16</strong></td></tr>
+</table>
+<div class="box">
+  <h4>Why the main concept ranks #1 despite a lower score than #2</h4>
+  <p>On the scores alone, the privacy checker edges ahead because the field is less crowded. We still rank the full pre-flight first. It has the strongest cited demand, and the privacy and security checks are better sold as <em>modules inside it</em> than as separate products. The honest launch order is: build #2 and #3 as the scan engine first, then market the whole thing as #1.</p>
+  <p><strong>Overlap with Jacob’s projects:</strong> none of the six is a UI generator, so they don’t overlap with Get UI Now. We deliberately left out “generate store screenshots and listings,” which would edge toward it. The launch-readiness metadata check survives only as a check inside #1. Nothing here repackages Kapsoul, iMusement, Hivvly, FlirtFee, Anchor AR, Wash Wizardz, DeepReach or Fetch.</p>
+</div>
+</section>
+
+<section data-label="Evidence">
+<h2><span class="chip">Evidence</span>What the stores say, what changed, who is already here</h2>
+<div class="item">
+  <h3><span class="n">E.1</span>Apple’s own numbers (2025 Transparency Report)</h3>
+  <ul>
+    <li>9,100,620 submissions reviewed; <strong>2,093,244 rejected</strong>; 387,087 approved after an earlier rejection.</li>
+    <li>Rejections by guideline section (one submission can break several): Performance 1,354,418 · Legal 495,673 · Design 415,532 · Business 283,820 · Safety 151,159 · Other 4,145.</li>
+    <li>Apple’s newsroom adds: over 1.2 million of the rejections were new apps and nearly 800,000 were updates. Over 443,000 were for privacy violations, over 371,000 for copying, spam or misleading users, and over 22,000 for hidden or undocumented features.</li>
+    <li>Apple’s App Review page: “On average, over 40% of unresolved issues are related to guideline 2.1: App Completeness.”</li>
+    <li>Google doesn’t publish submission counts. Its February 2026 post says it kept more than 1.75 million policy-violating apps from being published in 2025 (as summarized by AskSami).</li>
+  </ul>
+  <p class="src"><a href="https://www.apple.com/legal/app-store/transparency/2025/">Apple 2025 Transparency Report</a> · <a href="https://www.apple.com/in/newsroom/2026/05/the-app-store-stopped-over-2-point-2-billion-usd-in-fraudulent-transactions-in-2025/">Apple Newsroom, May 2026</a> · <a href="https://developer.apple.com/distribute/app-review/">Apple App Review page</a> · <a href="https://asksami.app/stats/app-stores">AskSami store stats</a></p>
+</div>
+<div class="item">
+  <h3><span class="n">E.2</span>Guideline changes that matter to AI-built apps (2025–2026)</h3>
+  <ul>
+    <li><strong>Nov 13, 2025:</strong> <strong>5.1.2(i)</strong> now says you must disclose where personal data is shared “with third-party AI” and get explicit permission. New <strong>4.1(c)</strong> bars using another developer’s icon, brand or product name. <strong>4.7</strong> now covers HTML5/JS mini apps.</li>
+    <li><strong>June 8, 2026:</strong> Apple clarified the basis for <strong>4.3(a)</strong> and <strong>4.3(b)</strong> (spam and saturated categories) and added examples. It also added new developer responsibilities under 1.2.</li>
+    <li><strong>May 2025 (US storefront only):</strong> after the Epic ruling, <strong>3.1.1(a)</strong> lets apps link to outside purchase methods without an entitlement. Other storefronts keep their own rules.</li>
+    <li><strong>Long-standing rules vibe builds keep hitting:</strong> <strong>4.2</strong> minimum functionality (“beyond a repackaged website”), <strong>4.2.6</strong> apps from “app generation services,” and <strong>2.5.2</strong>, which bars downloading or running code that changes features. In March 2026, Apple blocked updates for vibe-coding apps Replit and Vibecode and pulled Anything. Apple told The Information it was enforcing “long-standing rules,” not targeting vibe coding.</li>
+  </ul>
+  <p class="src"><a href="https://developer.apple.com/news/?id=ey6d8onl">Apple: Nov 2025 guideline update</a> · <a href="https://developer.apple.com/news/?id=a233fmpw">Apple: June 2026 update</a> · <a href="https://developer.apple.com/news/?id=9txfddzf">Apple: May 2025 US update</a> · <a href="https://fkks.com/news/court-finds-apple-violated-order-resulting-in-key-changes-for-ios-external-purchase-methods">FKKS on the Epic order</a> · <a href="https://developer.apple.com/app-store/review/guidelines/">App Review Guidelines</a> · <a href="https://thenextweb.com/news/vibe-coding-apple-app-store-surge-crackdown">The Next Web</a> · <a href="https://kinja.com/ai/why-vibe-coded-apps-keep-getting-rejected">Kinja</a></p>
+</div>
+<div class="item">
+  <h3><span class="n">E.3</span>Vibe coders hitting rejections</h3>
+  <ul>
+    <li>r/vibecoding thread “Apple rejecting vibe coded apps?” (March 2026): a builder worried about launch; replies separate crackdowns on vibe-coding <em>tools</em> (2.5.2) from rejections of poorly finished apps.</li>
+    <li>Lovable-to-native shops say a bare Capacitor wrapper “usually does not” pass 4.2. lovable2app calls 4.2 “the single most common rejection we see on Lovable apps,” often alongside 4.8 (Sign in with Apple).</li>
+    <li>Agency guides list the same families: 2.1, 4.2, 4.2.6, 4.3, 5.1, 3.1.1 and 2.5.2. These are vendor posts, not neutral data.</li>
+    <li>Security: CVE-2025-48757 reported 303 exposed Supabase endpoints across 170 of 1,645 Lovable projects checked (March 2025). Lovable has since shipped free Quick and Deep security scans.</li>
+  </ul>
+  <p class="src"><a href="https://www.reddit.com/r/vibecoding/comments/1ryjelm/apple_rejecting_vibe_coded_apps/">r/vibecoding</a> · <a href="https://lovable2app.com/blog/apple-guideline-4-2-lovable-webview-rejection/">lovable2app</a> · <a href="https://ptkd.com/journal/does-lovable-dev-apps-pass-app-store-review">PTKD Journal</a> · <a href="https://axonbuild.com/blog/vibe-coded-app-rejected-app-store/">Axonbuild</a> · <a href="https://mattpalmer.io/posts/2025/05/statement-on-CVE-2025-48757/">CVE-2025-48757 statement</a> · <a href="https://docs.lovable.dev/features/security">Lovable security docs</a></p>
+</div>
+<div class="item">
+  <h3><span class="n">E.4</span>Who already sells this, and for how much</h3>
+  <table>
+    <tr><th>Product</th><th>What it does</th><th>Listed price</th></tr>
+    <tr><td>ReviewAhead</td><td>Xcode project scan, 38 rules; free score + top 3 findings</td><td>$2.99/report; $4.99/mo unlimited</td></tr>
+    <tr><td>Appflight</td><td>CLI + web audit, 68 Apple checks, some Play checks</td><td>Free CLI; $19 audit; $29/mo Solo; $99/mo Team (as indexed)</td></tr>
+    <tr><td>AppClearance</td><td>Reads App Store Connect; hosts privacy/support pages</td><td>$29/mo per app</td></tr>
+    <tr><td>ReviewReady</td><td>AI scan of screenshots and metadata; human TestFlight review</td><td>$49 AI; $199 expert; $399 rejection rescue</td></tr>
+    <tr><td>shipcheck / AcceptMyApp / ReviewKit</td><td>React Native/Expo local scan; general iOS checker; tiered scans</td><td>$29/app or $49/yr; €29/app or €149/yr; $5 to $49/mo (per shipcheck’s comparison page)</td></tr>
+    <tr><td>fastlane precheck</td><td>Open-source metadata check against common rejection rules</td><td>Free</td></tr>
+    <tr><td>Vibe App Scanner</td><td>Deployed-app security scan (Supabase/RLS, keys)</td><td>Free first scan; $19/mo; $39/mo</td></tr>
+    <tr><td>Lovable built-in</td><td>Quick and Deep security scans inside Lovable</td><td>Free (fixes past the free quota use credits)</td></tr>
+  </table>
+  <p class="src"><a href="https://reviewahead.dev/">ReviewAhead</a> · <a href="https://appflight.co/">Appflight</a> · <a href="https://appclearance.com/">AppClearance</a> · <a href="https://www.reviewready.app/">ReviewReady</a> · <a href="https://shipcheck.bakerventuresstudio.com/compare/app-store-rejection-checkers-compared/">shipcheck comparison (a competitor’s own page)</a> · <a href="https://docs.fastlane.tools/actions/precheck/">fastlane precheck</a> · <a href="https://vibeappscanner.com/pricing">VAS pricing</a> · <a href="https://docs.lovable.dev/features/security-view">Lovable security view</a></p>
+</div>
+<div class="item">
+  <h3 style="break-before: page"><span class="n">E.5</span>What can be automated vs. what needs a human</h3>
+  <table>
+    <tr><th>Automatable (deterministic)</th><th>Automatable with an LLM (flag, don’t judge)</th><th>Needs a human or Apple</th></tr>
+    <tr><td>Info.plist purpose strings for every requested permission; privacy manifest present, including in SDKs and node_modules; Sign in with Apple required when Google login exists (4.8); account deletion path (5.1.1(v)); placeholder or lorem text; broken URLs; Expo/Capacitor config; remote-code and OTA patterns (2.5.2 risk); WebView-only shell detection (4.2 risk); external purchase links by storefront; exposed keys in the bundle</td><td>Screenshots vs. the actual app and the guidelines; whether the description matches the features; whether AI features are disclosed; whether the privacy policy matches the SDKs found; 4.3 “saturated category” similarity to top apps</td><td>Whether the app is “useful enough” (4.2) and whether it is spam (4.3) are reviewer judgment; a working demo account and a live backend during review; content and UGC moderation in practice; anything regulated (health, finance, crypto 5.1.1(ix)). Approval itself is Apple’s decision only.</td></tr>
+  </table>
+  <p class="src"><a href="https://developer.apple.com/documentation/bundleresources/privacy-manifest-files">Apple: privacy manifest files</a> · <a href="https://developer.apple.com/app-store/review/guidelines/">App Review Guidelines</a></p>
+</div>
+</section>
+
+<section data-label="Main concept: deep dive">
+<h2><span class="chip">Main</span>Deep dive: a pre-flight scanner for vibe coders</h2>
+<div class="item">
+  <h3><span class="n">M.1</span>Target audience and positioning</h3>
+  <p><span class="label">Who</span>First-time App Store submitters who built with Lovable, Bolt, v0 or Replit (web apps wrapped with Capacitor) or with Rork, Expo or Cursor (React Native). They don’t read Xcode warnings and won’t open a terminal.</p>
+  <p><span class="label">Wedge</span>Competitors scan an Xcode project, a CLI build or App Store Connect metadata. The wedge here is to <strong>start from where vibe coders are</strong>: a GitHub repo or builder export, the live web URL and the Supabase project. Then check the three things that sink these builds together: the wrapper (4.2), the backend (exposed data), and privacy and AI consent (5.1). Findings come back as <strong>copy-paste fix prompts</strong> for the builder the user already works in.</p>
+</div>
+<div class="item">
+  <h3><span class="n">M.2</span>Core features and scan flow</h3>
+  <ul>
+    <li><strong>1. Connect</strong> a GitHub repo, builder export zip or .ipa, plus the live URL. Optional: read-only App Store Connect key (AppClearance takes the same read-only approach).</li>
+    <li><strong>2. Deterministic checks</strong>, each mapped to a guideline number: permissions and purpose strings, privacy manifest, Sign in with Apple, account deletion, placeholder content, dead links, remote code and OTA patterns, WebView-only detection with a “native surface” count, external purchase links by storefront.</li>
+    <li><strong>3. Backend probe</strong> of the user’s <em>own</em> deployed app, with proof of ownership: anon-key reads on tables, RLS gaps, service keys in the bundle.</li>
+    <li><strong>4. LLM pass</strong> with labeled confidence: screenshots vs. app, description vs. features, AI disclosure and consent screen, “looks like many other apps” (4.3) warning.</li>
+    <li><strong>5. Output:</strong> a readiness score, blockers and risks, the guideline cited for each, fix prompts for Lovable/Cursor/Rork, a reviewer-notes draft and a demo-account checklist.</li>
+  </ul>
+</div>
+<div class="item">
+  <h3><span class="n">M.3</span>Funnel and pricing</h3>
+  <p><span class="label">Funnel</span>Free scan showing the score, counts and the top 3 findings (the same pattern ReviewAhead and VAS use). Then a one-time full report with fix prompts. Then a subscription that re-scans each release, watches the backend and alerts on guideline changes.</p>
+  <p><span class="label">Comparables</span>Reports sell for $2.99 (ReviewAhead) to $49 (ReviewReady AI). Subscriptions run $4.99/mo (ReviewAhead) to $29/mo (AppClearance, Appflight Solo). Human review costs $199, and rejection rescue $399 (ReviewReady).</p>
+  <p><span class="label">Suggested</span><em>Our suggestion:</em> $19 per full report, because it bundles the security and privacy modules that cheap checkers lack. $15/mo for one app with release re-scans and backend monitoring. An optional $149 human pass, sold only when a reviewer is available. These are untested proposals.</p>
+</div>
+<div class="item">
+  <h3><span class="n">M.4</span>Low-touch maintenance</h3>
+  <ul>
+    <li><strong>Automated:</strong> a daily diff of Apple’s guidelines page and developer news, Google Play policy pages, and the Lovable and Expo changelogs. Each diff opens a “rule review” ticket.</li>
+    <li><strong>Human, a few hours a month (estimate):</strong> turn guideline diffs into rule updates, triage false positives, refresh the fix-prompt templates when builder UIs change.</li>
+    <li><strong>No human in the paid path:</strong> scans, reports and billing are self-serve. Human review is opt-in and capped.</li>
+  </ul>
+</div>
+<div class="item">
+  <h3><span class="n">M.5</span>Moat and risks</h3>
+  <ul>
+    <li><strong>Platform risk:</strong> Apple or a builder could ship this. Lovable already gives away security scans, Apple is adding agentic coding to Xcode, and fastlane precheck is free. The moat is thin: cross-builder coverage, store <em>and</em> backend checks together, and a dataset of which fixes cleared review (only with user permission).</li>
+    <li><strong>False confidence:</strong> state “No guarantee of approval. App Review is Apple’s decision” on every report, and keep it in the terms. Never sell an “approved” badge. Grade findings as blockers, risks or info.</li>
+    <li><strong>Marks:</strong> no Apple logos or “Apple-approved” wording. Use guideline numbers and “for App Store submissions” only descriptively. Add a non-affiliation line.</li>
+    <li><strong>Security scanning ethics:</strong> scan only domains and projects the user proves they own (a DNS or file token). Never probe third-party apps.</li>
+    <li><strong>Crowding:</strong> seven-plus tools priced from $2.99. Without the vibe-coder wedge this is a race to the bottom.</li>
+  </ul>
+</div>
+<div class="item">
+  <h3><span class="n">M.6</span>Rough MVP plan (about 4–6 weeks for one builder; our estimate)</h3>
+  <ul>
+    <li><strong>Week 1–2:</strong> repo/zip ingest; around 20 deterministic rules for Capacitor and Expo (permissions, manifest, Sign in with Apple, account deletion, WebView-only, remote code, placeholders, links). Each rule has a guideline citation and a fix-prompt template.</li>
+    <li><strong>Week 3:</strong> Supabase probe behind domain verification; secrets-in-bundle check.</li>
+    <li><strong>Week 4:</strong> LLM pass on screenshots and metadata with confidence labels; report page and PDF.</li>
+    <li><strong>Week 5–6:</strong> Stripe paywall (free top-3, paid full report), re-scan subscription, guideline-diff watcher. Launch to r/vibecoding and builder communities with honest content (“the 2.1 checklist”).</li>
+  </ul>
+</div>
+</section>
+
+<section data-label="Five sibling concepts">
+<h2><span class="chip">Siblings</span>Five sibling concepts, ranked</h2>
+
+<div class="item">
+  <h3><span class="n">2</span>Privacy &amp; AI-consent consistency checker ⚑</h3>
+  <p><span class="label">Audience</span>Any small app team, especially those calling OpenAI or Anthropic APIs from their app.</p>
+  <p><span class="label">Core</span>Find the SDKs and data flows in the code. Compare them with the privacy policy text, the App Privacy “nutrition label” answers, the Play Data safety form and the privacy manifests. Check that an explicit consent screen exists before data goes to third-party AI (5.1.2(i), Nov 2025).</p>
+  <p><span class="label">Demand</span>Apple cites over 443,000 privacy-violation rejections in 2025. Legal was the second-largest rejection section at 495,673.</p>
+  <p><span class="label">Payment</span>Comparable: AppClearance at $29/mo includes generated, hosted policy pages. <em>Suggested:</em> $15 one-time consistency report, $9/mo drift watch.</p>
+  <p><span class="label">Maintenance</span>SDK-to-data-type mapping table needs updates monthly; it is otherwise automated. ⚑ This is preparation, not legal advice.</p>
+  <p><span class="label">Risk / build</span>AppClearance overlaps on policy hosting. Build it from the main concept’s SDK detector plus an LLM comparison against the policy.</p>
+  <p class="src"><a href="https://www.apple.com/in/newsroom/2026/05/the-app-store-stopped-over-2-point-2-billion-usd-in-fraudulent-transactions-in-2025/">Apple Newsroom</a> · <a href="https://developer.apple.com/news/?id=ey6d8onl">5.1.2(i) update</a> · <a href="https://appclearance.com/">AppClearance</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">3</span>Backend exposure scanner for vibe-coded apps</h3>
+  <p><span class="label">Audience</span>Lovable, Bolt and Replit builders on Supabase or Firebase.</p>
+  <p><span class="label">Core</span>Verified-owner scan of the deployed app: anon-key table reads, RLS gaps, service keys in the bundle, open edge functions, missing security headers.</p>
+  <p><span class="label">Demand</span>CVE-2025-48757 found 303 exposed endpoints across 170 projects.</p>
+  <p><span class="label">Payment</span>VAS charges $19/mo and $39/mo. Lovable’s built-in scans are free. <em>Suggested:</em> include it in #1 instead of selling it alone.</p>
+  <p><span class="label">Maintenance</span>Low: fixed checks, plus updates when Supabase changes its defaults.</p>
+  <p><span class="label">Risk / build</span>The most crowded of the six, with free incumbents. Scanning must be limited to verified owners. Build: about 2 weeks.</p>
+  <p class="src"><a href="https://mattpalmer.io/posts/2025/05/statement-on-CVE-2025-48757/">CVE statement</a> · <a href="https://vibeappscanner.com/pricing">VAS</a> · <a href="https://docs.lovable.dev/features/security">Lovable security</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">4</span>Google Play pre-check + 12-tester readiness</h3>
+  <p><span class="label">Audience</span>First-time Android publishers on new personal accounts.</p>
+  <p><span class="label">Core</span>An AAB and listing scan (target SDK, permissions, Data safety vs. SDKs). It also tracks the rule that personal accounts created after Nov 13, 2023 need a closed test with at least 12 testers opted in for 14 continuous days before applying for production access.</p>
+  <p><span class="label">Demand</span>A hard, documented Google gate. Google says it blocked more than 1.75M policy-violating apps in 2025.</p>
+  <p><span class="label">Payment</span>Appflight already runs Android checks for free. <em>Suggested:</em> $9 for the tester-clock tracker and production-application checklist. Don’t sell testers; trading installs risks Google’s policies.</p>
+  <p><span class="label">Maintenance</span>Low to medium: Play policy changes several times a year.</p>
+  <p><span class="label">Risk / build</span>Thin pricing power. Best as an Android tab inside #1.</p>
+  <p class="src"><a href="https://support.google.com/googleplay/android-developer/answer/14151465">Play Console Help: testing requirements</a> · <a href="https://asksami.app/stats/app-stores">AskSami (Google 2025 figure)</a> · <a href="https://appflight.co/">Appflight</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">5</span>Payments &amp; IAP rule checker by storefront ⚑</h3>
+  <p><span class="label">Audience</span>Apps with paywalls, especially those built with Stripe-first web tools.</p>
+  <p><span class="label">Core</span>Find Stripe or web-checkout links and digital-goods paywalls. Map them per storefront: US external links allowed since May 2025 under 3.1.1(a); elsewhere, IAP or the regional entitlement rules apply. Flag likely 3.1.1 problems.</p>
+  <p><span class="label">Demand</span>Business-section rejections: 283,820 in 2025. The rules changed through court orders, which causes confusion.</p>
+  <p><span class="label">Payment</span>No direct priced competitor found. <em>Suggested:</em> $19 report, $5/mo rule-change alerts.</p>
+  <p><span class="label">Maintenance</span>The highest of the six. Rules move with litigation and regional regulation (EU), so a human must review each change. ⚑ Not legal advice.</p>
+  <p><span class="label">Risk / build</span>Wrong advice costs a rejection or worse. Ship it narrow (US vs. everywhere else) and cite the guideline text verbatim.</p>
+  <p class="src"><a href="https://developer.apple.com/news/?id=9txfddzf">Apple May 2025 update</a> · <a href="https://fkks.com/news/court-finds-apple-violated-order-resulting-in-key-changes-for-ios-external-purchase-methods">FKKS</a> · <a href="https://www.apple.com/legal/app-store/transparency/2025/">Transparency Report</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">6</span>Accessibility pre-check for app-store labels</h3>
+  <p><span class="label">Audience</span>Teams that want to claim Apple’s Accessibility Nutrition Labels honestly, or that sell into the EU (the European Accessibility Act took effect June 28, 2025).</p>
+  <p><span class="label">Core</span>Static and screenshot checks: missing accessibility labels, Dynamic Type support, contrast, tap-target size. The output is a “can you honestly claim VoiceOver / Larger Text?” report.</p>
+  <p><span class="label">Demand</span>Weaker today. Apple says the labels are voluntary for now and will become required for new submissions over time, with no date.</p>
+  <p><span class="label">Payment</span>No cited direct comparable. <em>Suggested:</em> $15 per report.</p>
+  <p><span class="label">Maintenance</span>Low. Real conformance still needs human testing; the tool must say so.</p>
+  <p><span class="label">Risk / build</span>Demand jumps if Apple sets a date. Park it as a module and switch it on then.</p>
+  <p class="src"><a href="https://developer.apple.com/help/app-store-connect/manage-app-accessibility/overview-of-accessibility-nutrition-labels/">Apple: Accessibility Nutrition Labels</a> · <a href="https://developer.apple.com/videos/play/wwdc2025/224/">WWDC25 session</a> · <a href="https://www.barrierbreak.com/meet-european-accessibility-act-compliance-uk/">EAA guide</a></p>
+</div>
+<div class="box">
+  <h4>Gappy’s take</h4>
+  <p>The gap isn’t “a checker.” There are plenty of those. It’s a checker that speaks vibe coder: it starts from a Lovable link, finds the wrapper, the leaky table and the missing AI-consent screen at once, and hands back prompts the builder can paste. Promise preparation, never approval.</p>
+</div>
+</section>
+
+<p class="colophon">TheGapBrief Side Reports are published by Open Mind Innovations LLC. Researched October 11, 2026. Not affiliated with or endorsed by Apple, Google, Lovable, or any vendor named. Prices are as listed by the linked vendors on that date (“as indexed” where the page was script-rendered); “suggested” prices are proposals. Nothing here is legal advice.</p>
+</body>
+</html>

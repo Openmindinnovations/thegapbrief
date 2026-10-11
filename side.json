@@ -1,6 +1,16 @@
 {
   "reports": [
     {
+      "slug": "app-review-preflight",
+      "date": "2026-10-11",
+      "date_label": "October 11, 2026",
+      "title": "Pre-Flight for Vibe Coders: An App Store Rejection Scanner and 5 Sibling Ideas",
+      "summary": "Apple rejected 2.09M of 9.1M submissions in 2025, but pre-submission checkers are already crowded at $2.99–$199. The opening is a scanner built for vibe coders that checks the web wrapper, the backend and AI consent together. Five sibling ideas are ranked alongside it.",
+      "mascot_says": "Promise preparation, never approval.",
+      "pdf": "pdfs/side/app-review-preflight.pdf",
+      "source": "briefs/side/app-review-preflight/report.html"
+    },
+    {
       "slug": "optimus-aftermarket",
       "date": "2026-10-10",
       "date_label": "October 10, 2026",

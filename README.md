@@ -57,6 +57,10 @@ Each issue is dated Monday and covers the previous Monday through that Monday. T
 6. **Verify.**
    ```bash
    scripts/verify.sh 2026-10-12     # waits up to ~3 min for Pages, then expects 200s + application/pdf; exits non-zero on failure
+   # After verify passes: email the PDF as an ATTACHMENT from the bot inbox jpp@mail.grokbot.com
+   #   to project@openmindinnovations.com (Jacob's standing instruction).
+   #   Subject: 'TheGapBrief Weekly: <title>'   Body: 1-2 lines with the title, https://thegapbrief.com/weeks/<date>/ and https://thegapbrief.com/pdfs/thegapbrief-<date>.pdf.
+   #   Attach the local file (from pdfs/). Record whether the send succeeded.
    ```
    `publish.sh` does nothing harmful if there is nothing to commit, and it rebases on `origin/main` before pushing.
 
@@ -86,6 +90,10 @@ Files: `side.json` · `briefs/side/_template.html` · `briefs/side/side.css` (PD
    ```bash
    scripts/publish.sh "Side report: Report Title"
    scripts/verify.sh side my-report-slug     # hub, report page, PDF, side feed, home
+   # After verify passes: email the PDF as an ATTACHMENT from the bot inbox jpp@mail.grokbot.com
+   #   to project@openmindinnovations.com (Jacob's standing instruction).
+   #   Subject: 'TheGapBrief Side Report: <title>'   Body: 1-2 lines with the title, https://thegapbrief.com/side/<slug>/ and https://thegapbrief.com/pdfs/side/<slug>.pdf.
+   #   Attach the local file (from pdfs/). Record whether the send succeeded.
    ```
 
 ## Custom domain (thegapbrief.com)

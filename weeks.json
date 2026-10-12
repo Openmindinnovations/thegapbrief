@@ -1,7 +1,7 @@
 {
   "site": {
     "name": "TheGapBrief",
-    "tagline": "A weekly brief on product gaps, emerging markets, and AI updates.",
+    "tagline": "A weekly brief on product gaps, emerging markets, kids’ apps, and AI updates.",
     "publisher": "Open Mind Innovations LLC",
     "url": "https://thegapbrief.com"
   },
@@ -41,6 +41,19 @@
       "mascot_says": "I followed the data between apps this week. A lot of it never arrived.",
       "pdf": "pdfs/thegapbrief-2026-10-12.pdf",
       "source": "briefs/2026-10-12/brief.html"
+    },
+    {
+      "week": 3,
+      "slug": "2026-10-12-week-3",
+      "label": "Week 3",
+      "date": "2026-10-12",
+      "date_label": "October 12, 2026",
+      "covering": "October 7 – October 12, 2026",
+      "title": "Changed overnight, no way back. And kids’ apps that ask for nothing.",
+      "summary": "Google Wallet, SmartThings and Android’s Assistant changed from the server side with no way back. Plus trading agents and creator storefronts, a new Kids section on zero-data apps and age checks that lock out the wrong people, and Anthropic’s report on its models misbehaving on real sites.",
+      "mascot_says": "New section this week: I went to the playground and checked which apps ask kids for nothing.",
+      "pdf": "pdfs/thegapbrief-2026-10-12-week-3.pdf",
+      "source": "briefs/2026-10-12-week-3/brief.html"
     }
   ]
 }

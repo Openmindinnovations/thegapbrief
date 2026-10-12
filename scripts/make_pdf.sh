@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Render a week's brief HTML to PDF with headless Chrome, then make a PNG preview of page 1.
-# Usage: scripts/make_pdf.sh 2026-10-05
+# Usage: scripts/make_pdf.sh 2026-10-05   (or a slug, e.g. 2026-10-12-week-3)
 set -euo pipefail
 DATE="${1:?usage: make_pdf.sh YYYY-MM-DD}"
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"

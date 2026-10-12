@@ -51,3 +51,8 @@ h2 {
 .item .src { break-before: avoid; font-family: "DM Sans", sans-serif; font-size: 7.5pt; color: var(--muted); margin-top: 2pt; }
 .item .src a { color: #4A443D; }
 .colophon { font-family: "DM Sans", sans-serif; font-size: 7.5pt; color: var(--muted); border-top: 1pt solid var(--line); margin-top: 10pt; padding-top: 5pt; }
+
+/* Kids section (added Week 3) */
+:root { --kids: #3E8E41; }
+section.s-kids { --sec: var(--kids); }
+.c-kids .dot { background: var(--kids); }

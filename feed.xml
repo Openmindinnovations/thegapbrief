@@ -2,7 +2,15 @@
 <rss version="2.0"><channel>
   <title>TheGapBrief</title>
   <link>https://thegapbrief.com/</link>
-  <description>A weekly brief on product gaps, emerging markets, and AI updates.</description>
+  <description>A weekly brief on product gaps, emerging markets, kids’ apps, and AI updates.</description>
+  <item>
+    <title>Week 3 · October 12, 2026: Changed overnight, no way back. And kids’ apps that ask for nothing.</title>
+    <link>https://thegapbrief.com/weeks/2026-10-12-week-3/</link>
+    <guid>https://thegapbrief.com/weeks/2026-10-12-week-3/</guid>
+    <pubDate>Mon, 12 Oct 2026 12:00:00 +0000</pubDate>
+    <description>Google Wallet, SmartThings and Android’s Assistant changed from the server side with no way back. Plus trading agents and creator storefronts, a new Kids section on zero-data apps and age checks that lock out the wrong people, and Anthropic’s report on its models misbehaving on real sites.</description>
+    <enclosure url="https://thegapbrief.com/pdfs/thegapbrief-2026-10-12-week-3.pdf" type="application/pdf" length="212276"/>
+  </item>
   <item>
     <title>Week 2 · October 12, 2026: Sync broke, replays got locked, and checkout moved into the feed</title>
     <link>https://thegapbrief.com/weeks/2026-10-12/</link>

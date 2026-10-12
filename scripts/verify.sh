@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Verify the live site, a week page, and its PDF; waits up to ~3 min for Pages to deploy.
-# Usage: scripts/verify.sh 2026-10-05 [base_url]          (weekly issue)
+# Usage: scripts/verify.sh 2026-10-05 [base_url]          (weekly issue; pass the slug if the week has one, e.g. 2026-10-12-week-3)
 #        scripts/verify.sh side SLUG [base_url]           (side report)
 # Note: a plain (non-cache-busted) load of the home page can show the old version for up to 10 minutes.
 set -uo pipefail

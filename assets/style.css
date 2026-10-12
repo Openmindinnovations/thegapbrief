@@ -151,3 +151,9 @@ a:focus-visible, .btn:focus-visible { outline: 3px solid var(--sun); outline-off
   .side-hero { flex-direction: column-reverse; align-items: flex-start; }
   .header-inner { flex-wrap: wrap; gap: 10px; }
 }
+
+/* Kids section (added Week 3): leafy green */
+:root { --kids: #3E8E41; }
+.sec-kids { --sec: var(--kids); }
+.outline-grid.four { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 760px) { .outline-grid.four { grid-template-columns: 1fr; } }

@@ -20,7 +20,19 @@ from datetime import datetime, timezone
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SECTIONS = [("gaps", "Gaps", "Missing pieces in real products"),
             ("markets", "Markets", "Emerging in apps and digital products"),
+            ("kids", "Kids", "Kids' apps: popular, growing, missing"),
             ("ai", "AI", "The week's key AI updates")]
+
+
+def slug(w):
+    """URL slug for a week: explicit "slug" (e.g. 2026-10-12-week-3) or the date."""
+    return w.get("slug") or w["date"]
+
+
+def order_key(w):
+    """Newest first: by date, then by week number (so two issues on one date sort correctly)."""
+    n = w.get("week")
+    return (w["date"], n if isinstance(n, int) else -1)
 
 
 def read(p):
@@ -103,7 +115,7 @@ def legend():
 
 def counts(o):
     return '<ul class="counts">' + "".join(
-        f'<li class="sec-{k}"><span class="dot"></span>{len(o.get(k, []))} {lab}</li>' for k, lab, _ in SECTIONS) + "</ul>"
+        f'<li class="sec-{k}"><span class="dot"></span>{len(o.get(k, []))} {lab}</li>' for k, lab, _ in SECTIONS if o.get(k)) + "</ul>"
 
 
 def footer(prefix, site):
@@ -154,12 +166,12 @@ def build_home(site, weeks, side=None):
   <p class="eyebrow" id="latest">{badge(feat)}Latest · {label(feat)} · <time datetime="{feat['date']}">{feat['date_label']}</time></p>
   <article class="card card-featured">
     <div class="card-body">
-      <h2><a href="weeks/{feat['date']}/index.html">{html.escape(feat['title'])}</a></h2>
+      <h2><a href="weeks/{slug(feat)}/index.html">{html.escape(feat['title'])}</a></h2>
       <p class="summary">{html.escape(feat['summary'])}</p>
       {counts(o)}
       <div class="actions">
         <a class="btn btn-primary" href="{feat['pdf']}" download>Download PDF</a>
-        <a class="btn btn-ghost" href="weeks/{feat['date']}/index.html">Read online →</a>
+        <a class="btn btn-ghost" href="weeks/{slug(feat)}/index.html">Read online →</a>
       </div>
     </div>
     <aside class="says">
@@ -172,11 +184,11 @@ def build_home(site, weeks, side=None):
         cards = "".join(f"""
     <article class="card card-archive">
       <p class="eyebrow">{badge(w)}{label(w)} · <time datetime="{w['date']}">{w['date_label']}</time></p>
-      <h3><a href="weeks/{w['date']}/index.html">{html.escape(w['title'])}</a></h3>
+      <h3><a href="weeks/{slug(w)}/index.html">{html.escape(w['title'])}</a></h3>
       <p class="summary">{html.escape(w['summary'])}</p>
       <div class="actions">
         <a class="btn btn-small" href="{w['pdf']}" download>Download PDF</a>
-        <a class="link" href="weeks/{w['date']}/index.html">Read →</a>
+        <a class="link" href="weeks/{slug(w)}/index.html">Read →</a>
       </div>
     </article>""" for w in rest)
         archive = f'<div class="archive-grid">{cards}\n  </div>'
@@ -222,8 +234,8 @@ def build_week(site, w, newer, older):
     </div>"""
     pdf = prefix + w["pdf"]
     nav = '<nav class="week-nav">'
-    nav += f'<a href="{prefix}weeks/{newer["date"]}/index.html">← {label(newer)}</a>' if newer else "<span></span>"
-    nav += f'<a href="{prefix}weeks/{older["date"]}/index.html">{label(older)} →</a>' if older else "<span></span>"
+    nav += f'<a href="{prefix}weeks/{slug(newer)}/index.html">← {label(newer)}</a>' if newer else "<span></span>"
+    nav += f'<a href="{prefix}weeks/{slug(older)}/index.html">{label(older)} →</a>' if older else "<span></span>"
     nav += "</nav>"
     body = f"""{header(prefix, site, small=True)}
 <main class="wrap week-page">
@@ -240,7 +252,7 @@ def build_week(site, w, newer, older):
   </aside>
   <section class="outline" aria-labelledby="outline-h">
     <h2 class="section-title" id="outline-h">This week at a glance <span class="muted">ranked, most important first</span></h2>
-    <div class="outline-grid">{blocks}
+    <div class="outline-grid{' four' if blocks.count('outline-block') > 3 else ''}">{blocks}
     </div>
   </section>
   <section class="reader" aria-labelledby="reader-h">
@@ -255,7 +267,7 @@ def build_week(site, w, newer, older):
   {nav}
 </main>
 {footer(prefix, site)}"""
-    write(f"weeks/{w['date']}/index.html",
+    write(f"weeks/{slug(w)}/index.html",
           page(f"{label(w)} · {w['date_label']}: {w['title']} | {site['name']}", body, prefix, w["summary"]))
 
 
@@ -263,7 +275,7 @@ def build_feed(site, weeks):
     items = ""
     for w in weeks:
         d = datetime.strptime(w["date"], "%Y-%m-%d").replace(hour=12, tzinfo=timezone.utc)
-        link = f"{site['url']}/weeks/{w['date']}/"
+        link = f"{site['url']}/weeks/{slug(w)}/"
         items += f"""
   <item>
     <title>{html.escape(label(w))} · {html.escape(w['date_label'])}: {html.escape(w['title'])}</title>
@@ -411,7 +423,7 @@ def load_side():
 def main():
     data = json.loads(read("weeks.json"))
     site = data["site"]
-    weeks = sorted(data["weeks"], key=lambda w: w["date"], reverse=True)
+    weeks = sorted(data["weeks"], key=order_key, reverse=True)
     missing = [w["pdf"] for w in weeks if not os.path.exists(os.path.join(ROOT, w["pdf"]))]
     if missing:
         sys.exit(f"missing PDF(s): {missing}")

@@ -37,7 +37,9 @@ Each issue is dated Monday and covers the previous Monday through that Monday. T
    - Rules: link a source for every item. Don't invent numbers; only state a figure if a cited source gives it, and attribute it. Leave out anything you can't verify. No hype. Re-check that "this week" news is actually from this week, because aggregators sometimes republish old funding news. Don't pitch the owner's existing projects as new ideas (Kapsoul, iMusement, Hivvly, FlirtFee, Anchor AR, Wash Wizardz, Get UI Now, DeepReach, Fetch).
 2. **Scaffold and write the brief.**
    ```bash
-   scripts/new_week.sh 2026-10-12 "Week 2" "October 5 – October 12, 2026"
+   scripts/new_week.sh 2026-10-19 "Week 4" "October 12 – October 19, 2026"
+   # If two issues share a date, pass a 4th arg SLUG (e.g. 2026-10-12-week-3). The slug becomes the folder,
+   # page URL (/weeks/<slug>/) and PDF name (pdfs/thegapbrief-<slug>.pdf); use the slug with make_pdf.sh and verify.sh.
    # creates briefs/2026-10-12/brief.html from briefs/_template.html and prints a weeks.json stub
    ```
    Fill in the `<h1>` headline, intro, the counts in the contents list, and the items. Copy an `<div class="item">` block for each extra item. Keep the structure, because `build.py` reads the outline from it:
@@ -47,7 +49,8 @@ Each issue is dated Monday and covers the previous Monday through that Monday. T
    scripts/make_pdf.sh 2026-10-12      # -> pdfs/thegapbrief-2026-10-12.pdf and previews/thegapbrief-2026-10-12-p1.png
    ```
    The script warns if template placeholders are left and prints the page and link counts (full issues target 3–6 pages). Open the PNG and check the layout.
-4. **Add the entry** printed by `new_week.sh` to the `weeks` array in `weeks.json`, and fill in `title`, `summary`, and `mascot_says`. Order doesn't matter, because the build sorts by date and features the newest.
+4. **Add the entry** printed by `new_week.sh` to the `weeks` array in `weeks.json`, and fill in `title`, `summary`, and `mascot_says`. Order doesn't matter: the build sorts by date, then by week number, and features the newest. An optional "slug" field overrides the URL/PDF name (defaults to the date).
+   Issues have **four sections** (since Week 3): Gaps, Markets, Kids (green), AI. Older 3-section issues still render.
    - Optional `"label"` overrides the displayed "Week N" text.
    - Previews and test issues: set `"week": "Preview"` (a non-number, so it doesn't use up a week number), `"label": "Preview issue"`, and `"preview": true`. This adds a yellow PREVIEW badge.
 5. **Build and publish.**

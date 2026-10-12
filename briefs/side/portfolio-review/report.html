@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>OMI Portfolio Review · TheGapBrief Side Report</title>
+<link rel="stylesheet" href="../../brief.css">
+<link rel="stylesheet" href="../side.css">
+<style>
+section[data-label="FlirtFee bot team"], section[data-label="DeepReach plan"], section[data-label="Get UI Now plan"] { break-before: page; }
+.fix ol { margin: 0 0 4pt 20pt; padding-left: 12pt; } .fix li { margin-bottom: 2.5pt; }
+.flag { color: #8A3B3B; font-weight: 700; }
+</style>
+</head>
+<body>
+<header class="masthead">
+  <img class="mascot" src="../../../assets/gappy.svg" alt="Gappy, the scout fox">
+  <div class="mast-text">
+  <p class="kicker">TheGapBrief · Side Report · October 12, 2026 · Internal</p>
+  <h1>OMI Portfolio Review: Wash Wizardz, Get UI Now, DeepReach, FlirtFee and Fetch</h1>
+  <p class="dek">A site-by-site review of the Open Mind Innovations companies (Kapsoul, Hivvly, iMusement, CharacterGuard and Anchor AR excluded at Jacob’s request), with prioritized fixes and proposed bot teams for FlirtFee, DeepReach and Get UI Now.</p>
+  <p class="meta">Prepared for Jacob Peterson. Observations come from fetching each public homepage on October 12, 2026 with curl (HTML, headers, link checks) and headless Chrome screenshots at 1366×900 and 390×844. No traffic, revenue or user figures were available to us; none are estimated. Where a site makes a claim we couldn’t check (reviews, client counts), we say “unverified.” That doesn’t mean it’s false; it means the page doesn’t prove it.</p>
+  </div>
+</header>
+
+<section data-label="Summary">
+<h2><span class="chip">Summary</span>What we covered and the headline fixes</h2>
+<table>
+  <tr><th>Company</th><th>Live site</th><th>State</th><th>Top fix</th></tr>
+  <tr><td>Wash Wizardz</td><td>washwizardz.com</td><td>Full sales site, strong offer</td><td>Homepage is <strong>11.0 MB</strong>. Compress images; back up the review and BBB claims with links.</td></tr>
+  <tr><td>Get UI Now</td><td>getuinow.com</td><td>Clean landing page, quote form</td><td>Add a real checkout for the $99 tier; remove the broken “Built with v0” badge; add privacy/terms and analytics.</td></tr>
+  <tr><td>DeepReach</td><td>deepreachdigital.com</td><td>Full agency site with Stripe links</td><td><span class="flag">Verify or remove</span> the stats, logos and testimonials; drop “email scraping”; fix the mobile layout; 8.1 MB page.</td></tr>
+  <tr><td>FlirtFee</td><td>flirtfee.com (not linked from OMI)</td><td>Public investor pitch, no product</td><td><span class="flag">Get securities counsel</span> on the public “Invest Now” form before anything else; remove uncited stats and illustrative figures presented as real.</td></tr>
+  <tr><td>Fetch</td><td>none found</td><td>“Connected pet care. Link coming”</td><td>No site to review. Don’t point Fetch at fetchpet.com, which is an unrelated pet-insurance company.</td></tr>
+</table>
+<div class="box">
+  <h4>Common to every live site</h4>
+  <p>None of the four has a <strong>privacy policy or terms page</strong>: /privacy and /terms return 404, and no footer links to one. None has <strong>robots.txt or sitemap.xml</strong> (both 404), and none sets a <strong>canonical</strong> tag or uses <strong>structured data</strong> (JSON-LD). Three of the four post their forms to Formspree, so form data goes to a third party; that alone needs a privacy policy. One shared fix, a legal-pages-and-SEO-basics pass, could be run across all four by one bot.</p>
+  <p><strong>On the OMI portal itself:</strong> it lists FlirtFee as “Link coming,” but flirtfee.com is live as an investor pitch. Decide on purpose whether the portal should link to it (see the FlirtFee section first).</p>
+</div>
+<p class="src">Sites reviewed: <a href="https://www.openmindinnovations.com">openmindinnovations.com</a> · <a href="https://washwizardz.com">washwizardz.com</a> · <a href="https://www.getuinow.com">getuinow.com</a> · <a href="https://deepreachdigital.com">deepreachdigital.com</a> · <a href="https://flirtfee.com">flirtfee.com</a>. References: <a href="https://www.ftc.gov/business-guidance/resources/consumer-reviews-testimonials-rule-questions-answers">FTC Consumer Reviews and Testimonials Rule</a> · <a href="https://www.sec.gov/resources-small-businesses/exempt-offerings/private-placements-rule-506c">SEC Rule 506(c)</a> · <a href="https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business">CAN-SPAM guide</a> · <a href="https://developer.apple.com/app-store/review/guidelines/">App Review Guidelines</a></p>
+</section>
+
+<section data-label="Company reviews">
+<h2><span class="chip">Reviews</span>Company by company</h2>
+
+<div class="item fix">
+  <h3><span class="n">1</span>Wash Wizardz: pressure washing</h3>
+  <p><span class="label">What works</span>The clearest offer in the portfolio. The headline “We Make Dirt Disappear Like Magic” sits next to a phone number, a 30-second quote, a $199 driveway special, “from” prices for each service, annual plans ($499 / $899 / $1,499) and an instant-estimate tool. Title and meta description are good. GA4 (gtag) and the Meta pixel are installed. The mobile layout is clean and has a sticky “Get Instant Estimate” button.</p>
+  <p><span class="label">Fix first</span></p>
+  <ol>
+    <li><strong>Page weight: 11.0 MB of HTML</strong>, because 17 images are embedded inline as base64. Every visitor downloads all of them before the page can render, which is slow on mobile data. Move images to files, serve WebP/AVIF and lazy-load below the fold.</li>
+    <li><strong>Back up the trust claims.</strong> The page says “4.98★ Google,” “500+ Google Reviews,” “BBB Accredited,” “Licensed • Insured” and “500+ Happy Properties.” None of these links anywhere, and no license number is shown. Link the Google profile and BBB page, show the license and insurance details, or remove any claim that isn’t true. Unbacked review claims are a regulatory risk (the FTC’s 2024 rule bans fake or misrepresented reviews) and they lower trust.</li>
+    <li><strong>Local SEO:</strong> the page text names no city or service area, apart from an 818 phone number. Add the service area, a LocalBusiness JSON-LD block, a Google Business Profile link and a page per city or service.</li>
+    <li>Add privacy and terms pages (the site has a quote form and tracking pixels), an og:image, robots.txt and a sitemap.</li>
+  </ol>
+</div>
+
+<div class="item fix">
+  <h3><span class="n">2</span>Get UI Now: fast app and web design</h3>
+  <p><span class="label">What works</span>Fast and light (99.5 KB, about 0.37 s to fetch). The pain is stated clearly (“agencies charge $5k–$15k”), the tiers are simple ($99 / $399 / $799+), and the 3-step process and portfolio are good. Most Open Graph tags are present.</p>
+  <p><span class="label">Fix first</span></p>
+  <ol>
+    <li><strong>There’s no way to pay.</strong> Every “Get Started” button leads to a quote form, and the pricing note says packages are “starting points.” At least the $99 single-screen tier should go straight to checkout (a Stripe link plus a brief form). That’s the cheapest way to learn whether people will buy.</li>
+    <li><strong>The quote form asks too much.</strong> Phone is required (“for our follow-up call”), plus screen count and project type. Make phone optional and state the turnaround (we found a 24-hour <em>estimate</em> promise, but no delivery time).</li>
+    <li><strong>Broken and unclear links.</strong> The “Built with v0” badge returns 404 and floats over the mobile layout. The footer says “Powered by Lumina Studio” with no explanation. Remove the badge and either explain the studio or drop the line.</li>
+    <li><strong>No analytics found</strong> (no GA, Plausible, PostHog or similar in the HTML), so the funnel can’t be measured. Add privacy and terms pages, an og:image, a sitemap and robots.txt. “Real Designs That Launched Real Products” and “Trusted by indie founders” need links or names, or softer wording.</li>
+  </ol>
+</div>
+
+<div class="item fix">
+  <h3><span class="n">3</span>DeepReach: AI-assisted marketing packages</h3>
+  <p><span class="label">What works</span>Six clear monthly packages ($399 / $995 / $1,195 / $1,995) with deliverables, each linking straight to a Stripe Payment Link. That’s a real payment path. There’s a strategy-call CTA, GA4, Segment and the Meta pixel, and a solid title and meta description.</p>
+  <p><span class="label">Fix first</span></p>
+  <ol>
+    <li><span class="flag">Verify or remove the proof.</span> The page claims “Trusted by 150+ growing businesses,” “Helping brands grow since 2020,” “94% client retention,” “3.2x avg. engagement,” “47% avg. open-rate lift,” a logo row (Bloom Wellness, TechFix Solutions, Coastal Realty, Northline Co., Peak Fitness) and three named testimonials. We can’t verify any of them. If they’re placeholders, remove them now: the FTC rule on fake reviews and testimonials (effective October 2024) allows civil penalties. Replace them with real, permissioned results, even one.</li>
+    <li><strong>Remove “Email scraping and lead list building”</strong> from the $1,995 package. Scraped lists and cold email collide with CAN-SPAM and, for EU/UK contacts, GDPR. Offer “compliant lead research” instead.</li>
+    <li><strong>Mobile layout.</strong> In our 390-px render the hero text is clipped at the left edge, the menu icon draws as a single line, and a sticky “Book a Free Strategy Call” button overlaps “View Packages.” Check this on a real phone.</li>
+    <li><strong>Page weight: 8.1 MB</strong> with 35 inline base64 images. Same fix as Wash Wizardz.</li>
+    <li>The “Growth Projector” shows +85% revenue and +113% ROI. Even labeled “illustrative,” that reads as a promise. Remove it or base it on real client data. Add terms covering the 3-month minimum and cancellation next to the Stripe buttons, plus a privacy page, og tags, a sitemap and robots.txt.</li>
+  </ol>
+</div>
+
+<div class="item fix">
+  <h3><span class="n">4</span>FlirtFee: proximity “pay to connect” marketplace (investor page)</h3>
+  <p><span class="label">What it is</span>flirtfee.com is a single “Investor Pitch” page, not a product. The concept: a live map of people within about 5,000 ft. “Hosts” set prices to unlock their Instagram ($7), TikTok ($9), phone number ($22) or a 30-minute video call ($38, host must approve). The platform takes about 28–30%, and message packs cost $6. The page asks for $20,000–$30,000 on a SAFE through an “Invest Now / Reserve Your Investment” form (Formspree) that collects name, email, phone and amount.</p>
+  <p><span class="label">Fix first</span></p>
+  <ol>
+    <li><span class="flag">Securities: talk to counsel before leaving this public.</span> A public page soliciting investment amounts is a general solicitation. The footer says “For accredited investors only” and “Not a solicitation,” which contradicts the “Invest Now” buttons. If the raise relies on Rule 506(c), investors’ accredited status must be verified; 506(b) generally doesn’t allow public advertising. Until counsel weighs in, put the page behind a password or replace it with a waitlist.</li>
+    <li><strong>Remove uncited or made-up figures:</strong> “73% of young adults…,” “4 in 5 say…,” “Projected 1.4M monthly active users,” “40+ cities by 2028,” and the host example “Ava Chen… $2,840 earned.” Only the map is labeled “stylized.” In an investor context, unsupported numbers are a liability.</li>
+    <li><strong>Trust and safety is the product.</strong> Selling a nearby stranger’s phone number on a live map raises stalking, harassment, minors and solicitation risks that app stores and payment processors screen for. Unlocked contact info is also likely a digital good under Apple’s in-app purchase rule (3.1.1), which affects the fee math. This has to be designed before any build (see the bot plan).</li>
+    <li>Fix the character-encoding bugs (“Â© 2026,” “Ã—” on the close button). “Privacy · Terms · Legal” is plain text, not links; add the pages. No analytics and no robots.txt or sitemap.</li>
+  </ol>
+</div>
+
+<div class="item">
+  <h3><span class="n">5</span>Fetch: connected pet care</h3>
+  <p>The OMI portal lists “Fetch — Connected pet care. Link coming.” We found no site. Search for “fetch pet” turns up Fetch by The Dodo / fetchpet.com, an unrelated pet-insurance brand. <strong>Next steps:</strong> pick a distinct name or domain early (the trademark desk, Plate/Statute/Keeper, can run a clearance check), then put up a one-page waitlist with a privacy policy before linking it from the portal.</p>
+</div>
+</section>
+
+<section data-label="FlirtFee bot team">
+<h2><span class="chip">FlirtFee</span>The bot team needed to build FlirtFee</h2>
+<p class="intro">FlirtFee’s hard problem isn’t the map or checkout. It’s whether a paid “unlock a stranger nearby” product can be made safe and acceptable to app stores and payment processors. So the team starts with policy and safety, and the builders come in only after the core rules are settled. Bots draft and run things; Jacob or licensed humans approve anything legal, financial or public.</p>
+<table>
+  <tr><th class="num">Order</th><th>Bot (suggested name)</th><th>Responsibilities</th><th>Key deliverables</th><th>Reuse?</th></tr>
+  <tr><td class="num">1</td><td><strong>Product Lead</strong> (“Spark”)</td><td>Own the spec and the go/no-go call; reconcile the investor page with the real product; run weekly priorities.</td><td>PRD; risk register; launch criteria; one test city chosen</td><td>New, or Brian (Product Lead) part-time</td></tr>
+  <tr><td class="num">2</td><td><strong>Trust &amp; Safety Lead</strong> (“Guardian”)</td><td>18+ age verification; location fuzzing (no exact pins, delays); consent and blocking; reporting; anti-solicitation and anti-harassment policy; moderation playbook.</td><td>Safety spec; community rules; incident runbook; moderation queue design</td><td>New specialist; Sentinel reviews</td></tr>
+  <tr><td class="num">3</td><td><strong>Legal &amp; Compliance desk</strong> (“Counsel-prep”)</td><td>Prepare questions and documents for real counsel: securities (the raise), marketplace terms, privacy (location data), app-store rules (1.x, 3.1.1, 5.1), payment-processor acceptable-use policies.</td><td>Counsel brief; draft Terms, Privacy and Host Agreement for lawyer review</td><td>Statute (trademark desk) for name and mark</td></tr>
+  <tr><td class="num">4</td><td><strong>Payments Lead</strong> (“Ledger”)</td><td>Decide in-app purchase vs. web checkout per platform; host payouts (marketplace KYC, tax forms); refunds and chargebacks; fee model.</td><td>Payment architecture; payout flow; fee math after the app-store cut</td><td>New</td></tr>
+  <tr><td class="num">5</td><td><strong>Backend Lead</strong></td><td>Privacy-preserving proximity service; accounts and verification; consent-gated reveal of contact info; audit logs.</td><td>API; data model with location retention limits; abuse rate limits</td><td><strong>Atlas</strong></td></tr>
+  <tr><td class="num">6</td><td><strong>Designer</strong></td><td>Map and profile UX that makes consent obvious; host pricing screens; safety prompts.</td><td>Figma flows; design system</td><td><strong>Tony</strong></td></tr>
+  <tr><td class="num">7</td><td><strong>App Builder</strong></td><td>Build the iOS and Android app (and the web landing page).</td><td>TestFlight / closed-test builds; landing page</td><td><strong>Forge</strong></td></tr>
+  <tr><td class="num">8</td><td><strong>QA &amp; Trust testing</strong></td><td>Abuse-case testing (stalking, minors, scams); pre-submission store checks; regression.</td><td>Abuse test suite; store-readiness checklist</td><td><strong>Sentinel</strong></td></tr>
+  <tr><td class="num">9</td><td><strong>Ops &amp; Support</strong></td><td>Host onboarding and verification queue; support inbox; moderation shifts with human escalation.</td><td>Support macros; SLAs; escalation tree</td><td><strong>Riley</strong></td></tr>
+  <tr><td class="num">10</td><td><strong>Marketing</strong> (“Pulse”) + social design</td><td>Waitlist; one-city launch (campus or event first); host recruitment content; honest claims only.</td><td>Launch plan; content calendar; waitlist metrics</td><td>New, with <strong>Frame</strong> for visuals</td></tr>
+  <tr><td class="num">—</td><td><strong>Investor relations</strong></td><td>Only after counsel: data room, updates, verified-investor process.</td><td>Compliant raise materials</td><td><strong>Chief of Staff</strong></td></tr>
+</table>
+<div class="box">
+  <h4>Spin-up order and gates</h4>
+  <p><strong>Phase 0 (week 1–2):</strong> Spark, Guardian and Counsel-prep. Take the investor form private, write the safety spec, and get counsel’s answers on the raise and the model. <strong>Gate:</strong> are the model, app-store path and payments viable?</p>
+  <p><strong>Phase 1:</strong> Ledger, Atlas and Tony define payments and data. <strong>Phase 2:</strong> Forge and Sentinel build and test a closed beta in one city. <strong>Phase 3:</strong> Riley and Pulse/Frame run the launch. The Chief of Staff runs weekly reviews throughout.</p>
+</div>
+</section>
+
+<section data-label="DeepReach plan">
+<h2><span class="chip">DeepReach</span>Edits, a bot-run marketing plan and a team</h2>
+<div class="item">
+  <h3><span class="n">D.1</span>Specific edits (site and positioning)</h3>
+  <ul>
+    <li><strong>Pick a niche.</strong> “Small and growing businesses” is everyone. Lead with one vertical where proof can be built fast, such as local home-service businesses. Wash Wizardz is in-house and could become the first real, permissioned case study.</li>
+    <li><strong>Lead with the honest AI angle:</strong> “Marketing run by an AI team with a human strategist on every account.” That’s distinctive and true to how DeepReach would actually operate.</li>
+    <li><strong>Replace the proof block</strong> with only verified items (see fix #1 above). Until then, sell a <strong>free 10-minute marketing audit</strong> (a sample report) instead of “Trusted by 150+.”</li>
+    <li><strong>Add a cheaper first purchase</strong> before the 3-month minimum, such as a one-time setup or audit sprint (suggested price; untested), so buyers can try the service with less risk.</li>
+    <li>Remove email scraping and the Growth Projector. Add terms, privacy, og:image, a sitemap and robots.txt. Compress images. Fix the mobile hero and the sticky-button overlap.</li>
+  </ul>
+</div>
+<div class="item">
+  <h3><span class="n">D.2</span>Bot-run marketing strategy (DeepReach markets itself the way it would market a client)</h3>
+  <table>
+    <tr><th>Channel</th><th>Cadence</th><th>Content / action</th><th>Human gate</th></tr>
+    <tr><td>LinkedIn + Instagram</td><td>4 posts/week each</td><td>Before/after teardowns of local-business marketing, short how-tos, behind-the-scenes on the AI workflow</td><td>Jacob approves weekly batch</td></tr>
+    <tr><td>SEO blog</td><td>1 article/week</td><td>Practical guides for the chosen niche (“email welcome flows for pressure-washing companies”); each ends with the free audit</td><td>Spot-check before publishing</td></tr>
+    <tr><td>Free audit lead magnet</td><td>Always on</td><td>A form generates a short automated audit (site, Google profile, social); a human reviews it before it’s sent</td><td>Every audit reviewed</td></tr>
+    <tr><td>Outbound email</td><td>Start at 20/day, ramp slowly</td><td>Personalized notes to businesses with visible public gaps, opt-out included, sourced from compliant lists, not scraped. CAN-SPAM compliant.</td><td>Templates and lists approved</td></tr>
+    <tr><td>Partnerships</td><td>2 asks/month</td><td>Web designers and bookkeepers who refer clients (referral fee)</td><td>Jacob signs</td></tr>
+  </table>
+  <p><span class="label">Measure</span>A weekly scorecard: audits requested → calls booked → packages sold → month-4 retention. Track with UTMs on every link and GA4 conversion events (the site already has gtag). Report real numbers only; nothing on the site until it’s verified.</p>
+</div>
+<div class="item">
+  <h3><span class="n">D.3</span>Recommended DeepReach bot team</h3>
+  <table>
+    <tr><th>Role</th><th>Responsibilities</th><th>Hands off to</th><th>Reuse?</th></tr>
+    <tr><td><strong>Reach Lead</strong> (GM/strategist)</td><td>Positioning, offers, weekly scorecard, client strategy calls (with Jacob)</td><td>Everyone; reports to Chief of Staff</td><td>New</td></tr>
+    <tr><td><strong>Copy &amp; SEO</strong> (“Quill”)</td><td>Blog, captions, emails, audit write-ups</td><td>Frame (visuals) → Sentinel (claims check)</td><td>New</td></tr>
+    <tr><td><strong>Social design</strong></td><td>Post graphics, carousels, short-video storyboards</td><td>Reach Lead for scheduling</td><td><strong>Frame</strong></td></tr>
+    <tr><td><strong>Outbound SDR</strong> (“Signal”)</td><td>Prospect research, drafts, follow-ups; nothing sends without approval</td><td>Reach Lead (booked calls)</td><td>New</td></tr>
+    <tr><td><strong>Web</strong></td><td>Site fixes, landing pages, audit tool</td><td>Sentinel (QA)</td><td><strong>Forge</strong></td></tr>
+    <tr><td><strong>Claims &amp; QA</strong></td><td>Check every public claim, testimonial and email for compliance</td><td>Publishing</td><td><strong>Sentinel</strong></td></tr>
+    <tr><td><strong>Client ops</strong></td><td>Onboarding, monthly reports, renewals and churn alerts</td><td>Reach Lead</td><td><strong>Riley</strong></td></tr>
+  </table>
+</div>
+</section>
+
+<section data-label="Get UI Now plan">
+<h2><span class="chip">Get UI Now</span>Edits, a bot-run marketing plan and a team</h2>
+<div class="item">
+  <h3><span class="n">G.1</span>Specific edits (site and positioning)</h3>
+  <ul>
+    <li><strong>Sharpen the buyer.</strong> The highest-intent buyer is the founder about to build with Lovable, Bolt, Cursor or Rork, who wants real designed screens <em>before</em> prompting. Headline idea: “Pro app screens in 48 hours, ready to hand to your AI builder.” Only promise 48 hours if you can deliver it.</li>
+    <li><strong>Sell the $99 screen directly:</strong> checkout first, a brief form after. Keep quotes for larger tiers. State the delivery time per tier.</li>
+    <li><strong>Proof:</strong> turn the six portfolio tiles into short case cards (brief → screens → what launched, with a link), or relabel them as “sample work.”</li>
+    <li>Remove the v0 badge and the unexplained “Lumina Studio” line. Make phone optional. Add analytics, privacy and terms (the form collects phone numbers), og:image, a sitemap and robots.txt.</li>
+  </ul>
+</div>
+<div class="item">
+  <h3><span class="n">G.2</span>Bot-run marketing strategy</h3>
+  <table>
+    <tr><th>Channel</th><th>Cadence</th><th>Content / action</th><th>Human gate</th></tr>
+    <tr><td>X + LinkedIn “redesign of the day”</td><td>Daily</td><td>Take a public app screen (with credit, or one we built), post before → after with a 3-point rationale</td><td>Tony approves design quality</td></tr>
+    <tr><td>Dribbble / Behance</td><td>2 shots/week</td><td>Polished versions of the daily redesigns, linking to the $99 offer</td><td>Tony</td></tr>
+    <tr><td>Communities (r/SideProject, indie and no-code groups)</td><td>Weekly, within each community’s rules</td><td>Free one-screen teardown threads; no spam</td><td>Jacob approves first posts</td></tr>
+    <tr><td>SEO pages</td><td>2/week</td><td>“[App type] UI design examples + price” pages (fitness app, booking app…) built from real deliveries</td><td>Spot-check</td></tr>
+    <tr><td>Launch moments</td><td>Once, then quarterly</td><td>Product Hunt launch; a free “first screen” giveaway week</td><td>Jacob</td></tr>
+  </table>
+  <p><span class="label">Measure</span>Visits → quote/checkout starts → paid orders → repeat orders, with UTMs on every post and analytics installed first (none found today). Track design turnaround and revision counts so the 24-hour and delivery promises stay honest.</p>
+</div>
+<div class="item">
+  <h3><span class="n">G.3</span>Recommended Get UI Now bot team</h3>
+  <table>
+    <tr><th>Role</th><th>Responsibilities</th><th>Hands off to</th><th>Reuse?</th></tr>
+    <tr><td><strong>GUN Lead</strong> (GM)</td><td>Offer, pricing, scorecard, customer calls</td><td>Chief of Staff</td><td>New, or Brian part-time</td></tr>
+    <tr><td><strong>Screen generator</strong> (“Render”)</td><td>First drafts of screens from the brief, using AI tools, in Figma</td><td>Tony</td><td>New</td></tr>
+    <tr><td><strong>Design lead / quality bar</strong></td><td>Review and refine every delivery; daily redesign posts</td><td>Riley (delivery)</td><td><strong>Tony</strong></td></tr>
+    <tr><td><strong>Social visuals</strong></td><td>Format posts and portfolio shots</td><td>GUN Lead</td><td><strong>Frame</strong></td></tr>
+    <tr><td><strong>Outreach</strong> (“Scout”)</td><td>Find founders asking for design help in public; draft replies and DMs for approval</td><td>GUN Lead</td><td>New</td></tr>
+    <tr><td><strong>Web</strong></td><td>Checkout, SEO pages, site fixes</td><td>Sentinel</td><td><strong>Forge</strong></td></tr>
+    <tr><td><strong>Delivery ops</strong></td><td>Order intake, deadlines, revisions, invoices</td><td>Tony / customer</td><td><strong>Riley</strong></td></tr>
+    <tr><td><strong>QA &amp; IP check</strong></td><td>Check deliveries for licensing (fonts, images, icons) and broken links; review claims</td><td>Riley</td><td><strong>Sentinel</strong></td></tr>
+  </table>
+</div>
+<div class="box">
+  <h4>Gappy’s take</h4>
+  <p>All four sites share a pattern: a strong offer up top, but thin proof and missing basics underneath. One “basics bot” pass (legal pages, sitemap, og image, image compression, analytics) would lift every site at once. After that, the order is FlirtFee’s legal check, DeepReach’s claims cleanup, Get UI Now’s checkout, and Wash Wizardz’s speed.</p>
+</div>
+</section>
+
+<p class="colophon">Internal review prepared for Open Mind Innovations LLC, October 12, 2026. Observations reflect the public homepages as fetched on that date; dynamic content loaded later by scripts may differ. Regulatory notes are flags for counsel, not legal advice.</p>
+</body>
+</html>

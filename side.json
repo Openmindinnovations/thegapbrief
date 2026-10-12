@@ -1,6 +1,16 @@
 {
   "reports": [
     {
+      "slug": "portfolio-review",
+      "date": "2026-10-12",
+      "date_label": "October 12, 2026",
+      "title": "OMI Portfolio Review: Wash Wizardz, Get UI Now, DeepReach, FlirtFee and Fetch",
+      "summary": "Site-by-site fixes for the Open Mind Innovations companies, from unbacked trust claims and 8–11 MB pages to missing legal pages and a public investor form, plus bot-team plans for FlirtFee, DeepReach and Get UI Now.",
+      "mascot_says": "Strong offers up top, thin proof underneath. One basics pass helps every site.",
+      "pdf": "pdfs/side/portfolio-review.pdf",
+      "source": "briefs/side/portfolio-review/report.html"
+    },
+    {
       "slug": "app-review-preflight",
       "date": "2026-10-11",
       "date_label": "October 11, 2026",

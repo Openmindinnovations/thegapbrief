@@ -309,20 +309,49 @@ def side_outline(r):
     return out
 
 
-def build_side_index(site, reports):
-    prefix = "../"
-    if reports:
-        cards = "".join(f"""
-    <article class="card card-side">
-      <p class="eyebrow eyebrow-side"><span class="badge-side">Side Report</span> <time datetime="{r['date']}">{r['date_label']}</time></p>
-      <h3><a href="{r['slug']}/index.html">{html.escape(r['title'])}</a></h3>
+OMI_LABEL = "OMI Companies"
+
+
+def omi_tag(r):
+    """Small tag for reports filed under the OMI Companies branch (category "omi"), with optional company."""
+    if r.get("category") != "omi":
+        return ""
+    co = f" · {html.escape(r['company'])}" if r.get("company") else ""
+    return f' <span class="badge-omi">{OMI_LABEL}{co}</span>'
+
+
+def side_cards(reports, prefix, rel):
+    return "".join(f"""
+    <article class="card card-side{' card-omi' if r.get('category') == 'omi' else ''}">
+      <p class="eyebrow eyebrow-side"><span class="badge-side">Side Report</span>{omi_tag(r)} <time datetime="{r['date']}">{r['date_label']}</time></p>
+      <h3><a href="{rel}{r['slug']}/index.html">{html.escape(r['title'])}</a></h3>
       <p class="summary">{html.escape(r['summary'])}</p>
       <div class="actions">
         <a class="btn btn-small btn-side" href="{prefix}{r['pdf']}" download>Download PDF</a>
-        <a class="link link-side" href="{r['slug']}/index.html">Read →</a>
+        <a class="link link-side" href="{rel}{r['slug']}/index.html">Read →</a>
       </div>
     </article>""" for r in reports)
-        listing = f'<div class="side-list">{cards}\n  </div>'
+
+
+def build_side_index(site, reports):
+    prefix = "../"
+    omi = [r for r in reports if r.get("category") == "omi"]
+    general = [r for r in reports if r.get("category") != "omi"]
+    if reports:
+        listing = ""
+        if omi:
+            listing += f"""<section class="side-branch" id="omi-companies" aria-labelledby="omi-h">
+    <h2 class="section-title" id="omi-h">{OMI_LABEL} <span class="muted">reports for Open Mind Innovations portfolio companies · <a class="link link-side" href="omi-companies/index.html">branch page</a></span></h2>
+    <div class="side-list">{side_cards(omi, prefix, "")}
+    </div>
+  </section>
+  """
+        if general:
+            listing += f"""<section class="side-branch" id="research" aria-labelledby="gen-h">
+    <h2 class="section-title" id="gen-h">Research <span class="muted">markets, niches and ideas</span></h2>
+    <div class="side-list">{side_cards(general, prefix, "")}
+    </div>
+  </section>"""
     else:
         listing = f"""<div class="empty">{svg('gappy-head.svg', 'mascot-small')}<p>No side reports yet.</p></div>"""
     body = f"""{header(prefix, site, small=True, active="side")}
@@ -332,7 +361,7 @@ def build_side_index(site, reports):
       <p class="eyebrow eyebrow-side"><span class="badge-side">Side Reports</span></p>
       <h1 class="week-title">Side Reports</h1>
       <p class="summary lead">Detailed, one-off research on a question Jacob assigns: longer than a weekly issue, sourced the same way, published when it is ready.</p>
-      <p class="muted"><a class="link link-side" href="feed.xml">Side Reports RSS</a> · the weekly brief lives on the <a class="link link-side" href="{prefix}index.html">Weekly</a> page.</p>
+      <p class="muted"><a class="link link-side" href="#omi-companies">{OMI_LABEL}</a> · <a class="link link-side" href="#research">Research</a> · <a class="link link-side" href="feed.xml">Side Reports RSS</a> · the weekly brief lives on the <a class="link link-side" href="{prefix}index.html">Weekly</a> page.</p>
     </div>
     {svg('gappy-head.svg', 'mascot-side')}
   </section>
@@ -340,6 +369,28 @@ def build_side_index(site, reports):
 </main>
 {footer(prefix, site)}"""
     write("side/index.html", page(f"Side Reports | {site['name']}", body, prefix, "Detailed one-off research reports from TheGapBrief."))
+    build_omi_index(site, omi)
+
+
+def build_omi_index(site, omi):
+    prefix = "../../"
+    listing = f'<div class="side-list">{side_cards(omi, prefix, "../")}\n  </div>' if omi else \
+        f"""<div class="empty">{svg('gappy-head.svg', 'mascot-small')}<p>No OMI company reports yet.</p></div>"""
+    body = f"""{header(prefix, site, small=True, active="side")}
+<main class="wrap side-page">
+  <section class="side-hero">
+    <div>
+      <p class="eyebrow eyebrow-side"><span class="badge-side">Side Reports</span> <span class="badge-omi">{OMI_LABEL}</span></p>
+      <h1 class="week-title">{OMI_LABEL}</h1>
+      <p class="summary lead">Research done for Open Mind Innovations portfolio companies: market scans, site reviews and ad angles, each tagged with the company it serves.</p>
+      <p class="muted"><a class="link link-side" href="../index.html">All side reports</a></p>
+    </div>
+    {svg('gappy-head.svg', 'mascot-side')}
+  </section>
+  {listing}
+</main>
+{footer(prefix, site)}"""
+    write("side/omi-companies/index.html", page(f"{OMI_LABEL} | Side Reports | {site['name']}", body, prefix, "Side reports for Open Mind Innovations portfolio companies."))
 
 
 def build_side_report(site, r, newer, older):
@@ -356,7 +407,7 @@ def build_side_report(site, r, newer, older):
     navl += "</nav>"
     body = f"""{header(prefix, site, small=True, active="side")}
 <main class="wrap week-page side-page">
-  <p class="eyebrow eyebrow-side"><span class="badge-side">Side Report</span> <time datetime="{r['date']}">{r['date_label']}</time></p>
+  <p class="eyebrow eyebrow-side"><span class="badge-side">Side Report</span>{omi_tag(r)} <time datetime="{r['date']}">{r['date_label']}</time></p>
   <h1 class="week-title">{html.escape(r['title'])}</h1>
   <p class="summary lead">{html.escape(r['summary'])}</p>
   <div class="actions">

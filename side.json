@@ -1,6 +1,18 @@
 {
   "reports": [
     {
+      "slug": "ai-influencer-trends",
+      "date": "2026-10-13",
+      "date_label": "October 13, 2026",
+      "title": "AI Influencer Trends, Sep–Oct 2026: What CharacterGuard Ads Can Ride",
+      "summary": "Uncanny signature-look characters like Jean Philanthrope and Charles Robinson took off in weeks on Higgsfield-style motion transfer, and copycats followed within days. This report covers niches, hooks, tools, the fastest-growing accounts (sourced figures only), the stolen-face debate, 5 trends to ride and 3 CharacterGuard ad ideas.",
+      "mascot_says": "Go viral on Monday, get cloned by Friday. Lock it first.",
+      "pdf": "pdfs/side/ai-influencer-trends.pdf",
+      "source": "briefs/side/ai-influencer-trends/report.html",
+      "category": "omi",
+      "company": "CharacterGuard"
+    },
+    {
       "slug": "portfolio-review",
       "date": "2026-10-12",
       "date_label": "October 12, 2026",
@@ -8,7 +20,9 @@
       "summary": "Site-by-site fixes for the Open Mind Innovations companies, from unbacked trust claims and 8–11 MB pages to missing legal pages and a public investor form, plus bot-team plans for FlirtFee, DeepReach and Get UI Now.",
       "mascot_says": "Strong offers up top, thin proof underneath. One basics pass helps every site.",
       "pdf": "pdfs/side/portfolio-review.pdf",
-      "source": "briefs/side/portfolio-review/report.html"
+      "source": "briefs/side/portfolio-review/report.html",
+      "category": "omi",
+      "company": "Portfolio-wide"
     },
     {
       "slug": "app-review-preflight",

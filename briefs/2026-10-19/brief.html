@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TheGapBrief — Week 4 · October 19, 2026</title>
+<link rel="stylesheet" href="../brief.css">
+</head>
+<body>
+
+<header class="masthead">
+  <img class="mascot" src="../../assets/gappy.svg" alt="Gappy, the scout fox">
+  <div class="mast-text">
+  <p class="kicker">TheGapBrief — Week 4 · October 19, 2026</p>
+  <h1>The small features people relied on went missing. And age checks won in court.</h1>
+  <p class="dek">Product gaps, emerging markets, kids’ apps, and AI updates from October 12 – October 19, 2026.</p>
+  <p class="meta">Items are ranked within each section, most important first. Every claim links to its source; numbers appear only where a cited source states them. Review counts come from the cited review analyses, not from us.</p>
+  </div>
+</header>
+
+<p class="intro">This week’s gaps are small features with real consequences: per-meal carb totals that diabetics use to dose insulin, a free-text box for allergy notes, an aisle-ordered shopping list, a two-tap coffee reorder. Each one went away in a redesign, and users can’t turn it back on. In markets, stablecoins moved onto Mastercard’s card network, a bank rented a fintech’s whole platform, and Google’s cross-store cart went live. In kids’ apps, Florida won the right to enforce its under-14 social media law and sued Discord over age checks. In AI, Google shipped Gemini 4 Argon, Meta released a large open-weight model, and Character.AI filed for bankruptcy.</p>
+
+<ul class="contents">
+  <li class="c-gaps"><span class="dot"></span>Gaps · missing pieces in real products (6)</li>
+  <li class="c-markets"><span class="dot"></span>Markets · what is emerging (7)</li>
+  <li class="c-kids"><span class="dot"></span>Kids · popular, growing, missing (6)</li>
+  <li class="c-ai"><span class="dot"></span>AI · the week’s key updates (6)</li>
+</ul>
+
+<section class="s-gaps" data-section="gaps">
+<h2><span class="chip">Gaps</span>Missing gaps in real apps and products</h2>
+<p class="section-note">Real product, the missing piece, and why nobody covers it yet.</p>
+
+<div class="item">
+  <h3><span class="n">1.1</span>MyFitnessPal: carbs and protein per meal are gone from the diary</h3>
+  <p><span class="label">Missing</span>Macros for each meal. Since the October redesign (version 26.39.0 onward), the diary shows daily totals and only calories per meal. Tapping a meal opens the whole day.</p>
+  <p><span class="label">Evidence</span>Between October 1 and 16, Unstar counted 119 Google Play reviews blaming the redesign, 72 of them one-star. 52 say per-meal macros are gone. 5 lost carb counting they need for medical reasons, and 2 of them say they used the meal total to work out their insulin dose. MyFitnessPal replied to all 119 but announced no fix. It hasn’t said whether the view is now Premium-only, and the newest build, 26.41.0, still shows the problem.</p>
+  <p><span class="label">Why open</span>Diet apps treat per-meal totals as a layout choice. No “carb counting” mode exists that a redesign can’t remove, even when people use the number for dosing.</p>
+  <p class="src"><a href="https://unstar.app/blog/myfitnesspal-macros-per-meal-gone-new-diary-update-reviews-2026">Unstar: MyFitnessPal review analysis (Oct 18, 2026)</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">1.2</span>DoorDash on Android: the special-instructions box has disappeared</h3>
+  <p><span class="label">Missing</span>The free-text field for notes like “no bread” or “separate bags” on food items. DoorDash’s own help page still tells customers to use it.</p>
+  <p><span class="label">Evidence</span>Unstar found 25 Google Play reviews since July 30 saying the field is gone, 11 of them from October 1–15. 5 reviewers mention a food allergy or celiac disease. DoorDash replied to none of them. These complaints made up 0.3% of negative reviews in August and 1.2% in early October. A Reddit thread from September says the field still works on the website.</p>
+  <p><span class="label">Why open</span>The note box was the only way to flag an allergy if the restaurant didn’t offer a matching option. Delivery apps have no structured allergy field that goes with the order.</p>
+  <p class="src"><a href="https://unstar.app/blog/doordash-special-instructions-missing-cant-customize-order-reviews-2026">Unstar: DoorDash review analysis (Oct 16, 2026)</a> · <a href="https://www.reddit.com/r/doordash/comments/1wh8nxq/add_special_instructions_removed_from_the_app/">r/doordash thread</a> · <a href="https://help.doordash.com/en-us/consumers/article/can-i-specify-special-instructions-for-my-order">DoorDash Help Center</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">1.3</span>Smart TVs: no setting for “my apps, my HDMI inputs, nothing else”</h3>
+  <p><span class="label">Missing</span>An owner-controlled mode with no sponsored tiles, no viewing tracking (automatic content recognition) and a fast, plain launcher.</p>
+  <p><span class="label">Evidence</span>On October 17–19, developers shared open projects (“dumbtv” and “cleanyourtv”) that point an AI coding agent at an Android TV, Google TV or Fire TV set to disable ad and tracking packages and swap the launcher. The cleanyourtv creator says a few thousand people did the same within two days. Others report breaking or bricking their TVs.</p>
+  <p><span class="label">Why open</span>TV makers earn money from ads and viewing data, so they have little reason to sell a “dumb” mode. Owners are left with do-it-yourself hacks that can break the set.</p>
+  <p class="src"><a href="https://techcrunch.com/2026/10/19/people-are-using-ai-to-make-their-smart-tvs-dumb-again/">TechCrunch (Oct 19, 2026)</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">1.4</span>Alexa app: the shopping list can’t be put in store order anymore</h3>
+  <p><span class="label">Missing</span>Drag-to-reorder for list items, which shoppers used to match the order of store aisles. Since late September, the redesigned list also takes more taps to reach.</p>
+  <p><span class="label">Evidence</span>From September 30 to October 17, Unstar counted 57 Google Play reviews about lists, 36 of them one-star. 17 say lists don’t load or sync, 15 cite extra taps, and 4 can’t rearrange items. One reviewer with auto-update off saw the new design anyway, which suggests Amazon switched it on from its side. Amazon replied to none of the 12,000 reviews Unstar read.</p>
+  <p><span class="label">Why open</span>Voice-assistant lists are built for adding items by voice, not for using them in a store. Nobody offers a list that sorts itself by aisle.</p>
+  <p class="src"><a href="https://unstar.app/blog/alexa-app-shopping-list-changed-cant-rearrange-items-reviews-2026">Unstar: Alexa list review analysis (Oct 19, 2026)</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">1.5</span>Google Maps: police and crash alerts from hours or days ago won’t expire</h3>
+  <p><span class="label">Missing</span>Reports that expire on time, and a way for drivers to hide old ones. Normally a report clears itself if no one confirms it.</p>
+  <p><span class="label">Evidence</span>Android Authority reported on October 12 that incident reports were staying up for hours or up to a week, including around Chicago, Indianapolis and Minneapolis. It suggested the cause may be on Google’s servers. Unstar found 19 Android reviews since October 5. 11 of the 14 that give an age say the reports were 10+ hours old. The newer 26.41 build didn’t fix it, and Google replied to 4 with template answers.</p>
+  <p><span class="label">Why open</span>Crowd-reported alerts are only useful while they’re fresh. When expiry fails, drivers can’t filter by age.</p>
+  <p class="src"><a href="https://www.androidauthority.com/google-maps-stale-incident-reports-3722062/">Android Authority (Oct 12, 2026)</a> · <a href="https://unstar.app/blog/google-maps-old-police-reported-ahead-alerts-wont-clear-reviews-2026">Unstar (Oct 15, 2026)</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">1.6</span>Dunkin’ app: the rebuild made reordering and card reloads harder</h3>
+  <p><span class="label">Missing</span>The two-tap reorder for a usual order, favorites that carry over, and an “Add funds” button that can be reached. On some Android phones the button sits behind the navigation bar.</p>
+  <p><span class="label">Evidence</span>From October 1–15, Unstar counted 95 Google Play reviews blaming the new app, 72 of them one-star. 19 are about reorder or favorites and 13 about reloading. Negative reviews rose from 33.8% in September to 64.4% in early October. Dunkin’ replied to 74, almost always to say it would share the feedback. There’s no way back to the old app.</p>
+  <p><span class="label">Why open</span>Restaurant app rebuilds keep dropping the repeat-order shortcut that daily customers rely on. Unstar points to similar complaints about Taco Bell’s update.</p>
+  <p class="src"><a href="https://unstar.app/blog/dunkin-app-update-reorder-favorites-gone-cant-reload-card-reviews-2026">Unstar: Dunkin’ review analysis (Oct 17, 2026)</a></p>
+</div>
+</section>
+
+<section class="s-markets" data-section="markets">
+<h2><span class="chip">Markets</span>Emerging markets in apps and digital products</h2>
+<p class="section-note">What is actually showing up: new categories, rounds, launches, and the forces creating demand.</p>
+
+<div class="item">
+  <h3><span class="n">2.1</span>Stablecoin balances you can spend on a card network</h3>
+  <p>On October 15, Mastercard and BVNK launched the Global Money Platform. A single API lets banks, fintechs and companies offer accounts that hold fiat and stablecoins together, convert between them, issue stablecoin-linked cards, and pay out to local bank accounts through Mastercard Move. Nuvei, Marqeta, Ontop, Bolt Group and Almond FinTech are early integrators. Mastercard says Move coverage will expand to more than 40 currencies in 2027. <em>New development</em> on Week 2’s stablecoin-payouts item: this one runs on a card network itself.</p>
+  <p class="src"><a href="https://www.mastercard.com/us/en/news-and-trends/press/2026/october/mastercard-and-bvnk-launch-global-money-platform-to-power-a-mult.html">Mastercard press release (Oct 15, 2026)</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">2.2</span>Banks renting a fintech’s entire platform under their own brand</h3>
+  <p>Meow took a $31.6M Series B led by Stifel, with Archetype participating, bringing its total funding to over $60M. Stifel Bank will offer a white-label version of Meow’s treasury platform (cash, cards, bill pay, invoicing, stablecoin payments) to its venture and fund banking clients, with onboarding expected in early 2027. Stifel says its venture and fund banking deposits are now over $10 billion.</p>
+  <p class="src"><a href="https://www.meow.com/blog/meow-series-b-announcement">Meow (Oct 15, 2026)</a> · <a href="https://www.globenewswire.com/news-release/2026/10/15/3381637/0/en/stifel-makes-strategic-investment-in-meow-partners-to-launch-next-generation-digital-banking-platform.html">Stifel release</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">2.3</span>One shopping cart across many retailers</h3>
+  <p>Google’s Universal Cart went live in the US on October 15, in Search and the Gemini app. Shoppers can save items from different stores in one cart, get price-drop and restock alerts, see which card gives the best perks through Google Wallet, and either pay with Google Pay or send the items to the store’s own cart. Participating merchants, including Nike, Sephora, Target, Walmart and Wayfair, stay the seller of record. <em>New development</em> on Week 2’s checkout item: the cart now sits above any single store.</p>
+  <p class="src"><a href="https://blog.google/products-and-platforms/products/shopping/universal-cart-launch/">Google (Oct 15, 2026)</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">2.4</span>Inheritance tools built into bank accounts</h3>
+  <p>Prismm, a Startup Battlefield company at TechCrunch Disrupt (October 14), plugs into bank cores. Customers can name beneficiaries and give chosen family members access to accounts and documents ahead of time, so heirs can start transfers online. Its founders say banks lose billions in deposits each year when heirs move inherited money elsewhere. That figure is the founders’ claim.</p>
+  <p class="src"><a href="https://techcrunch.com/2026/10/14/prismm-helps-banks-keep-inherited-money-in-house/">TechCrunch (Oct 14, 2026)</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">2.5</span>Health tracking without a new wearable, and paid prevention plans</h3>
+  <p>Hiyd showed a 2.7 mm, 7-gram sensor that attaches to the back of the watch someone already owns and tracks heart rate, HRV and sleep. TechCrunch reports over 16,000 deposits ahead of a November Kickstarter. The same day, UK-based Stride raised a £4.6m seed round for DNA, blood and gut testing with dietitian support, and is taking its StrideOne membership to the US. Stride’s retention and customer figures are its own.</p>
+  <p class="src"><a href="https://techcrunch.com/2026/10/14/hiyd-is-a-health-tracker-that-attaches-to-the-watch-you-already-wear/">TechCrunch on Hiyd (Oct 14, 2026)</a> · <a href="https://www.getstride.com/blog/2026/10/stride-raises-4-6m-seed-funding/">Stride (Oct 14, 2026)</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">2.6</span>Proof that resold and luxury goods are real</h3>
+  <p>Veritas released a second-generation anti-counterfeit chip that works on metal and can be scanned through glass, for jewelry, trophies and fragrance bottles (October 16). Each tap produces a fresh authenticated response, and the chip has a tamper-detection wire. In India, Circle raised a Rs 25 crore seed round led by Nexus Venture Partners for a managed resale marketplace, and plans to spend on verification and “Trust Hubs.”</p>
+  <p class="src"><a href="https://techcrunch.com/2026/10/16/veritas-is-building-a-chip-to-verify-luxury-goods/">TechCrunch on Veritas (Oct 16, 2026)</a> · <a href="https://www.vccircle.com/spillgames-circle-oxg-space-rocketpay-revrag-ai-raise-early-stage-funding">VCCircle on Circle (Oct 14, 2026)</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">2.7</span>Visa and entry checks handled at the moment of booking</h3>
+  <p>Intellivisa raised a $3M pre-seed round, with participation from United Airlines Ventures. It plugs into airline and travel-agency bookings and walks each traveler through visa and entry requirements. It plans to expand from visas to other clearance requirements. Its approval-rate figure is the company’s own.</p>
+  <p class="src"><a href="https://www.phocuswire.com/news/startups/ai-travel-clearance-startup-intellivisa-raises-3m">PhocusWire (Oct 14, 2026)</a></p>
+</div>
+</section>
+
+<section class="s-kids" data-section="kids">
+<h2><span class="chip">Kids</span>Kids’ apps: popular, growing, missing</h2>
+<p class="section-note">What kids and families are using, what is growing, and what is still missing.</p>
+
+<div class="item">
+  <h3><span class="n">3.1</span>Popular: YouTube Kids now tops both US kids’ charts</h3>
+  <p><span class="label">Popular</span>In Appfigures’ hourly US iPhone Kids chart (checked October 19), the top free apps are YouTube Kids, Toca Boca World, LEGO Builder, Lingokids and ABCmouse, followed by Coloring Games for Kids 2-6!, Bluey: Let’s Play! and Avatar World. YouTube Kids also leads the 5-and-under chart, ahead of LEGO Builder and Lingokids. Netflix has three games on the charts: Toca Boca Jr Kitchen NETFLIX, Netflix Playground and Gabby’s Dollhouse NETFLIX. Rankings change hourly and are not download counts.</p>
+  <p class="src"><a href="https://app.appfigures.com/top-apps/ios-app-store/united-states/iphone/kids">Appfigures: US Kids</a> · <a href="https://app.appfigures.com/top-apps/ios-app-store/united-states/iphone/kids/5-and-under">US 5 &amp; Under</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">3.2</span>Missing: real age checks and safe defaults on kids’ chat platforms</h3>
+  <p><span class="label">Missing</span>Age verification stronger than an email address and a birthday, and default settings that keep strangers out of kids’ messages. Florida sued Discord on October 15 over both. The state alleges that adults can pose as children, that for years strangers could message kids by default, and that Discord doesn’t scan all private chats. It calls Discord’s September 22 teen safety settings too little, too late. These are allegations in a complaint, not findings.</p>
+  <p><span class="label">Why open</span>Gaming and chat apps link to one another. The complaint describes a child lured from Roblox to Discord, and no single safety check follows a child between apps.</p>
+  <p class="src"><a href="https://www.myfloridalegal.com/newsrelease/attorney-general-james-uthmeier-files-lawsuit-against-discord-deceiving-florida">Florida Attorney General (Oct 15, 2026)</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">3.3</span>Demand driver: Florida can now enforce its under-14 social media law</h3>
+  <p><span class="label">What changed</span>On October 14, the 11th Circuit ruled that Florida’s HB 3 is likely constitutional and reversed the injunction that blocked it. The law bars accounts for under-14s on platforms with “addictive features” like infinite scroll and requires parental consent for 14- and 15-year-olds. The case returns to district court. The industry group CCIA warns the ruling could push identity checks onto users of every age.</p>
+  <p><span class="label">Why it matters</span>While the case continues, covered apps need age checks and parental-consent flows for Florida users.</p>
+  <p class="src"><a href="https://www.courthousenews.com/11th-circuit-sides-with-florida-over-social-media-ban-for-minors/">Courthouse News (Oct 14, 2026)</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">3.4</span>Growing: parents can share an age range with apps, not a birthdate</h3>
+  <p><span class="label">Growing</span>On October 13, Google Play added a Family Link feature that lets parents share their child’s age range, or their own, with apps. Google describes it as giving apps “the minimum information required” for an age-appropriate experience. <em>New development</em> on Week 2’s age-signals item: parents now control the signal from the Play side.</p>
+  <p class="src"><a href="https://blog.google/products-and-platforms/platforms/google-play/google-play-updates-october-2026/">Google Play (Oct 13, 2026)</a> · <a href="https://techcrunch.com/2026/10/13/google-play-now-supports-private-vibe-coded-apps-built-just-for-you/">TechCrunch</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">3.5</span>Growing: apps where kids make the story instead of scrolling a feed</h3>
+  <p><span class="label">Growing</span>Giant’s co-founder wrote in Fortune (October 14) that the company has raised $8M to let children invent characters and shape stories as they unfold. He says it is COPPA certified, has no ads, and shows parents everything their children create. In Japan, Kids-UP began crowdfunding on October 15 for Rashinba, an English app where kids play shop staff. It promises to be fully free, with no ads or in-app purchases, and is due in December.</p>
+  <p><span class="label">Why it lands</span>Both pitch screen time where the child makes choices, not an endless feed, and both lead with no ads.</p>
+  <p class="src"><a href="https://fortune.com/2026/10/14/giant-cofounder-apartment-list-social-media-kids-safety/">Fortune (Oct 14, 2026)</a> · <a href="https://babytech.jp/en/2026/10/rashimba-campfire/">BabyTech.jp (Oct 16, 2026)</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">3.6</span>Growing: kids’ coding and AI classes expand across borders</h3>
+  <p><span class="label">Growing</span>Poland’s Coding Giants, which teaches coding, AI and math to children and teens in 13 markets, secured up to €6 million in venture debt from Orbit Capital, mainly to grow in the US and Mexico. Tech.eu puts its annual recurring revenue at about $15 million.</p>
+  <p class="src"><a href="https://tech.eu/2026/10/14/orbit-capital-backs-coding-giants-to-scale-stem-education-internationally/">Tech.eu (Oct 14, 2026)</a></p>
+</div>
+</section>
+
+<section class="s-ai" data-section="ai">
+<h2><span class="chip">AI</span>The most important AI updates this week</h2>
+<p class="section-note">What changed and why it matters.</p>
+
+<div class="item">
+  <h3><span class="n">4.1</span>Google releases Gemini 4 Argon</h3>
+  <p><span class="label">What changed</span>On October 13, Google made Gemini 4 Argon available worldwide in the API, the Gemini app (Pro and Ultra) and AI Mode in Search. It’s built for long, multi-step work in coding, finance, law and security. Introductory pricing is $2/$10 per million input/output tokens until November 30, then $4/$20. Google says Argon ranks #1 on the Vals Index and that Google teams using it raised agentic code submissions by more than 35%.</p>
+  <p><span class="label">Why it matters</span>Google is launching its frontier model at half its later list price. It also says it trained Argon to pause for human confirmation before irreversible steps, which matters for agents. The benchmarks and internal results are Google’s own.</p>
+  <p class="src"><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/">Google (Oct 13, 2026)</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">4.2</span>Google Play now runs personal apps people build with AI</h3>
+  <p><span class="label">What changed</span>Since October 13, US users aged 18 and over can build an Android app in Google AI Studio and install it privately through Google Play. It needs no developer account and doesn’t appear in the public store. Sharing with friends and family is coming. Moving an app to the public store will require a developer account and the usual reviews.</p>
+  <p><span class="label">Why it matters</span>App stores now have a category of “apps for one person” that skip Play’s review. These apps still have to follow Play’s policies.</p>
+  <p class="src"><a href="https://techcrunch.com/2026/10/13/google-play-now-supports-private-vibe-coded-apps-built-just-for-you/">TechCrunch (Oct 13, 2026)</a> · <a href="https://blog.google/products-and-platforms/platforms/google-play/google-play-updates-october-2026/">Google Play</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">4.3</span>Character.AI files for bankruptcy, and Disney bids for its staff and assets</h3>
+  <p><span class="label">What changed</span>Character.AI began a Chapter 11 sale on October 12, citing “legal, regulatory, and operational headwinds.” It says the platform will shut down if no buyer keeps it running. A filing reported by TechCrunch on October 18 shows Disney, the opening bidder, agreeing to offer jobs to at least 60 employees. Character.AI had earlier said Disney would buy some of its assets for $20 million. The company still faces a lawsuit from the mother of a 14-year-old and government investigations over child safety.</p>
+  <p><span class="label">Why it matters</span>A large AI companion app is being sold off under liability and child-safety pressure. If it is wound down, users lose the service. Character.AI says they can still export their data.</p>
+  <p class="src"><a href="https://blog.character.ai/an-update-on-character-ai/">Character.AI (Oct 12, 2026)</a> · <a href="https://techcrunch.com/2026/10/18/disney-agrees-to-hire-the-majority-of-character-ais-workforce/">TechCrunch (Oct 18, 2026)</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">4.4</span>Meta releases Muse Spark Open, a large open-weight model built for Macs</h3>
+  <p><span class="label">What changed</span>On October 15, Meta released Muse Spark Open, a natively multimodal model with 816 billion parameters and a 1M-token context window. It’s aimed at coding and agent work, and it can run locally on high-memory Mac Studios. Meta calls it the most capable US open-weight model, based on its own evaluations.</p>
+  <p><span class="label">Why it matters</span>A US lab is shipping open weights at this scale again, and they can run on desktop Macs instead of a server cluster. TechCrunch, citing Engadget, says that takes about 1 TB of RAM. Week 3 noted Mistral’s open weights are also due this month.</p>
+  <p class="src"><a href="https://techcrunch.com/2026/10/15/meta-launches-an-open-weight-model-that-runs-on-macs/">TechCrunch (Oct 15, 2026)</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">4.5</span>YouTube Music labels songs made mainly with AI</h3>
+  <p><span class="label">What changed</span>Starting October 14, YouTube Music shows a label on the player for tracks where generative AI made the composition and vocals. Tapping the label shows more detail. YouTube uses partner disclosures and its own detection tools, and the labels will come to the main YouTube app too.</p>
+  <p><span class="label">Why it matters</span>A major streaming service now discloses AI music to listeners by default. The label depends on what distributors declare and on what detection finds.</p>
+  <p class="src"><a href="https://blog.youtube/news-and-events/youtube-music-ai-labels/">YouTube (Oct 14, 2026)</a></p>
+</div>
+
+<div class="item">
+  <h3><span class="n">4.6</span>Anthropic commits 5% of its shares to a public benefit fund</h3>
+  <p><span class="label">What changed</span>On October 18, Anthropic said it will put 5% of its shares into a new Anthropic Public Benefit Fund, subject to stockholder approval. The board can add 2% more for every 50% rise in the company’s value above a baseline. The fund is an LLC that can make large donations or direct distributions, and Anthropic names AI’s effect on jobs as one example. It can’t use its equity for lobbying. Separately, on October 15, fast mode for Claude Opus 5.5 left research preview on the API.</p>
+  <p><span class="label">Why it matters</span>It ties a share of an AI lab’s gains to public spending as its value grows. The baseline and governance details haven’t been published yet.</p>
+  <p class="src"><a href="https://www.anthropic.com/news/public-benefit-fund">Anthropic (Oct 18, 2026)</a> · <a href="https://platform.claude.com/docs/en/release-notes/overview">Claude Platform release notes</a></p>
+</div>
+</section>
+
+<p class="colophon">TheGapBrief is published by Open Mind Innovations LLC. Week 4 covers October 12–19, 2026. Rankings reflect our judgment of importance; chart positions are snapshots from the cited trackers, not download counts. Company-reported figures are labeled as such.</p>
+</body>
+</html>

@@ -54,6 +54,19 @@
       "mascot_says": "New section this week: I went to the playground and checked which apps ask kids for nothing.",
       "pdf": "pdfs/thegapbrief-2026-10-12-week-3.pdf",
       "source": "briefs/2026-10-12-week-3/brief.html"
+    },
+    {
+      "week": 4,
+      "slug": "2026-10-19",
+      "label": "Week 4",
+      "date": "2026-10-19",
+      "date_label": "October 19, 2026",
+      "covering": "October 12 – October 19, 2026",
+      "title": "The small features people relied on went missing. And age checks won in court.",
+      "summary": "MyFitnessPal’s per-meal carbs, DoorDash’s allergy notes and Alexa’s aisle-order list disappeared in redesigns. Plus stablecoins on Mastercard’s network and a cross-store cart, Florida’s court win and Discord lawsuit, and Gemini 4 Argon, Meta’s open weights and Character.AI’s bankruptcy.",
+      "mascot_says": "This week I tracked the little buttons people tap every day. Several of them were gone.",
+      "pdf": "pdfs/thegapbrief-2026-10-19.pdf",
+      "source": "briefs/2026-10-19/brief.html"
     }
   ]
 }

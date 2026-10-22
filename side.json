@@ -1,6 +1,18 @@
 {
   "reports": [
     {
+      "slug": "agent-social-posting",
+      "date": "2026-10-22",
+      "date_label": "October 22, 2026",
+      "title": "Letting an AI Agent Post to X, Instagram and TikTok: Tools, Prices and a Setup for Every OMI Brand",
+      "summary": "Compares 15 options, from Zernio (formerly Late), Blotato, Postiz, Ayrshare and Buffer to Hootsuite, Sprout and the native APIs, on X/IG/TikTok support, MCP/API access, multi-brand support and stated prices. Top pick: Zernio's hosted MCP at $108/mo for 30 accounts plus X API usage, with Higgsfield for reviewed TikTok drops.",
+      "mascot_says": "Let the agent draft; let a human press Publish. And keep links out of X posts.",
+      "pdf": "pdfs/side/agent-social-posting.pdf",
+      "source": "briefs/side/agent-social-posting/report.html",
+      "category": "omi",
+      "company": "Portfolio-wide"
+    },
+    {
       "slug": "ai-course-for-kids",
       "date": "2026-10-20",
       "date_label": "October 20, 2026",

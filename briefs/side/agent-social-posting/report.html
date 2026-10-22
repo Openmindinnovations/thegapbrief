@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Letting an AI Agent Post to X, Instagram and TikTok: Tools, Prices and a Setup for Every OMI Brand · TheGapBrief Side Report</title>
+<link rel="stylesheet" href="../../brief.css">
+<link rel="stylesheet" href="../side.css">
+</head>
+<body>
+<!-- Side Report scaffold. Every <section> needs data-label="..." (shown as an outline column on the web page);
+     every <h3> inside a section becomes an outline line. Keep <span class="n">…</span> numbers inside h3 if you want them.
+     Rules: cite every claim; only cited, attributed numbers; no hype; flag compliance-heavy ideas. -->
+<header class="masthead">
+  <img class="mascot" src="../../../assets/gappy.svg" alt="Gappy, the scout fox">
+  <div class="mast-text">
+  <p class="kicker">TheGapBrief · Side Report · October 22, 2026</p>
+  <h1>Letting an AI Agent Post to X, Instagram and TikTok: Tools, Prices and a Setup for Every OMI Brand</h1>
+  <p class="dek">Which third-party services let Grok Bot post, schedule and read analytics on X, Instagram and TikTok through MCP or an API, what they cost as stated, and how to set them up for all 10 OMI brands.</p>
+  <p class="meta">Assigned by Jacob Peterson · OMI Companies · Portfolio-wide. Prices checked Oct 22, 2026. Every claim links to its source; numbers appear only where a cited source states them.</p>
+  </div>
+</header>
+
+<section data-label="Summary">
+<h2><span class="chip">Summary</span>Bottom line</h2>
+<div class="item">
+  <h3><span class="n">1</span>Top pick: Zernio (formerly Late) via its hosted MCP server</h3>
+  <p>Zernio has a hosted MCP endpoint, per-account billing with every feature included (publishing, analytics, comments, DMs), and the first 2 accounts free. For 10 brands × X/IG/TikTok (30 accounts), the stated rate card works out to <strong>$108/mo</strong>, plus X API pass-through at X's own rates.</p>
+  <p class="src"><a href="https://zernio.com/pricing">Zernio pricing</a> · <a href="https://docs.zernio.com/for-you/mcp">Zernio MCP</a></p>
+</div>
+<div class="item">
+  <h3><span class="n">2</span>Flat-price alternatives with MCP</h3>
+  <p><strong>Blotato Creator</strong>: $97/mo for 40 accounts, API and MCP on every paid plan, no per-post fee. <strong>Postiz Pro</strong>: $49/mo ($39 annual) for 30 channels, hosted MCP on every plan. Both are cheaper or more predictable if the X meter is a worry.</p>
+  <p class="src"><a href="https://www.blotato.com/pricing">Blotato rate card</a> · <a href="https://postiz.com/pricing">Postiz pricing</a></p>
+</div>
+<div class="item">
+  <h3><span class="n">3</span>Keep Higgsfield for TikTok, but with a human click</h3>
+  <p>The connected Higgsfield TikTok tool supports DIRECT_POST and UPLOAD_TO_DRAFT, but every publish needs a widget review/submit (a publish_token from the form), and it allows 13 posts per 24 h per account. Good for reviewed TikTok drops, not for unattended scheduling.</p>
+</div>
+</section>
+
+<section data-label="Caveats">
+<h2><span class="chip">Caveats</span>Platform caveats an agent can't skip</h2>
+<div class="item">
+  <h3><span class="n">2.1</span>X: pay-per-use is the only self-serve API</h3>
+  <p>Basic/Pro tiers are retired for new developers. Per a third-party guide citing X's rate card: $0.015 per post, <strong>$0.20 per post with a URL</strong>, $0.010 for summoned replies. Follow/like/quote-post endpoints were removed from self-serve on Apr 20, 2026. Example from those rates: 10 brands × 1 link post a day ≈ 300 posts ≈ $60/mo; plain posts ≈ $4.50/mo.</p>
+  <p class="src"><a href="https://api.sorsa.io/blog/twitter-api-pricing-2026">Sorsa X API guide</a> · <a href="https://social9.com/news/x-api-pay-per-use-pricing-link-posts-cost-more-2026">Social9</a></p>
+</div>
+<div class="item">
+  <h3><span class="n">2.2</span>Instagram: professional account required</h3>
+  <p>The Graph API publishes only to Instagram professional (business or creator) accounts, with app permissions; the limit is 100 API-published posts per rolling 24 h per account. Every OMI brand needs its IG switched to professional and (for Page-linked flows) a Facebook Page.</p>
+  <p class="src"><a href="https://developers.facebook.com/docs/instagram-platform/content-publishing">Meta: content publishing</a> · <a href="https://developers.facebook.com/docs/instagram-platform/instagram-graph-api/reference/ig-user/content_publishing_limit/">Meta: publishing limit</a></p>
+</div>
+<div class="item">
+  <h3><span class="n">2.3</span>TikTok: audits, and internal tools don't qualify</h3>
+  <p>Unaudited Direct Post clients can only post SELF_ONLY (private) and to at most 5 users per 24 h. TikTok's guidelines list "a utility tool to help upload contents to the account(s) you or your team manages" as <em>not acceptable</em>, so building our own TikTok app is unlikely to pass audit. Use an already-audited third party (or Higgsfield). There's also a posting cap of about 15/day per creator, shared across apps.</p>
+  <p class="src"><a href="https://developers.tiktok.com/doc/content-sharing-guidelines">TikTok sharing guidelines</a></p>
+</div>
+</section>
+
+<section data-label="Compare">
+<h2><span class="chip">Compare</span>Tool-by-tool comparison</h2>
+<div class="item">
+  <h3><span class="n">3.1</span>Platforms, agent access, multi-brand and price (as stated)</h3>
+  <table><thead><tr><th>Tool</th><th>X / IG / TikTok</th><th>Agent access</th><th>Multi-brand</th><th>Price (stated)</th></tr></thead><tbody><tr><td><a href="https://zernio.com/pricing">Zernio (formerly Late)</a></td><td>X, IG, TikTok + 13 more</td><td>REST API, SDKs, CLI, <strong>hosted MCP</strong></td><td>Per account; profiles/brands via API</td><td>2 free; $6/acct (3–10), $3 (11–100), $1 (101+); X API passed through at cost</td></tr><tr><td><a href="https://www.blotato.com/pricing">Blotato</a></td><td>X, IG, TikTok, LinkedIn, FB, Threads, Bluesky, Pinterest, YouTube</td><td>REST API + <strong>MCP</strong> (35 tools) on all paid plans; trial excludes API</td><td>Accounts counted in total</td><td>Starter $29 (20 accts) · Creator $97 (40) · Agency $499 (100); yearly ≈17% off</td></tr><tr><td><a href="https://postiz.com/pricing">Postiz</a></td><td>X, IG, TikTok and more</td><td>Public API, webhooks, CLI, <strong>hosted MCP</strong> on every plan; open-source self-host</td><td>Groups (customers)</td><td>Standard $29 (5 ch) · Team $39 (10) · Pro $49 (30) · Ultimate $99 (100); annual $23/$31/$39/$79</td></tr><tr><td><a href="https://www.ayrshare.com/pricing/">Ayrshare</a></td><td>X, IG, TikTok + 11 more</td><td>REST + GraphQL API (MCP not verified)</td><td>1 profile = 1 brand with all its networks</td><td>Premium $149 (1 profile) · Launch $299 (up to 10) · Business $599 (30)</td></tr><tr><td><a href="https://buffer.com/pricing">Buffer</a></td><td>X, IG, TikTok and more</td><td>GraphQL API on all plans (3,000–15,000 req/30 days); hosted MCP per <a href="https://www.blotato.com/blog/buffer-pricing">Blotato's review</a></td><td>Per channel</td><td>Essentials $5/ch (annual) or $6 monthly · Team $10/ch or $12; lower bands above 10 ch per Buffer rate card (third-party)</td></tr><tr><td><a href="https://help.metricool.com/plans-add-ons-and-api-access-explained-xux1u">Metricool</a></td><td>X (add-on), IG, TikTok and more</td><td>MCP on all plans; API only Advanced/Custom</td><td>Brands (1 profile per network each)</td><td>X add-on $10/acct/mo; plan prices: <a href="https://www.blotato.com/blog/metricool-pricing">third-party</a>: Starter 10 brands $45/mo ($36 annual), Advanced 15 brands $67 ($53)</td></tr><tr><td><a href="https://vistasocial.com/pricing">Vista Social</a></td><td>X (add-on), IG, TikTok and more</td><td>MCP listed under data integrations</td><td>Profiles</td><td>Professional $99 (15) · Advanced $199 (30) · Scale $449 (70); X $29/mo</td></tr><tr><td><a href="https://socialbee.com/pricing/">SocialBee</a></td><td>X, IG, TikTok and more</td><td>No public API stated; Zapier/Make/Pabbly</td><td>Workspaces (Pro: 5)</td><td>Bootstrap $29 (5) · Accelerate $49 (10) · Pro $99 (25) · Pro50 $179; +5 profiles $15/mo; +workspace $10/mo</td></tr><tr><td><a href="https://publer.com/help/en/article/what-are-publers-plans-and-pricing-15h4yqh/">Publer</a></td><td>X (paid plans), IG, TikTok and more</td><td>API + MCP for eligible Business/Enterprise</td><td>Unlimited workspaces</td><td>Business from $10/mo for 1 account; 10th account free per 9; total via calculator</td></tr><tr><td><a href="https://www.hootsuite.com/pricing">Hootsuite</a></td><td>X, IG, TikTok and more</td><td>API/MCP not verified on pricing page</td><td>Per user seat</td><td>Standard $99 (10 accts) · Professional $199 (unlimited) · Advanced $399 per user (annual)</td></tr><tr><td><a href="https://sproutsocial.com/pricing/">Sprout Social</a></td><td>X, IG, TikTok and more</td><td>API only on Advanced</td><td>Per seat</td><td>Standard $199 (5 profiles) · Professional $299 · Advanced $399 per seat/mo</td></tr><tr><td><a href="https://later.com/pricing/">Later</a></td><td>IG, TikTok, FB, Threads, YouTube, Pinterest, LinkedIn, Snapchat (<strong>no X</strong>)</td><td>No API/MCP stated</td><td>Social Sets (1 of each network)</td><td>Growth $37.50/mo annual (2 sets, 16 profiles); other tiers on page</td></tr><tr><td><a href="https://zapier.com/pricing">Zapier</a> / <a href="https://www.make.com/en/pricing">Make</a></td><td>Via each app's connector</td><td>Zapier MCP (1 MCP call = 2 tasks)</td><td>n/a (glue, not a scheduler)</td><td>Zapier Pro from $19.99/mo annual (750 tasks); Make prices not shown in our fetch</td></tr><tr><td>Higgsfield TikTok (connected)</td><td>TikTok only</td><td>MCP: tiktok_prepare_publish → widget → tiktok_publish</td><td>Per connected TikTok</td><td>Included with the existing Higgsfield connection (no separate price checked)</td></tr><tr><td><a href="https://api.sorsa.io/blog/twitter-api-pricing-2026">Native APIs</a></td><td>Each platform alone</td><td>Build and host it yourself</td><td>—</td><td>X pay-per-use; IG Graph free but requires professional accounts; TikTok needs an audit we likely can't pass</td></tr></tbody></table><p class="note">Prices are from the linked official pages, checked Oct 22, 2026. Exceptions: Metricool plan prices and Buffer volume bands come from Blotato's blog, and Blotato is a competitor. TikTok direct-post vs. draft mode per vendor was not verified for each third party; Higgsfield supports both.</p>
+</div>
+</section>
+
+<section data-label="Setup">
+<h2><span class="chip">Setup</span>Recommended setup for the OMI portfolio</h2>
+<div class="item">
+  <h3><span class="n">4.1</span>Count: 10 brands × 3 networks = 30 accounts</h3>
+  <p>Brands: Kapsoul, Hivvly, iMusement, CharacterGuard, Anchor AR, FlirtFee, DeepReach / Deep Reach Studios, GetUINow, ShipSonar, TheGapBrief. One X, one Instagram professional and one TikTok each. Add more if a brand runs LinkedIn, Threads or YouTube.</p>
+</div>
+<div class="item">
+  <h3><span class="n">4.2</span>Monthly cost at 30 accounts (computed only from stated prices)</h3>
+  <table><thead><tr><th>Plan</th><th>Fits</th><th>Math</th><th>Monthly</th></tr></thead><tbody><tr><td>Zernio</td><td>30 accounts</td><td>2 free + 8×$6 + 20×$3</td><td><strong>$108</strong> + X API usage</td></tr><tr><td>Blotato Creator</td><td>30 of 40 accounts</td><td>flat</td><td><strong>$97</strong> (yearly ≈17% off)</td></tr><tr><td>Postiz Pro</td><td>30 of 30 channels (no headroom)</td><td>flat</td><td><strong>$49</strong> monthly / $39 annual</td></tr><tr><td>Postiz Ultimate</td><td>up to 100 channels</td><td>flat</td><td>$99 monthly / $79 annual</td></tr><tr><td>Buffer Essentials</td><td>30 channels</td><td>30×$6 at the official monthly rate (upper bound; volume bands lower it)</td><td>≤ $180</td></tr><tr><td>Metricool Starter (10 brands) + 10 X add-ons</td><td>10 brands</td><td>$45 + 10×$10 (Starter price is third-party)</td><td>$145 (no API; MCP yes)</td></tr><tr><td>Vista Social Advanced</td><td>30 profiles + X</td><td>$199 + $29</td><td>$228</td></tr><tr><td>SocialBee Pro</td><td>25 + 5 profiles, 5 + 5 workspaces</td><td>$99 + $15 + 5×$10</td><td>$164 (no agent API)</td></tr><tr><td>Ayrshare Launch</td><td>10 profiles (1 per brand)</td><td>flat</td><td>$299</td></tr><tr><td>Hootsuite Professional</td><td>unlimited accounts, 1 user</td><td>per user, annual</td><td>$199</td></tr><tr><td>Sprout Social Advanced (API)</td><td>unlimited profiles, 1 seat</td><td>per seat</td><td>$399</td></tr></tbody></table>
+</div>
+<div class="item">
+  <h3><span class="n">4.3</span>Recommended stack</h3>
+  <ol><li><strong>Zernio</strong> as the agent's posting and analytics layer: connect its hosted MCP to Grok Bot. Start with 2 free accounts, e.g. TheGapBrief X and IG, then add brands.</li><li>Set an <strong>X budget</strong>: avoid URLs in X posts where possible (put the link in a reply or the bio), since link posts are about 13× the cost of plain ones.</li><li><strong>Higgsfield</strong> for TikTok videos made in Higgsfield, with Jacob clicking Publish in the widget.</li><li>Fallback: <strong>Blotato Creator ($97)</strong> if a flat bill matters more than per-account flexibility, or <strong>Postiz</strong> if budget is tightest.</li></ol>
+</div>
+<div class="item">
+  <h3><span class="n">4.4</span>Before connecting</h3>
+  <ul><li>Switch every brand's Instagram to a professional account and link a Facebook Page.</li><li>Make sure each TikTok account is public and in good standing. Expect each tool's TikTok posting to be subject to TikTok's per-creator daily cap.</li><li>Keep one human approval step: draft by agent, publish after Jacob OKs it (Postiz and Zernio support drafts).</li><li>Disclose AI-generated media (TikTok AIGC flag, platform labels).</li></ul>
+</div>
+</section>
+
+<section data-label="Risks">
+<h2><span class="chip">Risks</span>Risks and unknowns</h2>
+<div class="item">
+  <h3><span class="n">5.1</span>X costs and rules move fast</h3>
+  <p>X changed its prices and endpoints several times in 2026 (Feb, Apr, Jun, Sep). Re-check before budgeting.</p>
+  <p class="src"><a href="https://api.sorsa.io/blog/twitter-api-pricing-2026">Sorsa</a></p>
+</div>
+<div class="item">
+  <h3><span class="n">5.2</span>Third-party TikTok mode not verified per vendor</h3>
+  <p>Confirm direct post vs. draft on a trial account before committing.</p>
+</div>
+<div class="item">
+  <h3><span class="n">5.3</span>Blotato's trial excludes API/MCP</h3>
+  <p>Generating an API key ends the trial and starts billing.</p>
+  <p class="src"><a href="https://www.blotato.com/pricing">Blotato rate card</a></p>
+</div>
+<div class="item">
+  <h3><span class="n">5.4</span>Automation and spam limits</h3>
+  <p>Every platform enforces its own caps (IG 100/24 h; TikTok about 15/day per creator). Don't cross-post identical content across 10 brands at once.</p>
+  <p class="src"><a href="https://developers.facebook.com/docs/instagram-platform/instagram-graph-api/reference/ig-user/content_publishing_limit/">Meta</a> · <a href="https://developers.tiktok.com/doc/content-sharing-guidelines">TikTok</a></p>
+</div>
+</section>
+
+<p class="colophon">TheGapBrief Side Reports are published by Open Mind Innovations LLC. Researched October 22, 2026. Prices and figures are as shown by the linked sources on that date; nothing here is legal, tax, or investment advice.</p>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>A Coin Run by a Bot Team: Tokenomics, Holder Voting, the Cheapest Launch Path and Hot Crypto Markets · TheGapBrief Side Report</title>
+<link rel="stylesheet" href="../../brief.css">
+<link rel="stylesheet" href="../side.css">
+</head>
+<body>
+<!-- Side Report scaffold. Every <section> needs data-label="..." (shown as an outline column on the web page);
+     every <h3> inside a section becomes an outline line. Keep <span class="n">…</span> numbers inside h3 if you want them.
+     Rules: cite every claim; only cited, attributed numbers; no hype; flag compliance-heavy ideas. -->
+<header class="masthead">
+  <img class="mascot" src="../../../assets/gappy.svg" alt="Gappy, the scout fox">
+  <div class="mast-text">
+  <p class="kicker">TheGapBrief · Side Report · October 27, 2026</p>
+  <h1>A Coin Run by a Bot Team: Tokenomics, Holder Voting, the Cheapest Launch Path and Hot Crypto Markets</h1>
+  <p class="dek">How a token built and operated by AI agents could fund its own compute, let holders vote on what the bots build next, launch for close to nothing, and earn its way onto exchanges. Plus original ideas and where crypto attention is right now.</p>
+  <p class="meta">Assigned by Jacob Peterson · Research. Prices and data checked Oct 27, 2026. Every figure links to its source. Allocation percentages and feature ideas are our own design proposals and are labeled that way. This is not legal, tax or investment advice.</p>
+  </div>
+</header>
+
+<section data-label="Summary">
+<h2><span class="chip">Summary</span>Bottom line</h2>
+<div class="item">
+  <h3><span class="n">1</span>Recommendation: a Base launch with a utility-first token, a compute treasury and Snapshot voting</h3>
+  <p>Launch on <strong>Base through Clanker</strong>. You pay only gas, the liquidity is locked from day one, and Clanker's new "Droid" option pays an agent's running costs from LP fees, which matches "keep the bots working." Start governance on <strong>off-chain Snapshot</strong> (no gas for voters) and move binding treasury votes on-chain later. Skip paid CEX listings at first: build DEX volume and holders, then apply directly to MEXC, which has the lowest reported entry bar.</p>
+  <p class="src"><a href="https://www.clanker.world/deploy">Clanker deploy page</a> · <a href="https://openliquid.io/blog/cex-listing-requirements-2026/">OpenLiquid CEX requirements</a></p>
+</div>
+<div class="item">
+  <h3><span class="n">2</span>Cheapest real cost to go live: gas only. A tier-2 CEX costs tens of thousands</h3>
+  <p>Creating a coin on pump.fun (Solana) or Clanker/Zora (Base) has no platform fee. Reported CEX entry costs run from about $20K–$75K all-in at MEXC to $500K–$2M+ at Binance (OpenLiquid). Binance itself says it charges no listing fee and that anyone promising a listing is a fraud.</p>
+  <p class="src"><a href="https://pump.fun/docs/fees">pump.fun fees</a> · <a href="https://openliquid.io/blog/how-to-get-listed-mexc/">OpenLiquid MEXC guide</a> · <a href="https://www.mexc.co/en-PH/news/292643">Binance listing warning (via MEXC News)</a></p>
+</div>
+<div class="item">
+  <h3><span class="n">3</span>Be careful with timing: AI-agent tokens are down hard and prediction markets are at records</h3>
+  <p>AI-agent tokens are about $3.4–3.5B in total market cap (CoinGecko, Sharpe), down about 80% from a ~$15.7B peak in January 2025 (WooFun). The story has to be real work done on-chain, not a chatbot with a ticker.</p>
+  <p class="src"><a href="https://www.coingecko.com/en/categories/ai-agents">CoinGecko AI Agents</a> · <a href="https://www.woofun.ai/en/news/detail/114425">WooFun Research</a></p>
+</div>
+</section>
+
+<section data-label="Tokenomics">
+<h2><span class="chip">Tokenomics</span>An allocation that keeps the bots running</h2>
+<div class="box"><strong>Design proposal (our numbers, not sourced benchmarks).</strong> Fixed supply, no mint function, every wallet public, and every bot wallet labeled on-chain.</div>
+<table>
+<tr><th>Bucket</th><th>Share</th><th>Rules</th></tr>
+<tr><td>Public launch / liquidity</td><td>60%</td><td>Fair launch on a bonding curve or locked pool. No presale, no private round.</td></tr>
+<tr><td>Bot Compute Treasury</td><td>20%</td><td>Multisig with timelocks. Pays only for inference, API and hosting bills. Monthly cap set by holder vote. Each payment links to an invoice hash.</td></tr>
+<tr><td>Community feature bounties</td><td>10%</td><td>Released only when a voted feature ships and is verified.</td></tr>
+<tr><td>Builder (human operator)</td><td>5%</td><td>12-month cliff, then 24-month linear vesting. Locked through a public vesting contract.</td></tr>
+<tr><td>Security / audit / legal reserve</td><td>5%</td><td>Audits, bug bounty, legal review.</td></tr>
+</table>
+<div class="item">
+  <h3><span class="n">2.1</span>Fund compute from fees, not token sales</h3>
+  <p>Treasury tokens dumped on the market to pay bills will sink the price. Pay the bots from <strong>trading-fee revenue in SOL/USDC</strong> first. On pump.fun the creator earns 0.30% of bonding-curve volume, and after graduation that share rises to as much as 0.95% at some market-cap tiers. On Base, Clanker routes LP rewards (it keeps 20% of LP fees). Its Droid feature funds an agent from LP rewards and lets anyone top up the Droid's wallet in USDC.</p>
+  <p class="src"><a href="https://pump.fun/docs/fees">pump.fun fee table</a> · <a href="https://poolfans.gitbook.io/poolfans-docs/guides/clanker">Clanker fees (PoolFans docs)</a> · <a href="https://www.clanker.world/deploy">Clanker Droid</a></p>
+</div>
+<div class="item">
+  <h3><span class="n">2.2</span>A public "burn meter"</h3>
+  <p>Idea: post a live dashboard of the bots' monthly compute spend next to fee income, and show how many months of runway are left. If income exceeds spend, holders vote on whether the surplus goes to buyback, bounties or more bots.</p>
+</div>
+</section>
+
+<section data-label="Governance">
+<h2><span class="chip">Voting</span>Democratic feature voting: the options</h2>
+<table>
+<tr><th>Option</th><th>How it works</th><th>Fits</th></tr>
+<tr><td>Snapshot (off-chain)</td><td>Signed votes, no gas. Supports quadratic voting, which needs Sybil-resistant validation.</td><td>Feature polls from day 1</td></tr>
+<tr><td>Snapshot X (on-chain)</td><td>Fully on-chain and modular: you choose the authentication, voting-power and execution strategies.</td><td>Binding treasury votes</td></tr>
+<tr><td>Realms (Solana)</td><td>SPL governance. Its QV plugin uses a√x + bx + c voting power with Civic Pass identity checks.</td><td>A Solana launch</td></tr>
+<tr><td>Governor-style (EVM)</td><td>Proposals execute after a timelock.</td><td>A mature, larger treasury</td></tr>
+<tr><td>Conviction voting</td><td>Support builds over time, so it suits continuous funding rather than urgent decisions.</td><td>The compute budget stream</td></tr>
+</table>
+<p class="src"><a href="https://docs.snapshot.box/proposals/voting-types">Snapshot voting types</a> · <a href="https://docs.snapshot.box/snapshot-x/overview">Snapshot X</a> · <a href="https://docs.realms.today/developer-resources/plugins-v1/v1-quadratic-voting">Realms QV</a></p>
+<div class="item">
+  <h3><span class="n">3.1</span>Suggested setup</h3>
+  <p>Use quadratic voting for feature choices, so a single whale can't decide the roadmap. Use conviction voting for the monthly compute budget. Require a timelock plus a human veto on any vote that moves treasury funds, so a governance attack can't drain it.</p>
+</div>
+</section>
+
+<section data-label="Launch">
+<h2><span class="chip">Launch</span>The cheapest route to launch and to exchanges</h2>
+<table>
+<tr><th>Path</th><th>Chain</th><th>Launch cost</th><th>Trade fee / creator cut</th></tr>
+<tr><td>pump.fun</td><td>Solana</td><td>No platform fee. 0.015 SOL at graduation.</td><td>1.25% on the curve; creator gets 0.30%</td></tr>
+<tr><td>Clanker</td><td>Base</td><td>Gas only</td><td>Default static 1%; Clanker keeps 20% of LP fees</td></tr>
+<tr><td>Zora</td><td>Base / Solana</td><td>No creation fee</td><td>1%; Zora says 0.70% goes to the creator</td></tr>
+<tr><td>Jupiter Studio</td><td>Solana</td><td>Not published</td><td>1%, split 50/50 (per sasa)</td></tr>
+<tr><td>Virtuals (Unicorn)</td><td>Base</td><td>Bonding curve paired with $VIRTUAL; graduates at 42,000 VIRTUAL</td><td>An agent-native audience</td></tr>
+</table>
+<p class="src"><a href="https://pump.fun/docs/fees">pump.fun</a> · <a href="https://support.zora.co/en/articles/4641857">Zora support</a> · <a href="https://sasapad.fun/learn/meme-coin-launchpad-fees-compared/">sasa launchpad comparison</a> · <a href="https://whitepaper.virtuals.io/about-virtuals/capital-formation-layer">Virtuals whitepaper</a></p>
+<div class="item">
+  <h3><span class="n">4.1</span>CEX listing: costs and bars (reported, not official)</h3>
+  <table>
+  <tr><th>Exchange</th><th>Reported total</th><th>Holders / daily DEX volume</th></tr>
+  <tr><td>MEXC</td><td>$20K–$75K</td><td>1,000 / $100K</td></tr>
+  <tr><td>Bitget</td><td>$25K–$80K</td><td>1,500 / $100K</td></tr>
+  <tr><td>Gate</td><td>$50K–$150K (Tokpie quotes 130K USDT + $100K in tokens + 50K USDT MM)</td><td>2,000 / $150K</td></tr>
+  <tr><td>KuCoin</td><td>$100K–$300K</td><td>5,000 / $300K</td></tr>
+  <tr><td>Binance</td><td>$500K–$2M+ (Binance says there is no listing fee)</td><td>10,000+ / $1M+</td></tr>
+  </table>
+  <p>Small exchanges list for less: Tokpie quotes BITStorage and VinDAX at 750 USDT base and its own listing at 990 USDT plus $250 in tokens. Those venues add little real liquidity or credibility. Audits are reported at $5K–$20K.</p>
+  <p class="src"><a href="https://openliquid.io/blog/cex-listing-requirements-2026/">OpenLiquid requirements table</a> · <a href="https://tokpie.io/blog/crypto-exchange-listing-fees-2026/">Tokpie fee guide</a> · <a href="https://openliquid.io/blog/how-to-get-listed-mexc/">OpenLiquid MEXC</a></p>
+</div>
+<div class="item">
+  <h3><span class="n">4.2</span>Lean sequence</h3>
+  <p>1) Launch on a gas-only launchpad. 2) Get an audit if you add any custom contracts (treasury, vesting). 3) Get listed on CoinGecko and DEX screeners. 4) Grow organic holders and volume. 5) Apply directly to MEXC and Bitget, and never through a "listing agent."</p>
+</div>
+</section>
+
+<section data-label="Ideas">
+<h2><span class="chip">Ideas</span>Ways to stand out (ideas, unverified as "first")</h2>
+<div class="box">Everything below is our own idea. We did not find these exact combinations in our searches, but that doesn't prove nobody has built them.</div>
+<div class="item"><h3><span class="n">5.1</span>"Hire the next bot" votes</h3><p>Holders vote to add a new agent role, such as auditor, meme artist or market-data analyst. The treasury funds its compute only while its public KPIs stay above a voted threshold, and it is "fired" automatically when they fall.</p></div>
+<div class="item"><h3><span class="n">5.2</span>Proof-of-work logs</h3><p>Each bot posts a signed, hashed log of every task, commit and API bill on-chain. Holders can audit exactly what the treasury bought.</p></div>
+<div class="item"><h3><span class="n">5.3</span>Bot-vs-bot roadmap debates</h3><p>Before each vote, two agents argue for and against a proposal in a public livestream, with an on-chain summary attached to the ballot.</p></div>
+<div class="item"><h3><span class="n">5.4</span>Feature futures</h3><p>A small prediction market on "will feature X ship by date Y," with resolution posted by the bots' proof logs. This connects to the hottest sector right now. It is compliance-heavy (see Legal).</p></div>
+<div class="item"><h3><span class="n">5.5</span>Compute-backed floor</h3><p>Surplus fees buy prepaid inference credits that holders can redeem by voting for public-good jobs, so the token stands for a claim on bot labor directed by votes.</p></div>
+<div class="item"><h3><span class="n">5.6</span>Agent-paid micro-services</h3><p>The bots sell small services to other agents (data pulls, summaries) over x402-style pay-per-query rails, and the income flows to the compute treasury.</p><p class="src"><a href="https://virtuals.substack.com/p/virtuals-monthly-update-september">Virtuals update (x402 use)</a></p></div>
+<div class="item"><h3><span class="n">5.7</span>Kill switch vote</h3><p>Holders can vote to pause the bots and send the remaining treasury back pro rata. This is a credible answer to "is this a rug?"</p></div>
+</section>
+
+<section data-label="Markets">
+<h2><span class="chip">Markets</span>Hot emerging crypto markets now</h2>
+<div class="item"><h3><span class="n">6.1</span>Prediction markets: record October</h3><p>Kalshi did $4.39B in monthly volume, passing Polymarket's $3.02B for the first time, and Polymarket set records of 477,850 monthly active traders and 38,270 new markets (Predictable, Oct 21). <em>Hottest by activity.</em></p><p class="src"><a href="https://predictable.gg/news/2026/10/21/kalshi-overtakes-polymarket-in-october/">Predictable</a> · <a href="https://www.theblock.co/post/377214/polymarket-rebounds-kalshi-leads">The Block</a></p></div>
+<div class="item"><h3><span class="n">6.2</span>RWA / tokenization</h3><p>Prime Ledger's 2026 report puts public-chain RWA value at about $39B, with tokenized Treasuries leading at $14.7B. TokenPost reported tokenized assets up 118.44% (period per article).</p><p class="src"><a href="https://www.primeledger.io/reports/Future-of-Tokenization-2026.pdf">Prime Ledger</a> · <a href="https://www.tokenpost.com/news/investing/41547">TokenPost</a></p></div>
+<div class="item"><h3><span class="n">6.3</span>AI agents: shakeout, then utility</h3><p>A curated basket (VIRTUAL, FET, KITE, OLAS) totals about $1.09B. Agenteconomy.to calls the broader category "memecoin-contaminated." Virtuals' ACP v2.0 adds agent-to-agent escrow and settlement. The opening is agents that do verifiable work.</p><p class="src"><a href="https://agenteconomy.to/stats/ai-agent-token-market-cap">agenteconomy.to</a> · <a href="https://whitepaper.virtuals.io/acp/acp-changelogs">Virtuals ACP changelog</a></p></div>
+<div class="item"><h3><span class="n">6.4</span>Launchpad and creator coins</h3><p>Zora added custom pairs (including Robinhood stock tokens) and Robinhood Chain in August 2026. Clanker added agent "Droids." Launching is cheap and commoditized, so distribution is the real moat.</p><p class="src"><a href="https://support.zora.co/en/articles/4641857">Zora changelog</a></p></div>
+<p class="meta">DePIN: our searches returned no current sourced figures, so we've left it out rather than guess.</p>
+</section>
+
+<section data-label="Legal">
+<h2><span class="chip">Legal</span>Legal and risk, plainly (not legal advice)</h2>
+<div class="item"><h3><span class="n">7.1</span>SEC: the line is "managerial efforts of others"</h3><p>The SEC's March 2026 interpretation (effective Mar 23) treats meme coins as digital collectibles that are not securities, because their value comes from supply and demand. A coin that promises a team of bots will build features to raise its value looks more like an investment contract. Market it as a <strong>utility and voting token</strong>, and never promise returns. The proposed "Regulation Crypto Assets" is not final; White &amp; Case doesn't expect a final rule before Q1 2027. The CLARITY Act is not law: Senate cloture failed 49–50 on Sep 15, 2026.</p><p class="src"><a href="https://www.sec.gov/newsroom/press-releases/2026-30-sec-clarifies-application-federal-securities-laws-crypto-assets">SEC release</a> · <a href="https://www.whitecase.com/insight-alert/sec-proposes-regulation-crypto-assets-rulemaking">White &amp; Case</a> · <a href="https://cryptoticker.io/en/clarity-act-explained/">CryptoTicker</a></p></div>
+<div class="item"><h3><span class="n">7.2</span>Washington State</h3><p>Washington DFI generally requires a money-transmitter license for exchanges, custodial wallets that can move funds, and virtual-currency payment processors serving residents. Keep the treasury in a non-custodial multisig and don't hold or move users' funds.</p><p class="src"><a href="https://dfi.wa.gov/consumers/virtual-currency-cryptocurrency-and-digital-assets-primer">WA DFI primer</a></p></div>
+<div class="item"><h3><span class="n">7.3</span>Rug-pull perception and reputation</h3><p>Most of the previous cycle's top AI-agent tokens are down 90–99% (WooFun), and the public assumes the worst. Mitigations: locked LP, a vested builder share, a public treasury, the kill-switch vote, a named human accountable for the project, and no paid influencers without disclosure. Run it through a separate LLC, and get a crypto lawyer to review it before launch.</p><p class="src"><a href="https://www.woofun.ai/en/news/detail/114425">WooFun Research</a></p></div>
+</section>
+
+
+<p class="colophon">TheGapBrief Side Reports are published by Open Mind Innovations LLC. Researched October 27, 2026. Prices and figures are as shown by the linked sources on that date; nothing here is legal, tax, or investment advice.</p>
+</body>
+</html>

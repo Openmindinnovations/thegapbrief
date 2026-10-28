@@ -1,6 +1,16 @@
 {
   "reports": [
     {
+      "slug": "ai-character-smugworth",
+      "date": "2026-10-28",
+      "date_label": "October 28, 2026",
+      "title": "Building an Obnoxious Genius: An Original AI Influencer for Higgsfield, 20 Viral Formats to Remake and a Full Character Bible",
+      "summary": "Uncanny signature-look AI characters (Jean Phil, Charles Robinson, Candy the greyhound) are winning by dropping one readable silhouette into every trend. This report lists 20 sourced viral formats to remake, plus a full bible for an original wild-haired know-it-all, Professor Smugworth: face, hair, outfits, palette, voice, Higgsfield prompts, 10 name checks, a first-10-posts plan and AI-label and likeness rules.",
+      "mascot_says": "Copy the format, never the face.",
+      "pdf": "pdfs/side/ai-character-smugworth.pdf",
+      "source": "briefs/side/ai-character-smugworth/report.html"
+    },
+    {
       "slug": "kenworth-dump-truck",
       "date": "2026-10-27",
       "date_label": "October 27, 2026",

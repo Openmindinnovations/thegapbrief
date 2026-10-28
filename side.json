@@ -1,6 +1,16 @@
 {
   "reports": [
     {
+      "slug": "kenworth-dump-truck",
+      "date": "2026-10-27",
+      "date_label": "October 27, 2026",
+      "title": "Should Rich Buy a Kenworth Truck and Trailer? Costs, Pay and King County Work in the Pipeline",
+      "summary": "Used WA Kenworth T880s list at $42,500–$115,000 against $318,500 (pre-FET) new; used pups run $11K–$16K. King County public-works truck-and-trailer pay is $86.95/hr, and Seattle–Tacoma private rates are quoted at $130–$250/hr. New-venture insurance runs $14K–$20K+. Covers financing, WA permits, a labeled break-even illustration (~600 billed hours a year), the Sound Transit/WSDOT/King County pipeline and how a one-truck hauler gets on as a sub.",
+      "mascot_says": "Buy used, line up the work, then roll.",
+      "pdf": "pdfs/side/kenworth-dump-truck.pdf",
+      "source": "briefs/side/kenworth-dump-truck/report.html"
+    },
+    {
       "slug": "bot-run-coin",
       "date": "2026-10-27",
       "date_label": "October 27, 2026",

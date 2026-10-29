@@ -1,6 +1,16 @@
 {
   "reports": [
     {
+      "slug": "game-asset-packs",
+      "date": "2026-10-29",
+      "date_label": "October 29, 2026",
+      "title": "Selling Game Asset Packs in 2026: Where to Sell, What Sells, What Creators Really Earn and the AI Rules",
+      "summary": "Store cuts now favor sellers (Roblox 100% of net, itch 10% default, Fab 88%, CGTrader up to 85%, Unity 70%), but discovery is the hard part, and published small-seller earnings are modest. This report covers each store's AI disclosure rules, real best-sellers and prices, AI tools and copyright risk, pack ideas, costs and a 30-day plan.",
+      "mascot_says": "Sell a series, not a pile.",
+      "pdf": "pdfs/side/game-asset-packs.pdf",
+      "source": "briefs/side/game-asset-packs/report.html"
+    },
+    {
       "slug": "ai-character-smugworth",
       "date": "2026-10-28",
       "date_label": "October 28, 2026",

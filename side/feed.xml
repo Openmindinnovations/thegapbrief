@@ -4,6 +4,14 @@
   <link>https://thegapbrief.com/side/</link>
   <description>Detailed one-off research reports from TheGapBrief.</description>
   <item>
+    <title>Side Report · October 30, 2026: Realistic AI Avatars and Instagram/TikTok Automation: The Toolchain, Real Prices and the Official Rate Limits</title>
+    <link>https://thegapbrief.com/side/ai-avatars-social-automation/</link>
+    <guid>https://thegapbrief.com/side/ai-avatars-social-automation/</guid>
+    <pubDate>Fri, 30 Oct 2026 12:00:00 +0000</pubDate>
+    <description>The realistic-avatar stack is Higgsfield or Midjourney for the face, ElevenLabs for voice, HeyGen for lip-synced video, and Zernio for posting, about $110 a month at list prices. This report covers ranked sites and prices, disclosure and likeness rules, the official API caps (Instagram 50 posts/24h; TikTok ~15 posts/day per creator, private until audit), what happened to Instagress-style bots, and compliant alternatives. It contains no evasion methods.</description>
+    <enclosure url="https://thegapbrief.com/pdfs/side/ai-avatars-social-automation.pdf" type="application/pdf" length="272180"/>
+  </item>
+  <item>
     <title>Side Report · October 29, 2026: Selling Game Asset Packs in 2026: Where to Sell, What Sells, What Creators Really Earn and the AI Rules</title>
     <link>https://thegapbrief.com/side/game-asset-packs/</link>
     <guid>https://thegapbrief.com/side/game-asset-packs/</guid>

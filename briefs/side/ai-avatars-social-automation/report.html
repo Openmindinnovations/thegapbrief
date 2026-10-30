@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Realistic AI Avatars and Instagram/TikTok Automation: The Toolchain, Real Prices and the Official Rate Limits · TheGapBrief Side Report</title>
+<link rel="stylesheet" href="../../brief.css">
+<link rel="stylesheet" href="../side.css">
+</head>
+<body>
+<header class="masthead">
+  <img class="mascot" src="../../../assets/gappy.svg" alt="Gappy, the scout fox">
+  <div class="mast-text">
+  <p class="kicker">TheGapBrief · Side Report · October 30, 2026</p>
+  <h1>Realistic AI Avatars and Instagram/TikTok Automation: The Toolchain, Real Prices and the Official Rate Limits</h1>
+  <p class="dek">Which sites build the most human-looking AI avatar, the full toolchain, what each costs, and how much you can automate on Instagram and TikTok inside the rules.</p>
+  <p class="meta">Assigned by Jacob Peterson · Research. Checked Oct 30, 2026. Every claim links to its source; numbers appear only where a cited source states them.</p>
+  </div>
+</header>
+
+<section data-label="Summary">
+<h2><span class="chip">Summary</span>Bottom line</h2>
+<div class="item">
+  <h3><span class="n">1</span>Build the face in Higgsfield or Midjourney, give it a voice in ElevenLabs, animate it in HeyGen, and post through official APIs only</h3>
+  <p>No single site does everything best. The realistic stack: a consistent face from <strong>Higgsfield</strong> (Soul / AI Influencer, Plus $59/mo) or <strong>Midjourney</strong> (Omni Reference, from $10/mo), a voice from <strong>ElevenLabs</strong> (Creator $22/mo for Professional Voice Cloning), talking-head video from <strong>HeyGen</strong> (Creator $29/mo, Avatar IV/V), and a scheduler on the official APIs, such as <strong>Zernio</strong> (first two accounts free).</p>
+  <p><strong>About "getting around the algorithm":</strong> this report deliberately gives <em>no</em> methods to evade or bypass Instagram's or TikTok's anti-bot detection. Doing that breaks both platforms' terms and risks bans on every linked account. What it does give are the official limits: Instagram's API allows <strong>50 published posts per 24 hours</strong> per account, and TikTok's Direct Post API allows <strong>about 15 posts a day</strong> per creator and <strong>6 requests a minute</strong> per token, with posts kept private until the app passes TikTok's audit. Auto-like/follow services like Instagress were shut down or abandoned; most of that category is gone.</p>
+  <p class="src"><a href="https://higgsfield.ai/pricing">Higgsfield pricing</a> (via <a href="https://everygen.ai/compare/higgsfield-pricing">Everygen, Oct 23, 2026</a>) · <a href="https://www.heygen.com/pricing">HeyGen pricing</a> · <a href="https://elevenlabs.io/pricing">ElevenLabs pricing</a> · <a href="https://developers.facebook.com/docs/instagram-platform/instagram-graph-api/reference/ig-user/content_publishing_limit/">IG publishing limit</a> · <a href="https://developers.tiktok.com/doc/content-sharing-guidelines">TikTok Direct Post guidelines</a></p>
+</div>
+</section>
+
+<section data-label="Avatar sites, ranked">
+<h2><span class="chip">1</span>Best sites for a human-looking AI avatar, ranked</h2>
+<table>
+<tr><th>#</th><th>Site</th><th>Best for</th><th>Price (monthly, USD)</th></tr>
+<tr><td>1</td><td>HeyGen</td><td>Talking-head video, lip-sync, custom avatar of a real person</td><td>Free (3 videos); Creator $29 (600 credits); Pro from $49 (1,000 credits, 4K); Business $149 + $20/seat</td></tr>
+<tr><td>2</td><td>Higgsfield</td><td>Consistent AI character stills and cinematic clips (Soul, Kling, Seedance, Nano Banana)</td><td>Starter $19 (270 credits); Plus $59 / $47 yearly (1,200); Ultra $129 / $99 yearly (3,000)</td></tr>
+<tr><td>3</td><td>ElevenLabs</td><td>Voice: instant and professional voice clones, voice design</td><td>Starter $6 (30k credits, Instant clone); Creator $22 (121k, Professional clone); Pro $99</td></tr>
+<tr><td>4</td><td>Synthesia</td><td>Polished presenter and training videos, interactive avatars</td><td>Basic free (10 min, watermark); Starter $19 / $14 yearly; Pro $89 / $59 yearly</td></tr>
+<tr><td>5</td><td>Captions (Mirage)</td><td>Phone-first UGC-style AI actors and "AI Twins"</td><td>Max $24.99 (500 credits); Frontier $69.99 (1,400); video costs 8 credits a second</td></tr>
+<tr><td>6</td><td>Midjourney</td><td>Photoreal face design and reference stills</td><td>Basic $10; Standard $30; Pro $60; Mega $120</td></tr>
+</table>
+<p class="src"><a href="https://www.heygen.com/pricing">HeyGen</a> · <a href="https://everygen.ai/compare/higgsfield-pricing">Higgsfield prices read Oct 23, 2026 (Everygen)</a> · <a href="https://elevenlabs.io/pricing">ElevenLabs</a> · <a href="https://www.synthesia.io/pricing">Synthesia</a> · <a href="https://captions.ai/help/docs/subscriptions">Captions plans</a> · <a href="https://captions.ai/help/mirage/account-management/mirage-credits">Mirage credits</a> · <a href="https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans">Midjourney plans</a></p>
+<div class="item">
+  <h3><span class="n">1.1</span>HeyGen: the most complete avatar video tool</h3>
+  <p>Creator ($29, or $24 a month yearly) includes Avatar III and IV, limited Avatar V, 1080p, no branding and a custom video avatar with your own voice and likeness, in 175+ languages. Pro adds 4K, Seedance 2.5, Veo 3.1 and Cinematic Avatars. HeyGen's credit rates: 600 credits buys about 150 minutes of Avatar III, 19 minutes of Avatar IV with a video avatar, or 12 minutes of Avatar V. Avatar V videos are capped at 3 minutes.</p>
+  <p class="src"><a href="https://www.heygen.com/pricing">HeyGen pricing</a> · <a href="https://voyager.so/blog/heygen-pricing">Voyager: HeyGen credit math (Oct 20, 2026)</a></p>
+</div>
+<div class="item">
+  <h3><span class="n">1.2</span>Higgsfield: the character engine you already have</h3>
+  <p>One account covers Soul, Kling 3.0, Seedance, Nano Banana, GPT Image, Wan and its own AI Influencer studio. Standard Seedance 2.0 needs Plus or higher; Starter gets only Fast and Mini. The "unlimited" windows last 7 days on specific models, run on the website only (not MCP), and stop when the plan ends. Plan credits don't roll over, and the free tier carries no commercial rights.</p>
+  <p class="src"><a href="https://everygen.ai/compare/higgsfield-pricing">Everygen: Higgsfield pricing and fine print, citing higgsfield.ai/pricing and help center</a></p>
+</div>
+<div class="item">
+  <h3><span class="n">1.3</span>ElevenLabs: the voice layer</h3>
+  <p>Instant cloning needs 1–2 minutes of audio (Starter and up). Professional cloning needs 30–180 minutes, takes 3–6 hours to train, and requires Creator or above. <strong>Professional clones may only clone your own voice</strong> and require a Voice CAPTCHA check. Annual billing equals 10 months' price.</p>
+  <p class="src"><a href="https://elevenlabs.io/docs/eleven-creative/voices/voice-cloning">ElevenLabs voice cloning docs</a> · <a href="https://join.elevenlabs.io/ai-voice-replicator">ElevenLabs voice replicator</a></p>
+</div>
+<div class="item">
+  <h3><span class="n">1.4</span>Synthesia, Captions and Midjourney: when to pick them</h3>
+  <p>Synthesia renamed Creator to Pro on Oct 1, 2026, at the same price; every plan includes 10 minutes of video a month, and paid plans add credits. It suits corporate presenters more than influencer content. Captions' Mirage includes custom AI actors and up to 30 AI Twins on Max, but at 8 credits a second, 500 credits is about a minute of generated video. Midjourney's Omni Reference (V7) keeps a face consistent across images and costs 2× normal GPU time.</p>
+  <p class="src"><a href="https://help.synthesia.io/en/articles/17217419-what-s-changing-in-synthesia-plans-on-october-1-2026">Synthesia Oct 1 changes</a> · <a href="https://captions.ai/help/mirage/account-management/mirage-credits">Captions credits</a> · <a href="https://docs.midjourney.com/hc/en-us/articles/36285124473997-Omni-Reference">Midjourney Omni Reference</a></p>
+</div>
+</section>
+
+<section data-label="Toolchain">
+<h2><span class="chip">2</span>The full toolchain, step by step</h2>
+<div class="item">
+  <h3><span class="n">2.1</span>Five layers: face, body/motion, voice, lip-sync, publishing</h3>
+  <p><strong>1. Face and identity sheet:</strong> Midjourney (Omni Reference) or Higgsfield Soul. Lock one reference set: front, three-quarter, profile, and a few expressions. <strong>2. Motion/B-roll:</strong> Higgsfield (Kling 3.0, Seedance). <strong>3. Voice:</strong> ElevenLabs, using a designed voice or your own clone. <strong>4. Lip-synced talking head:</strong> HeyGen Avatar IV/V or Captions Mirage. <strong>5. Edit, caption and publish:</strong> CapCut or Captions for editing, Zernio for scheduling through the official APIs.</p>
+  <p>Monthly cost at list prices for the core four (Higgsfield Plus $59, ElevenLabs Creator $22, HeyGen Creator $29, Zernio with up to 2 accounts free) is <strong>$110</strong>, plus Midjourney if you want it ($10–$30). That is arithmetic on the cited list prices; promos and annual billing lower it.</p>
+  <p class="src">Prices as cited in section 1 · <a href="https://zernio.com/pricing">Zernio pricing</a></p>
+</div>
+</section>
+
+<section data-label="Disclosure & likeness">
+<h2><span class="chip">3</span>Disclosure and likeness rules</h2>
+<div class="item">
+  <h3><span class="n">3.1</span>Label realistic AI content on both platforms</h3>
+  <p><strong>TikTok</strong> requires creators to label AI-generated or significantly edited content that shows realistic people or scenes, using the AI-generated label, a caption or a sticker. It may also auto-label content that carries Content Credentials. <strong>Meta</strong> applies an "AI info" label when it detects industry signals or the creator discloses. Creators must disclose photorealistic AI video and realistic-sounding AI audio, and Meta can add penalties for not doing so.</p>
+  <p class="src"><a href="https://support.tiktok.com/en/using-tiktok/creating-videos/ai-generated-content">TikTok: AI-generated content</a> · <a href="https://newsroom.tiktok.com/new-labels-for-disclosing-ai-generated-content?lang=en">TikTok newsroom: AI labels</a> · <a href="https://about.fb.com/news/2024/04/metas-approach-to-labeling-ai-generated-content-and-manipulated-media/">Meta: labeling AI content</a></p>
+</div>
+<div class="item">
+  <h3><span class="n">3.2</span>Likeness: only your own face and voice, or an original character</h3>
+  <p>ElevenLabs' professional clones are limited to your own voice. HeyGen's custom avatar is built from "your own voice and likeness." TikTok's integrity rules ban impersonation. The safe pattern is an original, clearly AI character, or yourself with consent on file. Never copy a real person's face or voice. <span class="badge">Compliance</span></p>
+  <p class="src"><a href="https://elevenlabs.io/docs/eleven-creative/voices/voice-cloning">ElevenLabs</a> · <a href="https://www.heygen.com/pricing">HeyGen</a> · <a href="https://www.tiktok.com/community-guidelines/en/integrity-authenticity">TikTok Integrity and Authenticity</a></p>
+</div>
+</section>
+
+<section data-label="Official API limits">
+<h2><span class="chip">4</span>Instagram and TikTok: the official APIs and their limits</h2>
+<div class="box"><strong>Plain statement:</strong> this report does not include, and Scout will not provide, methods to evade or bypass Instagram's or TikTok's bot detection: no fingerprint spoofing, proxy rotation, account farms, or "safe" action rates for unofficial bots. These methods break the platforms' terms, and enforcement can take down every linked account. The legitimate ceiling is the official API limits below.</div>
+<div class="item">
+  <h3><span class="n">4.1</span>Instagram Graph API: 50 posts per 24 hours</h3>
+  <p>Publishing works only for Instagram professional (Business/Creator) accounts, and media must be on a public URL. The <code>content_publishing_limit</code> endpoint reports <code>quota_total</code> = <strong>50</strong> containers per <code>quota_duration</code> of <strong>86,400 seconds</strong> (24 hours). One older line in Meta's publishing guide says 100, so check the endpoint before you schedule. Meta recommends that apps enforce the limit themselves.</p>
+  <p class="src"><a href="https://developers.facebook.com/docs/instagram-platform/instagram-graph-api/reference/ig-user/content_publishing_limit/">IG User Content Publishing Limit</a> · <a href="https://developers.facebook.com/docs/instagram-platform/content-publishing/">Content Publishing guide</a></p>
+</div>
+<div class="item">
+  <h3><span class="n">4.2</span>TikTok Content Posting API: about 15 posts a day, private until audited</h3>
+  <p>Unaudited apps can post for up to <strong>5 users per 24 hours</strong>, only to private accounts, and only as <code>SELF_ONLY</code>. Even audited apps have a per-creator cap, "typically around 15 posts per day," shared across every app that uses Direct Post. Rate limits: <strong>6 requests a minute</strong> per token on <code>/post/publish/video/init/</code> and 20 a minute on creator_info. The error codes <code>spam_risk_too_many_posts</code> and <code>spam_risk_user_banned_from_posting</code> show where the spam lines are. Apps must show the creator's own privacy options and honor their choice.</p>
+  <p class="src"><a href="https://developers.tiktok.com/doc/content-sharing-guidelines">TikTok Content Sharing Guidelines</a> · <a href="https://developers.tiktok.com/docs/en/content-posting-api-reference-direct-post">Direct Post reference</a> · <a href="https://developers.tiktok.com/docs/en/content-posting-api-reference-query-creator-info">Query Creator Info</a></p>
+</div>
+<div class="item">
+  <h3><span class="n">4.3</span>What gets accounts flagged</h3>
+  <p>TikTok bans fake engagement, which covers buying or trading views, likes, follows or comments and services that artificially boost metrics. It also bans spam, impersonation, and accounts made to evade enforcement, and it removes inflated metrics. Meta's Inauthentic Behavior policy covers fake accounts, fake likes, follows and comments, and automated accounts used to deceive or evade enforcement. Instagram's developer policy has long banned "like," "share," "comment" or "follower" exchange programs. Posting AI content isn't the problem; faking engagement is.</p>
+  <p class="src"><a href="https://www.tiktok.com/community-guidelines/en/integrity-authenticity">TikTok Integrity and Authenticity</a> · <a href="https://www.tiktok.com/safety/en/policies-and-engagement/countering-influence-operations">TikTok: deceptive behavior</a> · <a href="https://about.fb.com/news/2024/04/metas-approach-to-labeling-ai-generated-content-and-manipulated-media/">Meta AI labels</a> · <a href="https://www.digitaltrends.com/social-media/instagress-bot-closses/">Digital Trends on IG developer policy</a></p>
+</div>
+<div class="item">
+  <h3><span class="n">4.4</span>Zernio: compliant scheduling you already use</h3>
+  <p>Zernio is a REST scheduling API for Instagram, TikTok and other networks, built on official connections. Pricing is per connected account: the first 2 are free, accounts 3–10 cost $6 each, 11–100 cost $3 each, and 101+ cost $1 each. Every account gets unlimited posts, analytics, comments and DMs. The platform caps in 4.1 and 4.2 still apply underneath.</p>
+  <p class="src"><a href="https://zernio.com/pricing">Zernio pricing</a> · <a href="https://zernio.com/">Zernio</a></p>
+</div>
+</section>
+
+<section data-label="Instagress & bot services">
+<h2><span class="chip">5</span>Sites like Instagress: what happened to auto-like/follow services</h2>
+<div class="item">
+  <h3><span class="n">5.1</span>Instagress (shut down April 20, 2017)</h3>
+  <p>Instagress was a paid web bot that automatically liked and commented on posts to gain followers. It closed "by request of Instagram" and offered refunds. Instagram didn't comment on the app but pointed to its developer policy, which bans like/comment/follower exchange programs and spam.</p>
+  <p class="src"><a href="https://www.theverge.com/2017/4/20/15374080/instagram-bot-site-instagress-dead">The Verge</a> · <a href="https://petapixel.com/2017/04/20/instagram-shuts-popular-botting-service-instagress/">PetaPixel</a> · <a href="https://www.businessinsider.com/instagram-cracks-down-on-fake-accounts-by-shutting-down-instagress-2017-4">Business Insider</a> · <a href="https://instagress.com/">instagress.com</a></p>
+</div>
+<table>
+<tr><th>Service</th><th>What it did</th><th>Status (Oct 2026)</th><th>Risk / ToS</th></tr>
+<tr><td>Jarvee (successor to Massplanner)</td><td>Windows multi-network automation</td><td>Closed Sept 2022. Massplanner closed in 2017 after an Instagram cease-and-desist</td><td>Unauthorized automation</td></tr>
+<tr><td>Combin</td><td>Desktop follow/like/comment and audience search</td><td>Support ended 2024; domain now points to an unrelated product</td><td>Users reported blocked accounts</td></tr>
+<tr><td>Ingramer → Inflact</td><td>Growth bot plus DM tools</td><td>Bot retired mid-2026; Inflact now sells viewer, downloader and analytics tools</td><td>Inflact itself now says bots "actively damage your account"</td></tr>
+<tr><td>Social Captain</td><td>Automated growth service</td><td>Domain 301-redirects to UpGrow; original service gone</td><td>n/a</td></tr>
+<tr><td>Kicksta</td><td>Follow/unfollow and like-after-follow on your account, from $69/mo</td><td>Still selling</td><td>Needs your login and does automated actions, so it falls under Meta's inauthentic-behavior rules and risks account loss</td></tr>
+</table>
+<p class="src"><a href="https://proxyway.com/news/jarvee-shuts-down">Proxyway: Jarvee</a> · <a href="https://hclout.com/blog/what-happened-to-combin">Hclout: Combin</a> · <a href="https://onigrow.com/en/onigrow-vs-combin/">OniGrow: Combin</a> · <a href="https://creatortribune.com/inflact-review/">Creator Tribune: Inflact</a> · <a href="https://hclout.com/blog/what-happened-to-ingramer">Hclout: Ingramer</a> · <a href="https://www.upgrow.com/socialcaptain-alternative">UpGrow: SocialCaptain redirect</a> · <a href="https://kicksta.co/blog/combin-vs-kicksta">Kicksta blog</a> · <a href="https://autogram.dev/alternatives/all">AutoGram status table (vendor, Oct 2026)</a></p>
+<p>Note: several status sources above are competitors' blogs, so read them as claims. The redirects and closure notices can be checked directly.</p>
+<div class="item">
+  <h3><span class="n">5.2</span>Compliant alternatives</h3>
+  <p>Use official-API schedulers (Zernio, using Instagram's Content Publishing API and TikTok's Content Posting API), Meta's own Meta Business Suite for scheduling and Instagram Insights for analytics, and TikTok's built-in analytics. Handle engagement by hand or with an approved comment and DM inbox. Grow through formats people share: collabs, UGC and paid promotion via Meta Ads or TikTok Promote, labeled as ads.</p>
+  <p class="src"><a href="https://zernio.com/">Zernio</a> · <a href="https://developers.facebook.com/docs/instagram-platform/content-publishing/">Meta Content Publishing</a> · <a href="https://developers.tiktok.com/doc/content-sharing-guidelines">TikTok Direct Post</a></p>
+</div>
+</section>
+</body>
+</html>

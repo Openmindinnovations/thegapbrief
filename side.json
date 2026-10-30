@@ -1,6 +1,16 @@
 {
   "reports": [
     {
+      "slug": "ai-avatars-social-automation",
+      "date": "2026-10-30",
+      "date_label": "October 30, 2026",
+      "title": "Realistic AI Avatars and Instagram/TikTok Automation: The Toolchain, Real Prices and the Official Rate Limits",
+      "summary": "The realistic-avatar stack is Higgsfield or Midjourney for the face, ElevenLabs for voice, HeyGen for lip-synced video, and Zernio for posting, about $110 a month at list prices. This report covers ranked sites and prices, disclosure and likeness rules, the official API caps (Instagram 50 posts/24h; TikTok ~15 posts/day per creator, private until audit), what happened to Instagress-style bots, and compliant alternatives. It contains no evasion methods.",
+      "mascot_says": "Post through the front door.",
+      "pdf": "pdfs/side/ai-avatars-social-automation.pdf",
+      "source": "briefs/side/ai-avatars-social-automation/report.html"
+    },
+    {
       "slug": "game-asset-packs",
       "date": "2026-10-29",
       "date_label": "October 29, 2026",

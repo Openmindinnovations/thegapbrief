@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Running a Bot Team on Less: Conserving Grok Bot Usage · TheGapBrief Side Report</title>
+<link rel="stylesheet" href="../../brief.css">
+<link rel="stylesheet" href="../side.css">
+</head>
+<body>
+<header class="masthead">
+  <img class="mascot" src="../../../assets/gappy.svg" alt="Gappy, the scout fox">
+  <div class="mast-text">
+  <p class="kicker">TheGapBrief · Side Report · November 2, 2026</p>
+  <h1>Running a Bot Team on Less: Conserving Grok Bot Usage</h1>
+  <p class="dek">Most of Jacob's Grok Bot usage is chat work, not routines. Better cron hygiene helps a little. Changing how the Kapsoul bots get briefed, how long their threads run, and how much they talk to each other saves far more.</p>
+  <p class="meta">Assigned by Jacob Peterson · Research. Checked Nov 2, 2026. Points tagged <strong>[Jacob's data]</strong> come from Jacob's own usage report for Oct 3 – Nov 2, 2026, given as shares of all Grok Bot usage. Points tagged <strong>[Best practice]</strong> are general guidance. This report gives no projected savings or run counts beyond the report's own numbers. Nothing was changed; this is a report only.</p>
+  </div>
+</header>
+
+<section data-label="Summary">
+<h2><span class="chip">Summary</span>Bottom line</h2>
+<div class="item">
+  <h3><span class="n">1</span>The routines aren't the problem. The chat is.</h3>
+  <p><strong>[Jacob's data]</strong> About <strong>85–90%</strong> of usage is interactive or delegated chat work, not routines. Kapsoul's three bots (Sentinel 17%, Atlas 13%, Forge 10%) make up about <strong>40%</strong> of the total, nearly all of it outside routines. Even the busiest routine, ShipSonar's stuck-order watch (about 336 runs a week), is only about 1%.</p>
+  <p><strong>Top 3:</strong> (1) Put the Kapsoul bots on tight briefs and fresh threads. (2) Cut bot-to-bot chatter: status pings, wrap-ups and relays. (3) Move deterministic checks such as stuck orders, sensitive paths and deadline reminders to plain scripts, webhooks or GitHub Actions. The routine fixes (lower cadence, waking hours only, triggers) are easy, but they're the smaller wins.</p>
+  <p class="src">Source: Jacob's usage report, Nov 2, 2026 (last 30 days).</p>
+</div>
+</section>
+
+<section data-label="Diagnosis">
+<h2><span class="chip">0</span>Where the usage went (Oct 3 – Nov 2)</h2>
+<table>
+<tr><th>Bot / group</th><th>Share</th><th>Notes from the report</th></tr>
+<tr><td>Sentinel (Kapsoul QA)</td><td>17%</td><td>All outside routines</td></tr>
+<tr><td>Atlas (Kapsoul backend)</td><td>13%</td><td>Almost all outside routines</td></tr>
+<tr><td>Forge (Kapsoul web)</td><td>10%</td><td>—</td></tr>
+<tr><td>Hull (ShipSonar scanner)</td><td>9%</td><td>Several status routines paused</td></tr>
+<tr><td>Keeper (social)</td><td>7%</td><td>5% outside routines. IG staggered follows 1% (~42 runs/wk). X lead scout, Higgsfield Discord reply check and IG daily run each ~14/wk. Discord copycat watch ~7/wk. Other routines 1%</td></tr>
+<tr><td>Other bots</td><td>44%</td><td>41% outside routines. Kapsoul safety deadline reminders 1% (~56/wk). ShipSonar stuck-order watch 1% (~336/wk, every 30 min). ShipSonar 12-hour sensitive-path check ~14/wk. TheGapBrief weekly &lt;1%</td></tr>
+</table>
+<div class="item">
+  <h3><span class="n">0.1</span>Where things stand this week</h3>
+  <p><strong>[Jacob's data]</strong> Plan: Cursor Ultra. The weekly usage limit is <strong>74.6% used</strong> and resets <strong>Thu Nov 5, 12:10 PT</strong>. On-demand is <strong>$20.47 of the $30</strong> monthly limit, which covers Grok Bot and Cursor together, and resets Sun Nov 8. On-demand was 1% of Grok Bot usage in this period.</p>
+  <p><strong>[Best practice]</strong> Cursor says its included pool is shared by everything on the subscription: the editor's Agent, the CLI, Cloud Agents, Grok Bot and the Grok apps. Heavy Cursor coding and heavy bot chat use the same budget. Unused included usage doesn't roll over.</p>
+  <p class="src"><a href="https://cursor.com/docs/models-and-pricing">Cursor: Models &amp; Pricing</a> · <a href="https://cursor.com/help/models-and-usage/usage-limits">Cursor: Usage and limits</a></p>
+</div>
+<div class="item">
+  <h3><span class="n">0.2</span>What the numbers say</h3>
+  <p>1) The work is chat-heavy. Routines across all bots are a small minority. 2) Kapsoul is the hot spot, and its QA bot leads. 3) Run counts and usage don't line up: 336 runs a week of the stuck-order watch is about 1%, the same as Keeper's 42-a-week follows. A cheap run done often isn't the problem. Long, open-ended conversations are.</p>
+  <p class="src">Interpretation of Jacob's usage report.</p>
+</div>
+</section>
+
+<section data-label="Ranked levers">
+<h2><span class="chip">1</span>Ranked recommendations</h2>
+<div class="item">
+  <h3><span class="n">1.1</span>Tight briefs and fresh threads for Sentinel, Atlas and Forge <em>[Jacob's data + Best practice]</em></h3>
+  <p><strong>What changes:</strong> give each Kapsoul task one goal, the files or areas it covers, a "done when" line and an output format, such as "Return a pass/fail list, max 10 lines." Start a new thread for each task instead of continuing one long thread for days. Paste a 5-line handoff summary in place of the old history.</p>
+  <p><strong>Why:</strong> Cursor counts context as input tokens. On Grok 4.7, input past 256k tokens is billed at 2× standard rates. A long thread re-sends its history every turn, so later turns cost more than earlier ones. Open-ended QA ("test everything") leads to wide exploration. Sentinel alone is 17%.</p>
+  <p><strong>Tradeoff:</strong> it takes a minute of setup per task, and a new thread loses whatever history you didn't carry over. Keep a short "Kapsoul state" note the bots can read.</p>
+  <p class="src"><a href="https://cursor.com/docs/models-and-pricing">Cursor: Models &amp; Pricing (long-context rates)</a> · <a href="https://cursor.com/help/ai-features/max-mode">Cursor: larger context increases tokens</a></p>
+</div>
+<div class="item">
+  <h3><span class="n">1.2</span>Cut chat between bots <em>[Jacob's data + Best practice]</em></h3>
+  <p><strong>What changes:</strong> no status pings, "acknowledged" replies or daily wrap-ups between bots. Bots message each other only to hand off work or flag a blocker. Results go into one shared file or page that people read, instead of being sent around. Don't use a PM bot that relays between bots and repeats their output.</p>
+  <p><strong>Why:</strong> every message to a bot wakes it, which starts a full turn with context loaded. 41% of "other bots" usage happens outside routines, which is where relay chatter shows up. Grok Bot's own usage guidance says the same: messaging another bot wakes it and uses usage.</p>
+  <p><strong>Tradeoff:</strong> less real-time awareness, so you read the shared status file instead of getting updates pushed to you.</p>
+  <p class="src">Jacob's usage report; this bot's usage-review guidance.</p>
+</div>
+<div class="item">
+  <h3><span class="n">1.3</span>Move deterministic checks out of Grok Bot <em>[Jacob's data + Best practice]</em></h3>
+  <p><strong>What changes:</strong> replace checks that need no judgment with a script on cron, a GitHub Actions <code>schedule</code> workflow, or a Supabase/Vercel cron. That covers the stuck-order watch (a query plus a threshold), the 12-hour sensitive-path check (a diff or grep), and the Kapsoul safety deadline reminders (date math). The script calls a bot only when something is actually wrong. This was already done for PromptPatrol face watch.</p>
+  <p><strong>Why:</strong> a script costs no Grok Bot usage on the runs where everything is fine. The bot is only needed to interpret a problem.</p>
+  <p><strong>Tradeoff:</strong> someone has to maintain a small script and its secrets, and an unexpected edge case won't get judged by a bot.</p>
+  <p class="src"><a href="https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows#schedule">GitHub Docs: schedule event</a> · <a href="https://vercel.com/docs/cron-jobs">Vercel Cron Jobs</a> · <a href="https://supabase.com/docs/guides/cron">Supabase Cron</a></p>
+</div>
+<div class="item">
+  <h3><span class="n">1.4</span>Switch from schedules to triggers <em>[Jacob's data + Best practice]</em></h3>
+  <p><strong>What changes:</strong> instead of polling every 30 minutes for stuck orders, react to events: a Stripe webhook (such as a failed or delayed payment), a GitHub push for sensitive paths, or an email or Slack message.</p>
+  <p><strong>Why:</strong> a trigger only runs when something happens. The stuck-order watch runs about 336 times a week, and most of those runs presumably find nothing.</p>
+  <p><strong>Tradeoff:</strong> short setup, the app has to be connected, and a missing event (one that never fires) needs a backup, such as one daily sweep.</p>
+  <p class="src"><a href="https://docs.stripe.com/webhooks">Stripe: Webhooks</a> · <a href="https://docs.github.com/en/webhooks">GitHub: Webhooks</a></p>
+</div>
+<div class="item">
+  <h3><span class="n">1.5</span>Lower cadence, waking hours only, and merge duplicates <em>[Jacob's data]</em></h3>
+  <p><strong>What changes:</strong> run Kapsoul deadline reminders (~56/wk) a few times on weekdays only. Combine Keeper's X lead scout, Higgsfield Discord reply check and Discord copycat watch into one "social sweep" twice a day in waking hours. Consider merging the IG staggered follows (~42/wk) with the IG daily run. Delete, rather than keep, any of Hull's paused status routines that are no longer needed.</p>
+  <p><strong>Why:</strong> nobody acts on results at 3 AM, and one merged run loads context once instead of three times.</p>
+  <p><strong>Tradeoff:</strong> results are less fresh, and overnight issues wait until morning. These routines are each about 1%, so this is cleanup, not the main fix.</p>
+  <p class="src">Jacob's usage report.</p>
+</div>
+<div class="item">
+  <h3><span class="n">1.6</span>Low effort for lookups, high effort only for hard problems <em>[Best practice]</em></h3>
+  <p><strong>What changes:</strong> ask for a quick answer on simple facts, status reads and formatting. Save deep reasoning and multi-source research for architecture, debugging and reports.</p>
+  <p><strong>Why:</strong> Cursor says model choice affects how fast included usage runs down, and its price table shows "Fast" variants at about 2× standard rates.</p>
+  <p><strong>Tradeoff:</strong> a quick answer can miss a subtlety, so escalate when one does.</p>
+  <p class="src"><a href="https://cursor.com/help/models-and-usage/usage-limits">Cursor: Usage and limits</a> · <a href="https://cursor.com/docs/models-and-pricing">Cursor: Models &amp; Pricing</a></p>
+</div>
+<div class="item">
+  <h3><span class="n">1.7</span>Cache research and reuse it <em>[Best practice]</em></h3>
+  <p><strong>What changes:</strong> save research results (pricing tables, API limits, competitor notes) to files in the repo or store with a "checked on" date. Bots read the file before searching the web again. TheGapBrief reports already work as a cache.</p>
+  <p><strong>Why:</strong> re-researching the same facts costs search and page reads every time. Reading one short file costs much less.</p>
+  <p><strong>Tradeoff:</strong> cached facts go stale. Set a re-check date, such as 30 days.</p>
+  <p class="src">General practice.</p>
+</div>
+<div class="item">
+  <h3><span class="n">1.8</span>Use the browser and desktop only as a last resort <em>[Best practice]</em></h3>
+  <p><strong>What changes:</strong> prefer a connector or API (Zernio, GitHub, Supabase, Stripe) over driving a browser. When browser work is needed, give the exact URL and the exact thing to read.</p>
+  <p><strong>Why:</strong> screenshot-and-click loops take many steps and carry a lot of context per step. An API call is one step.</p>
+  <p><strong>Tradeoff:</strong> some sites have no API.</p>
+  <p class="src">General practice.</p>
+</div>
+<div class="item">
+  <h3><span class="n">1.9</span>Batch asks, and merge overlapping bots <em>[Jacob's data + Best practice]</em></h3>
+  <p><strong>What changes:</strong> send one message with five asks instead of five messages. Consider merging the Kapsoul bots into fewer bots, or have Forge and Atlas share a single "Kapsoul state" file so each doesn't rebuild the same picture.</p>
+  <p><strong>Why:</strong> each new turn or new bot loads its context again.</p>
+  <p><strong>Tradeoff:</strong> a merged bot has a bigger, more general role and can lose focus. Merge only where the work overlaps.</p>
+  <p class="src">Jacob's usage report (Kapsoul ≈ 40%).</p>
+</div>
+<div class="item">
+  <h3><span class="n">1.10</span>Watch the on-demand cap and do a weekly review <em>[Jacob's data + Best practice]</em></h3>
+  <p><strong>What changes:</strong> on-demand is at $20.47 of $30 with the weekly limit 74.6% used, so go easy until Thu Nov 5. Keep the $30 cap, or lower it, so usage stops at a fixed point. The app already warns as you near the limit, so you don't need a routine to watch usage (that check would use usage too). Every Monday, spend 5 minutes on the shares by bot and routine: check the top 3 bots, pause one routine, and fix one brief.</p>
+  <p><strong>Why:</strong> nothing stops automatically at a percentage of included usage. The spend limit is the hard stop. Cursor says on-demand is billed in arrears at API rates.</p>
+  <p><strong>Tradeoff:</strong> work stops at the cap until the reset.</p>
+  <p class="src"><a href="https://cursor.com/help/account-and-billing/overages">Cursor: Usage-based charges</a> · <a href="https://cursor.com/docs/account/pricing/legacy-cursor-plans">Cursor: Legacy plans, on-demand</a></p>
+</div>
+</section>
+
+<section data-label="Summary table">
+<h2><span class="chip">2</span>Ranked at a glance</h2>
+<table>
+<tr><th>Rank</th><th>Lever</th><th>Targets</th><th>Effort</th></tr>
+<tr><td>1</td><td>Tight briefs + fresh threads</td><td>Kapsoul bots (~40%)</td><td>Low</td></tr>
+<tr><td>2</td><td>Cut chat between bots</td><td>Other bots' 41% outside routines</td><td>Low</td></tr>
+<tr><td>3</td><td>Move checks to scripts/cron/Actions</td><td>Stuck-order, sensitive-path, deadline reminders</td><td>Medium</td></tr>
+<tr><td>4</td><td>Triggers instead of polling</td><td>Stuck-order watch (Stripe webhook)</td><td>Medium</td></tr>
+<tr><td>5</td><td>Cadence, waking hours, merges</td><td>Keeper + reminders</td><td>Low</td></tr>
+<tr><td>6–10</td><td>Effort level, caching, browser, batching, review</td><td>Everything</td><td>Low</td></tr>
+</table>
+<p class="src">No savings are projected; check the shares by bot and routine one week after each change.</p>
+</section>
+
+<p class="colophon">TheGapBrief Side Reports are published by Open Mind Innovations LLC. Researched November 2, 2026. Usage figures are from Jacob's own usage report; outside facts are as shown by the linked sources on that date.</p>
+</body>
+</html>

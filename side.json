@@ -1,6 +1,16 @@
 {
   "reports": [
     {
+      "slug": "conserve-grok-bot-usage",
+      "date": "2026-11-02",
+      "date_label": "November 2, 2026",
+      "title": "Running a Bot Team on Less: Conserving Grok Bot Usage",
+      "summary": "About 85–90% of Jacob's Grok Bot usage is chat work, not routines, and Kapsoul's three bots are about 40%. Ten ranked levers, each tagged as Jacob's data or general best practice: tight briefs and fresh threads, cutting chat between bots, moving deterministic checks to scripts, cron or GitHub Actions, webhook triggers instead of 30-minute polling, waking-hours cadence and merges, effort levels, caching, careful browser use, batching, and a weekly review with the on-demand cap.",
+      "mascot_says": "Fewer, sharper asks.",
+      "pdf": "pdfs/side/conserve-grok-bot-usage.pdf",
+      "source": "briefs/side/conserve-grok-bot-usage/report.html"
+    },
+    {
       "slug": "nate-expansion",
       "date": "2026-10-30",
       "date_label": "October 30, 2026",

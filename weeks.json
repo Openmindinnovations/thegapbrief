@@ -80,6 +80,19 @@
       "mascot_says": "This week I followed what people paid for or earned. A lot of it vanished on the company’s side.",
       "pdf": "pdfs/thegapbrief-2026-10-26.pdf",
       "source": "briefs/2026-10-26/brief.html"
+    },
+    {
+      "week": 6,
+      "slug": "2026-11-02",
+      "label": "Week 6",
+      "date": "2026-11-02",
+      "date_label": "November 2, 2026",
+      "covering": "October 26 – November 2, 2026",
+      "title": "Apps changed things without asking first. And Reddit closed its doors as Discord opened its own.",
+      "summary": "Discord will put public-channel messages into web search with US users opted in by default, Pinterest dropped the board picker, Blink removed its floodlight button, and Duolingo’s streak freeze climbed to as much as 600 gems. Reddit is moving to a logged-in site as search referrals fall, DoorDash agreed to buy Instacart for $17 billion, and GM settled over selling driver data. Turkey’s under-15 rule took effect, Ofcom named its preferred age checks, and OpenAI and Anthropic both claimed to refute the Exponential Time Hypothesis.",
+      "mascot_says": "This week I watched settings change before anyone was asked. Check your defaults.",
+      "pdf": "pdfs/thegapbrief-2026-11-02.pdf",
+      "source": "briefs/2026-11-02/brief.html"
     }
   ]
 }

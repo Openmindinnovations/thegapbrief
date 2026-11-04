@@ -4,6 +4,14 @@
   <link>https://thegapbrief.com/side/</link>
   <description>Detailed one-off research reports from TheGapBrief.</description>
   <item>
+    <title>Side Report · November 4, 2026: Copying Custom Esignature: How Hard, and What Bots It Takes</title>
+    <link>https://thegapbrief.com/side/copy-custom-esignature/</link>
+    <guid>https://thegapbrief.com/side/copy-custom-esignature/</guid>
+    <pubDate>Wed, 04 Nov 2026 12:00:00 +0000</pubDate>
+    <description>Custom Esignature sells animated team email signatures at $96 a year per signature. The editor and dashboard are routine work; the hard part is deployment: Gmail&#x27;s signature scope is restricted (annual CASA, $500–$5,400) and Microsoft has no Graph API for signatures, so Outlook needs an event-based add-in or mail routing. Competitors such as CodeTwo and Exclaimer charge about $1 a user. Covers a phased build plan with difficulty ratings, a 5-bot team, ways to stand out, and IP cautions.</description>
+    <enclosure url="https://thegapbrief.com/pdfs/side/copy-custom-esignature.pdf" type="application/pdf" length="282520"/>
+  </item>
+  <item>
     <title>Side Report · November 2, 2026: Running a Bot Team on Less: Conserving Grok Bot Usage</title>
     <link>https://thegapbrief.com/side/conserve-grok-bot-usage/</link>
     <guid>https://thegapbrief.com/side/conserve-grok-bot-usage/</guid>

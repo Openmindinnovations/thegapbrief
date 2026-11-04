@@ -1,6 +1,16 @@
 {
   "reports": [
     {
+      "slug": "copy-custom-esignature",
+      "date": "2026-11-04",
+      "date_label": "November 4, 2026",
+      "title": "Copying Custom Esignature: How Hard, and What Bots It Takes",
+      "summary": "Custom Esignature sells animated team email signatures at $96 a year per signature. The editor and dashboard are routine work; the hard part is deployment: Gmail's signature scope is restricted (annual CASA, $500–$5,400) and Microsoft has no Graph API for signatures, so Outlook needs an event-based add-in or mail routing. Competitors such as CodeTwo and Exclaimer charge about $1 a user. Covers a phased build plan with difficulty ratings, a 5-bot team, ways to stand out, and IP cautions.",
+      "mascot_says": "Easy to demo, hard to deploy.",
+      "pdf": "pdfs/side/copy-custom-esignature.pdf",
+      "source": "briefs/side/copy-custom-esignature/report.html"
+    },
+    {
       "slug": "conserve-grok-bot-usage",
       "date": "2026-11-02",
       "date_label": "November 2, 2026",

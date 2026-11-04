@@ -1,6 +1,16 @@
 {
   "reports": [
     {
+      "slug": "grok-bot-usage-change",
+      "date": "2026-11-04",
+      "date_label": "November 4, 2026",
+      "title": "The Grok Bot Usage Squeeze: What Changed, What's Confirmed",
+      "summary": "Around Nov 1, Grok Bot users reported weekly meters jumping or running out early, and Elon Musk said serving costs were 'unsustainably high relative to revenue.' Official pages still list only multiples (Premium 4x, Super 15x, Ultra 50x of Plus) on one weekly pool shared with Grok and Cursor. No new limit numbers have been published. A dated timeline separates official facts, press, user reports and speculation, and ends with what it means for Jacob's bot team.",
+      "mascot_says": "Costs are confirmed. Cuts aren't quantified.",
+      "pdf": "pdfs/side/grok-bot-usage-change.pdf",
+      "source": "briefs/side/grok-bot-usage-change/report.html"
+    },
+    {
       "slug": "copy-custom-esignature",
       "date": "2026-11-04",
       "date_label": "November 4, 2026",

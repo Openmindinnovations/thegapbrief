@@ -93,6 +93,19 @@
       "mascot_says": "This week I watched settings change before anyone was asked. Check your defaults.",
       "pdf": "pdfs/thegapbrief-2026-11-02.pdf",
       "source": "briefs/2026-11-02/brief.html"
+    },
+    {
+      "week": 7,
+      "slug": "2026-11-09",
+      "label": "Week 7",
+      "date": "2026-11-09",
+      "date_label": "November 9, 2026",
+      "covering": "November 2 – November 9, 2026",
+      "title": "Apps put something between people and what they came for. And schools that turn off Google’s AI lose Search too.",
+      "summary": "Amazon’s search now runs through Alexa with no off switch, Pinterest plays a full-screen ad when you tap a pin, and Benjamin users say the only working cash-out leads to a gambling site. TikTok Shop got its own app and Prime swapped Grubhub for Uber Eats. Apple set an 18+ minimum for dating features and romantic AI companions, Google said schools that restrict AI will lose Search, and Anthropic told investors it may soon meet its own threshold for AI-accelerated progress.",
+      "mascot_says": "This week I kept tapping the thing I came for and getting something else first.",
+      "pdf": "pdfs/thegapbrief-2026-11-09.pdf",
+      "source": "briefs/2026-11-09/brief.html"
     }
   ]
 }

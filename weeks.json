@@ -106,6 +106,19 @@
       "mascot_says": "This week I kept tapping the thing I came for and getting something else first.",
       "pdf": "pdfs/thegapbrief-2026-11-09.pdf",
       "source": "briefs/2026-11-09/brief.html"
+    },
+    {
+      "week": 8,
+      "slug": "2026-11-16",
+      "label": "Week 8",
+      "date": "2026-11-16",
+      "date_label": "November 16, 2026",
+      "covering": "November 9 – November 16, 2026",
+      "title": "Apps took away what people had built, and left no one to ask. And the EU moved to ban loot boxes for kids.",
+      "summary": "Facebook will delete additional profiles after December 14 with no way to keep one, X users say “inauthentic behavior” appeals are rejected in seconds, and Fitbit watches lose third-party faces for good on November 28. The EU proposed its Digital Fairness Act, Oura agreed to buy a primary-care service and Instagram put Amazon links in Reels. The same act would ban paid loot boxes for minors, Greece asked platforms for working age checks, Nvidia’s Jensen Huang resigned, and OpenAI agreed to embed outside safety researchers.",
+      "mascot_says": "This week I kept looking for a person to ask, and kept getting sent back to the screen that was broken.",
+      "pdf": "pdfs/thegapbrief-2026-11-16.pdf",
+      "source": "briefs/2026-11-16/brief.html"
     }
   ]
 }
